@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.shiyun.dao.UserDao">
+
+	<resultMap type="User" id="user">
+		<result property="name" column="UserName" />
+		<result property="password" column="Password" />
+		<result property="enabled" column="ENABLED"/>
+		<result property="desc" column="Description" />
+	</resultMap>
+
+
+	<select id="getUser" parameterType="User" resultType="User"	resultMap="user"> 
+            SELECT UserName,Password,Description from Users 
+            <where>
+                <if test="enabled != null">
+                    enabled=#{enabled}
+                </if>
+                <if test="name != null and name != ''">
+                    and UserName=#{name}
+                </if>
+                <if test="password != null and password !=''">
+                    and Password=#{password}
+                </if>
+                </where>
+	</select>
+
+	<!-- 参数为String并用于判断时，只能用一下的参数名称获取 -->
+	<select id="getUsers" parameterType="String" resultType="Map">
+		select u.userName,u.password,ga.authority
+		roleName,u.description,u.enabled from users u, granted_authorities ga
+		where u.userName=ga.username and u.userName != 'admin'
+		<if test="_parameter != null and _parameter != ''">
+			and u.userName like '%${_parameter}%'
+		</if>
+	</select>
+	<select id="getUserRole" parameterType="User" resultType="Map">
+	    select userName,authority roleName from granted_authorities where userName != 'admin'
+	        <if test="name != null and name != ''">
+	            and userName=#{name}
+	        </if>
+	        <if test="role != null and role !=''">
+	            and authority=#{role}
+	        </if>
+	</select> 
+	<insert id="insertUsers" parameterType="User">
+		insert into users(username,password,description,enabled)
+		values(#{name},#{password},#{desc},1)
+	</insert>
+
+	<insert id="insertUserRole" parameterType="User">
+		insert into granted_authorities(username,authority) values(#{name},#{role})
+	</insert>
+	
+	<update id="updateUsers" parameterType="User">
+	    update users 
+	    <set>
+		    <if test="password != null and password !='' ">
+		        password=#{password},
+		    </if>
+		    <if test="desc != null and desc!='' ">
+		        description=#{desc},
+		    </if>
+		    <if test="enabled != null">
+		        enabled=#{enabled}
+		    </if>
+	    </set>
+	    where userName=#{name}
+	    
+	</update>
+	
+	<update id="updateUserRole" parameterType="User">
+	    update granted_authorities set authority=#{role} 
+	    where  username=#{name} and authority=#{oldRole}
+	</update>
+	
+	<update id="changePassword" parameterType="Password">
+	    update users 
+	    <set>
+		    <if test="newPassword != null and newPassword !='' ">
+		        password=#{newPassword},
+		    </if>
+	    </set>
+	    where userName=#{userName} and password=#{oldPassword}
+	    
+	</update>
+	
+</mapper> 
