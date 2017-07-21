@@ -76,8 +76,10 @@ th.ui-th-column div {
 
 <body>
 	<!-- 导航 -->
-
+	<!--
 	<div id="menu"><%@ include file="menu.inc"%></div>
+	-->
+
 	<!-- 导航结束 -->
 	<div style="text-align: center; margin: 0 auto;">
 		<h3><spring:message code="roleManager"/></h3>
