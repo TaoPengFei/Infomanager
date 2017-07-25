@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="cn.shiyun.dao.EmpShopDao"> 
+    
+     <select id="getShopByEmp" parameterType="String" resultType="map">
+     	<if test="_parameter != null and _parameter != ''">
+        	select o.shopname,o.shopid
+        	from bi.sy_empshoprela e,bi.dim_shop o 
+        	where e.shopid = o.shopid 
+        	and	e.shopid > 0
+        	and e.username=#{userName}
+        	union
+        	select '所有' shopname,0 shopid
+        	from bi.sy_empshoprela e  
+        	where e.shopid = 0
+        	and e.username=#{userName}
+        	order by shopname
+        </if>
+    </select>
+     
+     <insert id="insertEmpShop" useGeneratedKeys="true" keyProperty="id">
+     	 insert into bi.sy_empshoprela(username,shopid,status,mtime) values
+     	 <foreach collection="list" item="item" separator="," >
+     	 (#{item.username},#{item.shopid},10,now())
+     	 </foreach>
+    </insert>
+     
+     <delete id="deleteEmpShop">
+         delete from bi.sy_empshoprela where username=#{username} and shopid in
+          <foreach collection="shopid" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+</mapper> 

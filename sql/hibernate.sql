@@ -12,6 +12,9 @@ File Encoding         : 65001
 
 Date: 2017-07-20 13:28:58
 */
+/**
+ *  在本地创建一个hibernate数据库
+ */
 
 SET FOREIGN_KEY_CHECKS=0;
 
