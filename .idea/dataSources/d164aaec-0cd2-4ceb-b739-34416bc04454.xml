@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - hibernate@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="hibernate">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="auth"/>
+    <schema id="3" name="bi"/>
+    <schema id="4" name="cboard"/>
+    <schema id="5" name="crosstable"/>
+    <schema id="6" name="foodmart"/>
+    <schema id="7" name="information_schema"/>
+    <schema id="8" name="jackrabbit"/>
+    <schema id="9" name="mapcache"/>
+    <schema id="10" name="mvc"/>
+    <schema id="11" name="mysql"/>
+    <schema id="12" name="performance_schema"/>
+    <schema id="13" name="quartz"/>
+    <schema id="14" name="sampledata"/>
+    <schema id="15" name="steelwheels"/>
+    <schema id="16" name="sy"/>
+    <schema id="17" name="tpfboard"/>
+    <table id="18" parent="1" name="authoritie_menus"/>
+    <table id="19" parent="1" name="authorities"/>
+    <table id="20" parent="1" name="bdparams"/>
+    <table id="21" parent="1" name="cdf_storage"/>
+    <table id="22" parent="1" name="cplxparams"/>
+    <table id="23" parent="1" name="datasource"/>
+    <table id="24" parent="1" name="dim_outlet"/>
+    <table id="25" parent="1" name="dtparams"/>
+    <table id="26" parent="1" name="granted_authorities"/>
+    <table id="27" parent="1" name="lngparams"/>
+    <table id="28" parent="1" name="lsparams"/>
+    <table id="29" parent="1" name="menus"/>
+    <table id="30" parent="1" name="paramtypesmap"/>
+    <table id="31" parent="1" name="pro_acls_list"/>
+    <table id="32" parent="1" name="pro_files"/>
+    <table id="33" parent="1" name="rtelement"/>
+    <table id="34" parent="1" name="ssparams"/>
+    <table id="35" parent="1" name="user_settings"/>
+    <table id="36" parent="1" name="users"/>
+    <table id="37" parent="1" name="dim_shop"/>
+    <table id="38" parent="1" name="sy_empoutletrela"/>
+    <table id="39" parent="1" name="sy_empshoprela"/>
+    <column id="40" parent="18" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="41" parent="18" name="authoritie">
+      <mandatory>1</mandatory>
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <column id="42" parent="18" name="menuid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="43" parent="18" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="44" parent="19" name="AUTHORITY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="45" parent="19" name="DESCRIPTION">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <key id="46" parent="19" name="PRIMARY">
+      <columns>AUTHORITY</columns>
+      <primary>1</primary>
+    </key>
+    <column id="47" parent="20" name="ITEMID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="48" parent="20" name="PARAMVALUE">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="49" parent="20" name="PARAMKEY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="50" parent="20" name="FK61733C48FA34BFDC">
+      <columns>ITEMID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="51" parent="20" name="PRIMARY">
+      <columns>ITEMID
+PARAMKEY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="52" parent="20" name="FK61733C48FA34BFDC">
+      <columns>ITEMID</columns>
+      <ref-key>~.rtelement.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="53" parent="21" name="storageid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="54" parent="21" name="pentahouser">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="55" parent="21" name="storagevalue">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="56" parent="21" name="lastupdated">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="57" parent="21" name="cdf_storage_user_idx">
+      <columns>pentahouser</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="58" parent="21" name="PRIMARY">
+      <columns>storageid</columns>
+      <primary>1</primary>
+    </key>
+    <column id="59" parent="22" name="ITEMID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="60" parent="22" name="PARAMVALUE">
+      <data-type>longblob|0</data-type>
+    </column>
+    <column id="61" parent="22" name="PARAMKEY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="62" parent="22" name="FKD6D6E97FFA34BFDC">
+      <columns>ITEMID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="63" parent="22" name="PRIMARY">
+      <columns>ITEMID
+PARAMKEY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="64" parent="22" name="FKD6D6E97FFA34BFDC">
+      <columns>ITEMID</columns>
+      <ref-key>~.rtelement.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="65" parent="23" name="NAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="66" parent="23" name="MAXACTCONN">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="67" parent="23" name="DRIVERCLASS">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="68" parent="23" name="IDLECONN">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="69" parent="23" name="USERNAME">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="70" parent="23" name="PASSWORD">
+      <data-type>varchar(150)|0</data-type>
+    </column>
+    <column id="71" parent="23" name="URL">
+      <mandatory>1</mandatory>
+      <data-type>varchar(512)|0</data-type>
+    </column>
+    <column id="72" parent="23" name="QUERY">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="73" parent="23" name="WAIT">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="74" parent="23" name="PRIMARY">
+      <columns>NAME</columns>
+      <primary>1</primary>
+    </key>
+    <column id="75" parent="24" name="OutletId_t">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="76" parent="24" name="OutletId">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="77" parent="24" name="ShopId">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="78" parent="24" name="OutletCode">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="79" parent="24" name="OutletName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="80" parent="24" name="OutletShortName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="81" parent="24" name="OutletSeq">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="82" parent="24" name="ShopCode">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="83" parent="24" name="ShopName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="84" parent="24" name="ShopShortName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="85" parent="24" name="ShopSeq">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="86" parent="24" name="AreaId">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="87" parent="24" name="PlaceId">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="88" parent="24" name="BrandId">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="89" parent="24" name="Country">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="90" parent="24" name="Region">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="91" parent="24" name="Province">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="92" parent="24" name="City">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="93" parent="24" name="Addr1">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="94" parent="24" name="Addr2">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="95" parent="24" name="Contract">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="96" parent="24" name="ExtInfo">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="97" parent="24" name="Phone">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="98" parent="24" name="Fax">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="99" parent="24" name="WebSite">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="100" parent="24" name="CurrencySign">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="101" parent="24" name="CurrencyCode">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="102" parent="24" name="TableQty">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="103" parent="24" name="SeatQty">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="104" parent="24" name="EmpQty">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="105" parent="24" name="Area">
+      <data-type>decimal(16,2)|0</data-type>
+      <default-expression>&apos;1.00&apos;</default-expression>
+    </column>
+    <column id="106" parent="24" name="Status">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="107" parent="24" name="EffectiveDate">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="108" parent="24" name="EndDate">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="109" parent="24" name="VersionNo">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="110" parent="24" name="CurrVersionFlag">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="111" parent="24" name="CreateTime">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="112" parent="24" name="UpdateTime">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="113" parent="24" name="idx_Dim_Outlet_OutletId">
+      <columns>OutletId</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="114" parent="24" name="PRIMARY">
+      <columns>OutletId_t</columns>
+      <primary>1</primary>
+    </key>
+    <column id="115" parent="25" name="ITEMID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="116" parent="25" name="PARAMVALUE">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="117" parent="25" name="PARAMKEY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="118" parent="25" name="FK7F994A16FA34BFDC">
+      <columns>ITEMID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="119" parent="25" name="PRIMARY">
+      <columns>ITEMID
+PARAMKEY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="120" parent="25" name="FK7F994A16FA34BFDC">
+      <columns>ITEMID</columns>
+      <ref-key>~.rtelement.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="121" parent="26" name="USERNAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="122" parent="26" name="AUTHORITY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="123" parent="26" name="FK7471775D41B6DA97">
+      <columns>AUTHORITY</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="124" parent="26" name="FK7471775DD9EDC77F">
+      <columns>USERNAME</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="125" parent="26" name="PRIMARY">
+      <columns>USERNAME
+AUTHORITY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="126" parent="26" name="FK7471775DD9EDC77F">
+      <columns>USERNAME</columns>
+      <ref-key>~.users.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="127" parent="26" name="FK7471775D41B6DA97">
+      <columns>AUTHORITY</columns>
+      <ref-key>~.authorities.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="128" parent="27" name="ITEMID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="129" parent="27" name="PARAMVALUE">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="130" parent="27" name="PARAMKEY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="131" parent="27" name="FKE304FCCBFA34BFDC">
+      <columns>ITEMID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="132" parent="27" name="PRIMARY">
+      <columns>ITEMID
+PARAMKEY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="133" parent="27" name="FKE304FCCBFA34BFDC">
+      <columns>ITEMID</columns>
+      <ref-key>~.rtelement.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="134" parent="28" name="ITEMID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="135" parent="28" name="PARAMVALUE">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="136" parent="28" name="PARAMKEY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="137" parent="28" name="FK89BC75CDFA34BFDC">
+      <columns>ITEMID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="138" parent="28" name="PRIMARY">
+      <columns>ITEMID
+PARAMKEY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="139" parent="28" name="FK89BC75CDFA34BFDC">
+      <columns>ITEMID</columns>
+      <ref-key>~.rtelement.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="140" parent="29" name="menuid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="141" parent="29" name="menuname">
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <column id="142" parent="29" name="menuurl">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="143" parent="29" name="pid">
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <column id="144" parent="29" name="orders">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="145" parent="29" name="icon">
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <column id="146" parent="29" name="deletetag">
+      <comment>1 删除  0 保留</comment>
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <column id="147" parent="29" name="modifytime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="148" parent="29" name="menuname_en">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <key id="149" parent="29" name="PRIMARY">
+      <columns>menuid</columns>
+      <primary>1</primary>
+    </key>
+    <column id="150" parent="30" name="ITEMID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="151" parent="30" name="PARAMVALUE">
+      <data-type>varchar(25)|0</data-type>
+    </column>
+    <column id="152" parent="30" name="PARAMKEY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="153" parent="30" name="FKD3EDA1B0FA34BFDC">
+      <columns>ITEMID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="154" parent="30" name="PRIMARY">
+      <columns>ITEMID
+PARAMKEY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="155" parent="30" name="FKD3EDA1B0FA34BFDC">
+      <columns>ITEMID</columns>
+      <ref-key>~.rtelement.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="156" parent="31" name="ACL_ID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="157" parent="31" name="ACL_MASK">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="158" parent="31" name="RECIP_TYPE">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="159" parent="31" name="RECIPIENT">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="160" parent="31" name="ACL_POSITION">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="161" parent="31" name="FKB65646C2B23C5D30">
+      <columns>ACL_ID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="162" parent="31" name="PRIMARY">
+      <columns>ACL_ID
+ACL_POSITION</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="163" parent="31" name="FKB65646C2B23C5D30">
+      <columns>ACL_ID</columns>
+      <ref-key>~.pro_files.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="164" parent="32" name="FILE_ID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="165" parent="32" name="revision">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="166" parent="32" name="parent">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="167" parent="32" name="fileName">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="168" parent="32" name="fullPath">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="169" parent="32" name="data">
+      <data-type>longblob|0</data-type>
+    </column>
+    <column id="170" parent="32" name="directory">
+      <mandatory>1</mandatory>
+      <data-type>bit(1)|0</data-type>
+    </column>
+    <column id="171" parent="32" name="lastModified">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="172" parent="32" name="CHILD_ID">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="173" parent="32" name="FK94A87E2569FABF5E">
+      <columns>CHILD_ID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="174" parent="32" name="FK94A87E25CBBBB0EA">
+      <columns>parent</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="175" parent="32" name="fullPath">
+      <columns>fullPath</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="176" parent="32" name="PRIMARY">
+      <columns>FILE_ID</columns>
+      <primary>1</primary>
+    </key>
+    <key id="177" parent="32" name="fullPath">
+      <columns>fullPath</columns>
+      <underlying-index>fullPath</underlying-index>
+    </key>
+    <foreign-key id="178" parent="32" name="FK94A87E25CBBBB0EA">
+      <columns>parent</columns>
+      <ref-key>PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="179" parent="32" name="FK94A87E2569FABF5E">
+      <columns>CHILD_ID</columns>
+      <ref-key>PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="180" parent="33" name="INSTANCEID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="181" parent="33" name="REVISION">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="182" parent="33" name="PARID">
+      <data-type>varchar(254)|0</data-type>
+    </column>
+    <column id="183" parent="33" name="PARTYPE">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="184" parent="33" name="SOLNID">
+      <data-type>varchar(254)|0</data-type>
+    </column>
+    <column id="185" parent="33" name="READONLY">
+      <data-type>bit(1)|0</data-type>
+    </column>
+    <column id="186" parent="33" name="CREATED">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="187" parent="33" name="PRIMARY">
+      <columns>INSTANCEID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="188" parent="34" name="ITEMID">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="189" parent="34" name="PARAMVALUE">
+      <data-type>varchar(254)|0</data-type>
+    </column>
+    <column id="190" parent="34" name="PARAMKEY">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="191" parent="34" name="FK60E4AFE6FA34BFDC">
+      <columns>ITEMID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="192" parent="34" name="PRIMARY">
+      <columns>ITEMID
+PARAMKEY</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="193" parent="34" name="FK60E4AFE6FA34BFDC">
+      <columns>ITEMID</columns>
+      <ref-key>~.rtelement.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="194" parent="35" name="USER_SETTINGS_ID">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="195" parent="35" name="USERNAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="196" parent="35" name="SETTING_NAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="197" parent="35" name="SETTING_VALUE">
+      <mandatory>1</mandatory>
+      <data-type>varchar(2048)|0</data-type>
+    </column>
+    <key id="198" parent="35" name="PRIMARY">
+      <columns>USER_SETTINGS_ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="199" parent="36" name="USERNAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="200" parent="36" name="PASSWORD">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="201" parent="36" name="DESCRIPTION">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="202" parent="36" name="ENABLED">
+      <mandatory>1</mandatory>
+      <data-type>bit(1)|0</data-type>
+    </column>
+    <key id="203" parent="36" name="PRIMARY">
+      <columns>USERNAME</columns>
+      <primary>1</primary>
+    </key>
+    <column id="204" parent="37" name="ShopId">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="205" parent="37" name="ShopCode">
+      <data-type>varchar(40)|0</data-type>
+    </column>
+    <column id="206" parent="37" name="ShopName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="207" parent="37" name="ShopShortName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="208" parent="37" name="ShopAddr">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="209" parent="37" name="ShopInfo">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="210" parent="37" name="Fax">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="211" parent="37" name="Website">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="212" parent="37" name="Timezone">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="213" parent="37" name="Phone">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="214" parent="37" name="ShopSeq">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="215" parent="37" name="Status">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="216" parent="37" name="CreateTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="217" parent="37" name="UPdateTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="218" parent="37" name="PRIMARY">
+      <columns>ShopId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="219" parent="38" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="220" parent="38" name="USERNAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="221" parent="38" name="outletid">
+      <comment>如果一个empid对应所有营业区就写0</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="222" parent="38" name="status">
+      <comment>0 申请 10在用 100淘汰</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="223" parent="38" name="mtime">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="224" parent="38" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="225" parent="39" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="226" parent="39" name="USERNAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="227" parent="39" name="shopid">
+      <comment>如果一个empid对应所有酒店就写0</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="228" parent="39" name="status">
+      <comment>0 申请 10在用 100淘汰</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="229" parent="39" name="mtime">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="230" parent="39" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
