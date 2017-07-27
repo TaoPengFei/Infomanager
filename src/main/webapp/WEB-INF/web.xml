@@ -24,10 +24,12 @@
 	<session-config>
 		<session-timeout>0</session-timeout>
 	</session-config>
-	<!-- Spring和mybatis的配置文件 -->
+	<!-- Spring和mybatis的配置文件
+		classpath:spring.xml,
+	-->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring-mybatis.xml</param-value>
+		<param-value>classpath:spring-mybatis.xml,classpath:spring-redis.xml</param-value>
 	</context-param>
 	<!-- 编码过滤器 -->
 	<filter>
@@ -60,8 +62,13 @@
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
-	<!-- Spring监听器 -->
+	<!-- Spring监听器
 	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	-->
+	<listener>
+		<description>spring listener</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<!-- 防止Spring内存溢出监听器 -->

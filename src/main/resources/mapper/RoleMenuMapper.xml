@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-<mapper namespace="cn.shiyun.dao.RoleMenuDao"> 
-    
+<mapper namespace="cn.shiyun.dao.RoleMenuDao">
+
+    <!--  启用Redis二级缓存机制 -->
+    <!--
+    <cache type="cn.shiyun.cache.RedisCache" />
+    -->
      <select id="getMenuByRole" parameterType="String" resultType="Map">
      	<if test="_parameter != null and _parameter != ''">
         	select am.authoritie roleName,m.menuid,m.menuname,m.menuUrl,m.pid,m.icon 

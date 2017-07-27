@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-<mapper namespace="cn.shiyun.dao.EmpOutletDao"> 
-    
+<mapper namespace="cn.shiyun.dao.EmpOutletDao">
+
+	<!--  启用Redis二级缓存机制 -->
+	<!--
+    <cache type="cn.shiyun.cache.RedisCache" />
+    -->
+
      <select id="getOutletByEmp" parameterType="String" resultType="map">
      	<if test="_parameter != null and _parameter != ''">
         	select o.outletname,o.outletid

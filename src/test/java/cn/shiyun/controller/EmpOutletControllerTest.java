@@ -24,6 +24,9 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+/**
+ * Created by 陶鹏飞 on 2017/7/20.
+ */
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration(locations = { "classpath:spring-mvc.xml",  
         "classpath:spring-mybatis.xml"})

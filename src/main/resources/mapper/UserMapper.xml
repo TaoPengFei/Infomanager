@@ -4,6 +4,10 @@
 
 <mapper namespace="cn.shiyun.dao.UserDao">
 
+	<!--  启用Redis二级缓存机制 -->
+
+	<cache type="cn.shiyun.cache.RedisCache" />
+
 	<resultMap type="User" id="user">
 		<result property="name" column="UserName" />
 		<result property="password" column="Password" />

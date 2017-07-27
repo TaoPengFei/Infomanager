@@ -1,6 +1,11 @@
 package cn.shiyun.entity;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+
+	private static final long serialVersionUID = 2724888087391664167L;
+
 	private String name;
 	private String password;
 	private String desc;
