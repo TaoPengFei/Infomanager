@@ -17,6 +17,7 @@
     if(user != null){
         userName = user.getName();
     }else{
+        //response.sendRedirect(url+"login.jsp");
         response.sendRedirect(url+"login.jsp");
         //request.getRequestDispatcher(url+"login.jsp").forward(request,response);
     }

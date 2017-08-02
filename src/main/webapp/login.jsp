@@ -40,9 +40,9 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="dist/css/AdminLTE.css">
-    <!-- iCheck
+    <!-- iCheck -->
     <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
-    -->
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -162,7 +162,8 @@
                 dataType: "json",
                 async:false,
                 cache:false,
-                data:{	name:username,
+                data:{
+                    name:username,
                     password:pwd,
                     enabled:true
                 },
@@ -174,7 +175,8 @@
                         var notecode = data.code;
                         $("#btn-login").button('reset');
                         if(notecode == "1"){
-                            document.location.href="views/main.jsp";
+                            //document.location.href="views/main.jsp";
+                            document.location.href="starter.jsp";
                         }else {
                             if($("#btnClose").length > 0){
                                 $("#btnClose").trigger("click");

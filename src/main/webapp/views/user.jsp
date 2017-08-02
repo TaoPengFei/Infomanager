@@ -88,8 +88,8 @@ th.ui-th-column div {
 			<div class="row">
 				<div class="col-md-3 column">
 					<div class="input-group">
-						<span class="input-group-addon"><spring:message code="loginName"/></span> <input
-							type="text" class="form-control" id="userName">
+						<span class="input-group-addon"><spring:message code="loginName"/></span>
+						<input type="text" class="form-control" id="userName">
 					</div>
 				</div>
 				

@@ -70,14 +70,12 @@
 		<div class="row">
 			<div class="col-md-3 column">
 				<div class="input-group">
-					<span class="input-group-addon"><spring:message
-							code="userRole" /></span> <select class="form-control" id="roleName">
-					</select>
+					<span class="input-group-addon"><spring:message code="userRole" /></span>
+					<select class="form-control" id="roleName"></select>
 				</div>
 			</div>
 		</div>
-		<HR style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)"
-		width="80%" color=#987cb9 SIZE=3>
+		<HR style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="80%" color=#987cb9 SIZE=3>
 		<div class="row">
 			<div class="col-md-5 column" style="text-align:center">
 			<h2><span class="label label-info"><spring:message code="menuWithoutRole" /></span></h2>
@@ -87,7 +85,7 @@
 			<div class="col-md-5 column" style="text-align:center">
 			<h2><span class="label label-info"><spring:message code="menuWithRole" /></span></h2>
 			</div>
-	</div>
+		</div>
 		<div class="row">
 			<div class="col-md-5">
 				<select multiple class="form-control"  id="menuLeft"
