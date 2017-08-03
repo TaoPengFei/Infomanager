@@ -46,6 +46,7 @@ public class UserController {
 		return result;
 	}
 
+	//查询用户
 	@RequestMapping("queryUser.do")
 	@ResponseBody
 	public Map<String, Object> queryUser(String userName) {
@@ -63,6 +64,7 @@ public class UserController {
 		return result;
 	}
 
+	//增加用户
 	@RequestMapping("addUser.do")
 	@ResponseBody
 	public Map<String, Object> addUser(User user) {
@@ -86,6 +88,7 @@ public class UserController {
 		return result;
 	}
 
+	//修改用户
 	@RequestMapping("updateUser.do")
 	@ResponseBody
 	public Map<String, Object> updateUser(User user) {
@@ -108,7 +111,8 @@ public class UserController {
 		}
 		return result;
 	}
-	
+
+	//修改密码
 	@RequestMapping("updatePassword.do")
 	@ResponseBody
 	public Map<String, Object> updatePassword(Password password){

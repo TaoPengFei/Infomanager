@@ -141,25 +141,24 @@ th.ui-th-column div {
 								</div>
 							</div>
 							<div class="row" style="margin-top: 10px">
-                            <div class="col-xs-3">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><spring:message code="newPassword"/></span>
-                                    <input type="password" class="form-control" id="password">
-                                </div>
-                            </div>
-	                        <div class="col-xs-3">
-	                            <div class="input-group">
-                                    <span class="input-group-addon"><spring:message code="confirmPwd"/></span>
-                                    <input type="password" class="form-control" id="confirmpwd">
-                                </div>
-	                        </div>
-	                    </div>
+								<div class="col-xs-3">
+									<div class="input-group">
+										<span class="input-group-addon"><spring:message code="newPassword"/></span>
+										<input type="password" class="form-control" id="password">
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class="input-group">
+										<span class="input-group-addon"><spring:message code="confirmPwd"/></span>
+										<input type="password" class="form-control" id="confirmpwd">
+									</div>
+								</div>
+	                    	</div>
 							<div class="row">
 								<div class="col-md-6 column">
 									<div class="input-group">
 										<span class="input-group-addon"><spring:message code="description"/></span>
-										<textarea  class="form-control" rows="3"
-											id="newDesc" placeholder=""></textarea>
+										<textarea  class="form-control" rows="3" id="newDesc" placeholder=""></textarea>
 									</div>
 								</div>
 							</div>

@@ -2,10 +2,10 @@
 <!-- Content Wrapper. Contains page content -->
 <div id="inner-container">
     <div class="row">
-        <div class="col-md-3 column">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
             <div class="input-group">
                 <span class="input-group-addon">用户角色</span>
-                <select class="form-control" id="roleName" >
+                <select class="form-control" id="roleName" ng-model="selectedRoleName">
                     <!--
                     <option value="1">{{ x }}</option>
                     ng-repeat="x in roleNameList.data"
@@ -30,7 +30,9 @@
 
     <div class="row">
         <div class="col-md-5">
-            <select multiple class="form-control"  id="menuLeft" style="height: 600px;border-width:3px;"></select>
+            <select multiple class="form-control"  id="menuLeft" style="height: 600px;border-width:1px;">
+                <option ng-repeat="x in roleNameList.data" value="{{x}}">{{x}}</option>
+            </select>
         </div>
         <div class="col-md-2" style="text-align: center;">
             <div class="row" style="margin-top: 100px">
@@ -41,7 +43,9 @@
             </div>
         </div>
         <div class="col-md-5">
-            <select multiple class="form-control" id="menuRight" style="height: 600px;border-width:3px;"></select>
+            <select multiple class="form-control" id="menuRight" style="height: 600px;border-width:1px;">
+                <option ng-repeat="x in roleNameList.data" value="{{x}}">{{x}}</option>
+            </select>
         </div>
     </div>
 

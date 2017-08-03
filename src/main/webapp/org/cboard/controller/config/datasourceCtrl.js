@@ -1,145 +1,135 @@
 /**
  * Created by yfyuan on 2016/8/19.
  */
-cBoard.controller('datasourceCtrl', function ($scope, $http, ModalUtils, $uibModal, $filter) {
+cBoard.controller('datasourceCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
     var translate = $filter('translate');
     $scope.optFlag = 'none';
     $scope.dsView = '';
     $scope.curDatasource = {};
-    /*
-    var getDatasourceList = function () {
-        //$http.get("/dashboard/getDatasourceList.do").success(function (response) {
-        $http.get("http://localhost:8080/user/queryUser.do").success(function (response) {
-            $scope.datasourceList = response;
-            console.log();
-        });
-    };
-    getDatasourceList();
-    */
-
+    $scope.userName = "";
 
     var getUserList = function () {
-        /*
-        $.get("/user/queryUser.do",function (data) {
-            $scope.userList = data;
-            console.log($scope.userList);
-        })
-        /*
-        $http.get("http://localhost:8080/user/queryUser.do").success(function (response) {
-
-            var obj = JSON.parse(response.data);
-            console.log(obj);
-            //$scope.userList = respond;
-        })
-        */
         $http({
             method: 'get',
-            url: '/user/queryUser.do'
+            url: '/user/queryUser.do',
+            params :{
+                userName:$scope.userName
+            }
         }).success(function (response) {
             $scope.userList = response;
-            //console.log($scope.userList.data);
+            /*
+            //淘汰/启用样式控制
+            $scope.setStyle = function () {
+                //TODO
+            }
+            */
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
         });
     };
     getUserList();
 
+    var getRoleList = function () {
+        $http({
+            method: 'get',
+            url: '/role/roleLoad.do'
+        }).success(function (response) {
+            $scope.roleList = response;
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
+        });
+    }
+
+    //查询用户
     /*
-    var getUserList = function (){
-        $http.jsonp("/user/queryUser.do").success(function(response){
-            console.log(response.data);
-            //$scope.userList = response.data;
-        })
-    };
-    getUserList();
+     $scope.queryUser = function (current,$event) {
+     console.log("查询用户...");
+     };
      */
-    /*
-    $http.get("/dashboard/getProviderList.do").success(function (response) {
-        $scope.providerList = response;
-    });
-
-    $scope.newDs = function () {
-        $scope.optFlag = 'new';
-        $scope.curDatasource = {config: {}};
-        $scope.dsView = '';
-    };
-    $scope.editDs = function (ds) {
-        $scope.optFlag = 'edit';
-        $scope.curDatasource = angular.copy(ds);
-        $scope.changeDsView();
-    };
-    $scope.deleteDs = function (ds) {
-        ModalUtils.confirm(translate("COMMON.CONFIRM_DELETE"), "modal-warning", "lg", function () {
-            $http.post("/dashboard/deleteDatasource.do", {id: ds.id}).success(function () {
-                $scope.optFlag = 'none';
-                getDatasourceList();
-            });
-        });
-    };
-
-
-    $scope.changeDsView = function () {
-        $scope.dsView = '/dashboard/getDatasourceView.do?type=' + $scope.curDatasource.type;
-    };
-
-    $scope.saveNew = function () {
-        $http.post("/dashboard/saveNewDatasource.do", {json: angular.toJson($scope.curDatasource)}).success(function (serviceStatus) {
-            if (serviceStatus.status == '1') {
-                $scope.optFlag = 'none';
-                getDatasourceList();
-                ModalUtils.alert(translate("COMMON.SUCCESS"), "modal-success", "sm");
-            } else {
-                ModalUtils.alert(serviceStatus.msg, "modal-warning", "lg");
+    //数据双向绑定+监听机制
+    $scope.$watch("userName",function () {
+        $http({
+            method:'post',
+            url:'/user/queryUser.do',
+            params :{
+                userName:$scope.userName
             }
-        });
-    };
+        }).success(function (response) {
+            $scope.userList = response;
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
+        })
+    })
 
-    $scope.saveEdit = function () {
-        $http.post("/dashboard/updateDatasource.do", {json: angular.toJson($scope.curDatasource)}).success(function (serviceStatus) {
-            if (serviceStatus.status == '1') {
-                $scope.optFlag = 'none';
-                getDatasourceList();
-                ModalUtils.alert(translate("COMMON.SUCCESS"), "modal-success", "sm");
-            } else {
-                ModalUtils.alert(serviceStatus.msg, "modal-warning", "lg");
-            }
-        });
-    };
-
-    $scope.test = function () {
-        var datasource = $scope.curDatasource;
+    //增加用户
+    $scope.addUser = function (current,$event) {
+        console.log("增加用户...");
         $uibModal.open({
-            templateUrl: 'org/cboard/view/config/modal/test.html',
-            windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
-            size: 'lg',
+            templateUrl: 'org/cboard/view/config/modal/addUser.html',
+            //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
-            controller: function ($scope, $uibModalInstance) {
-                $scope.datasource = datasource;
-                $scope.curWidget = {query: {}};
-                $scope.alerts = [];
+            controller: function ($scope, $uibModalInstance, $http) {
+                getRoleList();
+                console.log($uibModalInstance)
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
-                $scope.do = function () {
-                    $http.post("/dashboard/test.do", {
-                        datasource: angular.toJson($scope.datasource),
-                        query: angular.toJson($scope.curWidget.query)
-                    }).success(function (result) {
-                        if (result.status != '1') {
-                            $scope.alerts = [{
-                                msg: result.msg,
-                                type: 'danger'
-                            }];
-                        } else {
-                            $scope.alerts = [{
-                                msg: translate("COMMON.SUCCESS"),
-                                type: 'success'
-                            }];
-                        }
-                    });
-                };
+                $scope.save = function () {
+                    console.log("保存用户...");
+                }
             }
         });
     };
-    */
 
+    //删除用户
+    $scope.delUser = function (current,$event) {
+        console.log("删除用户...");
+    };
+
+    //修改用户
+    $scope.modifyUser = function (current,$event) {
+        console.log("修改用户...");
+        $uibModal.open({
+            templateUrl: 'org/cboard/view/config/modal/modifyUser.html',
+            //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
+            backdrop: false,
+            controller: function ($scope, $uibModalInstance, $http) {
+                //getRoleList();
+                console.log($uibModalInstance)
+                $scope.close = function () {
+                    $uibModalInstance.close();
+                };
+                $scope.save = function () {
+                    console.log("保存修改...");
+                }
+            }
+        });
+    };
+
+    //启动/淘汰用户
+    $scope.enableUser = function (current,$event) {
+        $http({
+            method: 'post',
+            url: '/user/updateUser.do',
+            params :{
+                name:current.userName,
+                enabled:!current.enabled
+            }
+        }).success(function (response) {
+            if(response.code === 1){
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+            }else if(response.code === 0){
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }else if(response.code === -1){
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }else if(response.code === -2){
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+            getUserList();
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
+        });
+        $event.stopPropagation();//阻止冒泡
+    };
 });

@@ -1,7 +1,7 @@
 /**
  * Created by 陶鹏飞 on 2017/8/2.
  */
-cBoard.controller('datasetCtrl', function ($scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
+cBoard.controller('datasetCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
     var translate = $filter('translate');
     $scope.optFlag = 'none';
@@ -43,7 +43,9 @@ cBoard.controller('datasetCtrl', function ($scope, $http, dataService, $uibModal
                 //ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
             }
             $scope.roleList = response;
-        })
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
+        });
     })
 
     //查询
@@ -61,6 +63,7 @@ cBoard.controller('datasetCtrl', function ($scope, $http, dataService, $uibModal
         })
     }
     */
+
     //新增
     $scope.addRole = function () {
         $uibModal.open({
@@ -88,8 +91,8 @@ cBoard.controller('datasetCtrl', function ($scope, $http, dataService, $uibModal
                             ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
                         }
                         getRolesList();
-                    }).error(function () {
-                        ModalUtils.alert(translate("获取服务器数据失败！"), "modal-danger", "md");
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
                     })
                     $uibModalInstance.close();
                 }
@@ -121,8 +124,8 @@ cBoard.controller('datasetCtrl', function ($scope, $http, dataService, $uibModal
                 ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
             }
             getRolesList();
-        }).error(function () {
-            ModalUtils.alert(translate("获取服务器数据失败！"), "modal-danger", "sm");
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
         })
         $event.stopPropagation();//阻止冒泡
     }

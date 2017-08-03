@@ -1,16 +1,18 @@
 <!-- Content Wrapper. Contains page content -->
 <div id="inner-container">
     <form role="form" id="empinfo-form" AUTOCOMPLETE="off">
-        <div class="row" style="margin-right:2px;">
+        <div class="row" >
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
                 <div class="input-group">
                     <span class="input-group-addon">角色名称</span>
-                    <input type="text"  placeholder = "请输入..."class="form-control" id="roleName" ng-model="roleName">
+                    <input type="text"  placeholder = "请输入..." class="form-control" id="roleName" ng-model="roleName">
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-6 col-xs-12 column">
                 <div class="pull-right" style="margin-top: 10xp;">
                     <button type="button" class="btn btn-primary" id='addRole' ng-click="addRole()">新增</button>
+                    <button type="button" class="btn btn-primary" id='delRole' ng-click="printRole()">打印</button>
+                    <!--
                     <button type="button" class="btn btn-primary" id='delRole' ng-click="multipleDelRole()">删除</button>
                     <!--
                     <button type="button" class="btn btn-primary" id='queryRole' ng-click="queryRole()">查询</button>

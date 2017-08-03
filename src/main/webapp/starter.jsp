@@ -129,7 +129,7 @@
         }
 
         /* ================ TABLE ================ */
-        /* ================ TABLE ================ */
+
         table,table tr th, table tr td {
             border:1px solid #F8FAFB;
         }
@@ -169,6 +169,14 @@
         .table.table-bordered > tr >td {
             height: 22px;
             max-height: 22px;
+        }
+
+        /* ================ 淘汰/启用样式控制 ================ */
+        .trueClass{
+            opacity:0.1;
+        }
+        .falseClass{
+
         }
     </style>
 </head>
