@@ -92,6 +92,7 @@ $(document).ready(function() {
 	$("#btnAdd").click(function(){
 		var roleName = $('#roleName').val();
 		var menuLeftVal = $("#menuLeft").val();
+		alert(menuLeftVal);
 		if(menuLeftVal == null){
 			alert(lan.choseRow);
 			return;

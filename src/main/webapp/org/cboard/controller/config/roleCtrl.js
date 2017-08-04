@@ -1,7 +1,7 @@
 /**
- * Created by 陶鹏飞 on 2017/8/2.
+ * Created by 陶鹏飞 on 2017/8/4.
  */
-cBoard.controller('datasetCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
+cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
     var translate = $filter('translate');
     $scope.optFlag = 'none';
@@ -50,19 +50,19 @@ cBoard.controller('datasetCtrl', function ($rootScope, $scope, $http, dataServic
 
     //查询
     /*
-    $scope.queryRole = function () {
-        $http({
-            method:'post',
-            url:'/role/getRoles.do',
-            params :{
-                roleName:$scope.roleName
-            }
-        }).success(function (response) {
-            $scope.roleList = response;
-            //console.log($scope.roleList.data);
-        })
-    }
-    */
+     $scope.queryRole = function () {
+     $http({
+     method:'post',
+     url:'/role/getRoles.do',
+     params :{
+     roleName:$scope.roleName
+     }
+     }).success(function (response) {
+     $scope.roleList = response;
+     //console.log($scope.roleList.data);
+     })
+     }
+     */
 
     //新增
     $scope.addRole = function () {

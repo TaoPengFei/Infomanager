@@ -116,20 +116,16 @@
             margin: auto;
             padding: 50px;
         }
-
         .modal-fit .modal-body {
             height: calc(100vh - 200px);
             overflow: auto;
         }
-
         @media (min-width: 768px) {
             .modal-fit .modal-dialog {
                 width: auto;
             }
         }
-
         /* ================ TABLE ================ */
-
         table,table tr th, table tr td {
             border:1px solid #F8FAFB;
         }
@@ -170,13 +166,11 @@
             height: 22px;
             max-height: 22px;
         }
-
         /* ================ 淘汰/启用样式控制 ================ */
         .trueClass{
             opacity:0.1;
         }
         .falseClass{
-
         }
     </style>
 </head>
@@ -201,138 +195,146 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
+<div class="wrapper">
 
-        <!-- Main Header -->
-        <header class="main-header" ng-include="'starter/main-header.html'"></header>
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar" ng-include="'starter/main-sidebar.html'"></aside>
+    <!-- Main Header -->
+    <header class="main-header" ng-include="'starter/main-header.html'"></header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" ng-include="'starter/main-sidebar.html'"></aside>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <!--<section class="content-header">-->
-            <!--<h1>-->
-            <!--Page Header-->
-            <!--<small>Optional description</small>-->
-            <!--</h1>-->
-            <!--<ol class="breadcrumb">-->
-            <!--<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>-->
-            <!--<li class="active">Here</li>-->
-            <!--</ol>-->
-            <!--</section>-->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <!--<section class="content-header">-->
+        <!--<h1>-->
+        <!--Page Header-->
+        <!--<small>Optional description</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+        <!--<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>-->
+        <!--<li class="active">Here</li>-->
+        <!--</ol>-->
+        <!--</section>-->
 
-            <!-- Main content -->
-            <section ui-view class="content"></section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-
-        <!-- Main Footer -->
-        <footer class="main-footer" ng-include="'starter/main-footer.html'"></footer>
-
+        <!-- Main content -->
+        <section ui-view class="content"></section>
+        <!-- /.content -->
     </div>
-    <!-- ./wrapper -->
+    <!-- /.content-wrapper -->
 
-    <!--
-    <script src="org/cboard/util/CBoardEChartRender.js"></script>
-    <script src="org/cboard/util/CBoardCommonUtils.js"></script>
-    <script src="org/cboard/util/CBoardKpiRender.js"></script>
-    <script src="org/cboard/util/CBoardTableRender.js"></script>
-    -->
+    <!-- Main Footer -->
+    <footer class="main-footer" ng-include="'starter/main-footer.html'"></footer>
 
-    <!-- AngularJS-->
-    <script src="org/cboard/ng-app.js"></script>
-    <script src="org/cboard/ng-config.js"></script>
-    <script src="org/cboard/controller/cboard/cBoardCtrl.js"></script>
-    <script src="org/cboard/controller/dashboard/dashboardViewCtrl.js"></script>
-    <script src="org/cboard/controller/config/widgetCtrl.js"></script>
-    <script src="org/cboard/controller/config/datasourceCtrl.js"></script>
-    <script src="org/cboard/controller/config/boardCtrl.js"></script>
-    <script src="org/cboard/controller/config/categoryCtrl.js"></script>
-    <script src="org/cboard/controller/config/datasetCtrl.js"></script>
+</div>
+<!-- ./wrapper -->
 
-    <script src="org/cboard/service/dashboard/dashboardService.js"></script>
-    <script src="org/cboard/service/data/dataService.js"></script>
-    <script src="org/cboard/service/util/ModalUtils.js"></script>
-    <script src="org/cboard/service/updater/updateService.js"></script>
-    <script src="org/cboard/service/chart/chartFunnelService.js"></script>
-    <script src="org/cboard/service/chart/chartKpiService.js"></script>
-    <script src="org/cboard/service/chart/chartLineService.js"></script>
-    <script src="org/cboard/service/chart/chartPieService.js"></script>
-    <script src="org/cboard/service/chart/chartSankeyService.js"></script>
-    <script src="org/cboard/service/chart/chartRadarService.js"></script>
-    <script src="org/cboard/service/chart/chartService.js"></script>
-    <script src="org/cboard/service/chart/chartTableService.js"></script>
-    <script src="org/cboard/directive/dashboard/dashboardWidget.js"></script>
+<!--
+<script src="org/cboard/util/CBoardEChartRender.js"></script>
+<script src="org/cboard/util/CBoardCommonUtils.js"></script>
+<script src="org/cboard/util/CBoardKpiRender.js"></script>
+<script src="org/cboard/util/CBoardTableRender.js"></script>
+-->
 
-    <!--
-    <script type="text/ng-template" id="echartContent">
-        <div class="col-md-{{widget.width}}">
-            <div class="box">
-                <div class="box-header">
-                    <i class="fa fa-cube"></i>
-                    <h3 class="box-title">{{widget.name}}</h3>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" ng-click="reload(widget)"><i
-                                class="fa fa-refresh"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" ng-click="config(widget)"><i
-                                class="fa fa-wrench"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" ng-click="modalChart(widget)"><i
-                                class="fa fa-square-o"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="box-body" ng-style="{height:myheight+'px'}">
-                </div>
-            </div>
-        </div>
-    </script>
-    <script type="text/ng-template" id="kpiContent">
-        <div class="col-md-{{widget.width}} kpi-body">
-        </div>
-    </script>
-    <script type="text/ng-template" id="tableContent">
-        <div class="col-md-{{widget.width}}">
-            <div class="box">
-                <div class="box-header">
-                    <i class="fa fa-cube"></i>
-                    <h3 class="box-title">{{widget.name}}</h3>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" ng-click="reload(widget)"><i
-                                class="fa fa-refresh"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" ng-click="config(widget)"><i
-                                class="fa fa-wrench"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" ng-click="modalTable(widget)"><i
-                                class="fa fa-square-o"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="box-body" ng-style="{height:myheight+'px'}">
+<!-- AngularJS-->
+<script src="org/cboard/ng-app.js"></script>
+<script src="org/cboard/ng-config.js"></script>
+<script src="org/cboard/controller/cboard/cBoardCtrl.js"></script>
+<script src="org/cboard/controller/dashboard/dashboardViewCtrl.js"></script>
+
+<!--
+<script src="org/cboard/controller/config/widgetCtrl.js"></script>
+<script src="org/cboard/controller/config/datasourceCtrl.js"></script>
+<script src="org/cboard/controller/config/boardCtrl.js"></script>
+<script src="org/cboard/controller/config/categoryCtrl.js"></script>
+<script src="org/cboard/controller/config/datasetCtrl.js"></script>
+-->
+
+<script src="org/cboard/controller/config/userCtrl.js"></script>
+<script src="org/cboard/controller/config/roleCtrl.js"></script>
+<script src="org/cboard/controller/config/roleMenuCtrl.js"></script>
+
+
+<script src="org/cboard/service/dashboard/dashboardService.js"></script>
+<script src="org/cboard/service/data/dataService.js"></script>
+<script src="org/cboard/service/util/ModalUtils.js"></script>
+<script src="org/cboard/service/updater/updateService.js"></script>
+<script src="org/cboard/service/chart/chartFunnelService.js"></script>
+<script src="org/cboard/service/chart/chartKpiService.js"></script>
+<script src="org/cboard/service/chart/chartLineService.js"></script>
+<script src="org/cboard/service/chart/chartPieService.js"></script>
+<script src="org/cboard/service/chart/chartSankeyService.js"></script>
+<script src="org/cboard/service/chart/chartRadarService.js"></script>
+<script src="org/cboard/service/chart/chartService.js"></script>
+<script src="org/cboard/service/chart/chartTableService.js"></script>
+<script src="org/cboard/directive/dashboard/dashboardWidget.js"></script>
+
+<!--
+<script type="text/ng-template" id="echartContent">
+    <div class="col-md-{{widget.width}}">
+        <div class="box">
+            <div class="box-header">
+                <i class="fa fa-cube"></i>
+                <h3 class="box-title">{{widget.name}}</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" ng-click="reload(widget)"><i
+                            class="fa fa-refresh"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" ng-click="config(widget)"><i
+                            class="fa fa-wrench"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" ng-click="modalChart(widget)"><i
+                            class="fa fa-square-o"></i>
+                    </button>
                 </div>
             </div>
+            <div class="box-body" ng-style="{height:myheight+'px'}">
+            </div>
         </div>
-    </script>
-    -->
-    <!-- iCheck -->
-    <script src="plugins/iCheck/icheck.min.js"></script>
-    <script>
-        $(function () {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
-            });
+    </div>
+</script>
+<script type="text/ng-template" id="kpiContent">
+    <div class="col-md-{{widget.width}} kpi-body">
+    </div>
+</script>
+<script type="text/ng-template" id="tableContent">
+    <div class="col-md-{{widget.width}}">
+        <div class="box">
+            <div class="box-header">
+                <i class="fa fa-cube"></i>
+                <h3 class="box-title">{{widget.name}}</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" ng-click="reload(widget)"><i
+                            class="fa fa-refresh"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" ng-click="config(widget)"><i
+                            class="fa fa-wrench"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" ng-click="modalTable(widget)"><i
+                            class="fa fa-square-o"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body" ng-style="{height:myheight+'px'}">
+            </div>
+        </div>
+    </div>
+</script>
+-->
+<!-- iCheck -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
         });
-    </script>
+    });
+</script>
 
 
 

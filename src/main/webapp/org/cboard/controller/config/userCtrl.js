@@ -1,7 +1,7 @@
 /**
- * Created by yfyuan on 2016/8/19.
+ * Created by 陶鹏飞 on 2017/8/4.
  */
-cBoard.controller('datasourceCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
+cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
     var translate = $filter('translate');
     $scope.optFlag = 'none';
@@ -19,11 +19,11 @@ cBoard.controller('datasourceCtrl', function ($rootScope, $scope, $http, dataSer
         }).success(function (response) {
             $scope.userList = response;
             /*
-            //淘汰/启用样式控制
-            $scope.setStyle = function () {
-                //TODO
-            }
-            */
+             //淘汰/启用样式控制
+             $scope.setStyle = function () {
+             //TODO
+             }
+             */
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
             ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
         });

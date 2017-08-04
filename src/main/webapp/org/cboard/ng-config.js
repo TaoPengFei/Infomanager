@@ -1,8 +1,6 @@
 /**
- * Created by Peter on 2016/10/22.
+ * Created by 陶鹏飞 on 2017/8/4.
  */
-
-
 angular.module('cBoard').config(['$stateProvider', function ($stateProvider) {
     $stateProvider
         .state('user', {
@@ -38,38 +36,32 @@ angular.module('cBoard').config(['$stateProvider', function ($stateProvider) {
             templateUrl: 'org/cboard/view/dashboard/view.html',
             controller: 'dashboardViewCtrl'
         })
+        //权限控制路由配置
         .state('config', {
             url: '/config',
             abstract: true,
             template: '<div ui-view></div>'
         })
-        .state('config.board', {
-            url: '/board',
-            templateUrl: 'org/cboard/view/config/board.html',
-            controller: 'boardCtrl'
+        //用户路由配置
+        .state('config.user', {
+            url: '/user',
+            templateUrl: 'org/cboard/view/config/user.html',
+            controller: 'userCtrl'
         })
-        .state('config.widget', {
-            url: '/widget/{id}',
-            params: {id: null},
-            templateUrl: 'org/cboard/view/config/widget.html',
-            controller: 'widgetCtrl'
+        //角色路由配置
+        .state('config.role', {
+            url: '/role',
+            templateUrl: 'org/cboard/view/config/role.html',
+            controller: 'roleCtrl'
         })
-        .state('config.datasource', {
-            url: '/datasource',
-            templateUrl: 'org/cboard/view/config/datasource.html',
-            controller: 'datasourceCtrl'
-        })
-        .state('config.category', {
-            url: '/category',
-            templateUrl: 'org/cboard/view/config/category.html',
-            controller: 'categoryCtrl'
-        }).state('config.dataset', {
-        url: '/dataset',
-        templateUrl: 'org/cboard/view/config/dataset.html',
-        controller: 'datasetCtrl'
-    });
-
-}]);
+        //角色-菜单路由配置
+        .state('config.roleMenu', {
+            url: '/roleMenu',
+            templateUrl: 'org/cboard/view/config/roleMenu.html',
+            controller: 'roleMenuCtrl'
+        });
+    }
+]);
 
 angular.module('cBoard').factory('sessionHelper', ["$rootScope", function ($rootScope) {
     var sessionHelper = {

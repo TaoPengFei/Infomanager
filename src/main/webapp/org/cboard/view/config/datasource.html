@@ -47,7 +47,9 @@
                         <td>{{ row.description }}</td>
                         <td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>
                         <td>
-                            <button type="button" class="btn btn-info btn-xs" ng-click="modifyUser(row, $event)">修改</button>
+                            <button type="button" class="btn btn-info btn-xs" ng-click="modifyUser(row, $event)">
+                                <span class="glyphicon glyphicon-pencil"></span>修改
+                            </button>
                             <!--
                             <button type="button" class="btn btn-success btn-xs" ng-class='setStyle(x.enabled)' ng-click="enableUser(row, $event)">启用</button>
                             <button type="button" class="btn btn-danger btn-xs" ng-class='setStyle(x.enabled)' ng-click="eliminateUser(row, $event)">淘汰</button>
@@ -55,11 +57,15 @@
                             <button type="button" class="btn btn-success btn-xs"
                                     ng-class="{true:'trueClass',false:'falseClass'}[row.enabled]"
                                     ng-disabled="{{ row.enabled ? 'true' : 'false' }}"
-                                    ng-click="enableUser(row, $event)">启用</button>
+                                    ng-click="enableUser(row, $event)">
+                                <span class="glyphicon glyphicon-ok-circle"></span>启用
+                            </button>
                             <button type="button" class="btn btn-danger btn-xs"
                                     ng-class="{true:'falseClass',false:'trueClass'}[row.enabled]"
                                     ng-disabled="{{ row.enabled ? 'false' : 'true' }}"
-                                    ng-click="enableUser(row, $event)">淘汰</button>
+                                    ng-click="enableUser(row, $event)">
+                                <span class="glyphicon glyphicon-remove-circle"></span>淘汰
+                            </button>
                         </td>
                     </tr>
                 </tbody>

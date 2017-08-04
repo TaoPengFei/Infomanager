@@ -1,8 +1,8 @@
 /**
- * Created by 陶鹏飞 on 2017/8/1.
+ * Created by 陶鹏飞 on 2017/8/4.
  */
 'use strict';
-cBoard.controller('widgetCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
+cBoard.controller('roleMenuCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
     var translate = $filter('translate');
     $scope.optFlag = 'none';
@@ -58,35 +58,35 @@ cBoard.controller('widgetCtrl', function ($rootScope, $scope, $http, dataService
     //新增菜单
     $scope.addMenu = function () {
         /*
-        $http({
-            method:'post',
-            url:'/roleMenu/insertRoleMenu.do',
-            data :{
-                roleName:$scope.selectedRoleName,
-                //menuIds:$scope.selectedMenuWithoutRole[0]
-                menuIds:$("#menuLeft").val()
-            },
-            headers:{'Content-Type': 'application/x-www-form-urlencoded'},
-            transformRequest: function(obj) {
-                console.log(obj);
-                var str = [];
-                for(var p in obj){
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                }
-                console.log(str);
-                return str.join("&");
-            }
-        }).success(function (response) {
-            if(response.code === 1){
-                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                getMenuList();
-            }else if(response.code === 0){
-                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-            }
-        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-            ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
-        });
-        */
+         $http({
+         method:'post',
+         url:'/roleMenu/insertRoleMenu.do',
+         data :{
+         roleName:$scope.selectedRoleName,
+         //menuIds:$scope.selectedMenuWithoutRole[0]
+         menuIds:$("#menuLeft").val()
+         },
+         headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+         transformRequest: function(obj) {
+         console.log(obj);
+         var str = [];
+         for(var p in obj){
+         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+         }
+         console.log(str);
+         return str.join("&");
+         }
+         }).success(function (response) {
+         if(response.code === 1){
+         ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+         getMenuList();
+         }else if(response.code === 0){
+         ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+         }
+         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+         ModalUtils.alert(translate(errorThrown  + "!"), "modal-danger", "sm");
+         });
+         */
         $.ajax({
             url:'/roleMenu/insertRoleMenu.do',
             dataType:"json",
