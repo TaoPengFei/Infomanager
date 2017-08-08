@@ -64,4 +64,6 @@
 		<property name="defaultLocale" value="en" /> -->
 	</bean>
 
+	<import resource="classpath:application-shiro.xml"/>
+
 </beans>  

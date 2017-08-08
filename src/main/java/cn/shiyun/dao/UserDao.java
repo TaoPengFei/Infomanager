@@ -11,6 +11,8 @@ import cn.shiyun.entity.User;
 @Repository
 public interface UserDao {
 	public User getUser(User user);
+
+	public User getUserByUserName(String userName);
 	
 	public List<Map<String, Object>> getUsers(String userName);
 	

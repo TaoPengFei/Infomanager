@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shiro login</title>
+</head>
+<body>
+    <form action="/Infomanager/login/auth" method="post">
+        <div>
+            <label>用户名</label>
+            <input type="text" name="loginname" />
+        </div>
+        <div>
+            <label>密码&nbsp;</label>
+            <input type="text" name="password" />
+        </div>
+        <div>
+            <label>验证码</label>
+            <input type="text" name="captcha" />
+            <img id="verifyCodeImage" src="/genCaptcha" />
+            <a href="javascript:void(0);" onclick="changeImage()">换一张</a>
+        </div>
+        <div>
+            <input type="submit" value="登录" />
+        </div>
+    </form>
+    <!-- jQuery 2.2.3 -->
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        // 验证码刷新控制
+        function changeImage() {
+            console.log("Click...")
+            //$('#verifyCodeImage').attr('src', '${ctx }/verify/verifyCode?timestamp=' + Math.floor(Math.random() * 100));
+            $('#verifyCodeImage').attr("src", "/genCaptcha");
+        }
+    </script>
+</body>
+</html>

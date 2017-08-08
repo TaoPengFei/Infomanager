@@ -65,4 +65,10 @@ public class UserServiceImpl implements UserService{
 	public int changePassword(Password password) {
 		return userDao.changePassword(password);
 	}
+
+	@Override
+	public User getUserByUserName(String userName) {
+		User user = userDao.getUserByUserName(userName);
+		return user;
+	}
 }

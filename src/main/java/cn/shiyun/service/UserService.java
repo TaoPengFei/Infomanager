@@ -9,6 +9,8 @@ import cn.shiyun.entity.User;
 public interface UserService {
 	public User getUser(User user);
 
+	public User getUserByUserName(String userName);
+
 	public List<Map<String, Object>> queryUser(String userName);
 
 	public int addUser(User user);

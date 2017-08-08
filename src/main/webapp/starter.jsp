@@ -19,6 +19,7 @@
     }else{
         //response.sendRedirect(url+"login.jsp");
         response.sendRedirect(url+"login.jsp");
+        //response.sendRedirect(url+"login.html");
         //request.getRequestDispatcher(url+"login.jsp").forward(request,response);
     }
 %>
@@ -70,6 +71,8 @@
     <!--<script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>-->
     <script src="org/cboard/Settings.js"></script>
     <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-mocks.js"></script>
+
     <script src="lib/angular-ui-router.min.js"></script>
     <script src="lib/angular-md5.min.js"></script>
     <script src="lib/angular-drag-and-drop-lists.js"></script>

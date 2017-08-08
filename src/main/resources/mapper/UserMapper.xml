@@ -31,6 +31,20 @@
                 </where>
 	</select>
 
+	<select id="getUserByUserName" parameterType="String" resultType="User"	resultMap="user">
+		SELECT UserName,Password,Description from Users
+		<where>
+			<choose>
+				<when test="_parameter != null and _parameter != ''">
+					and UserName='${_parameter}'
+				</when>
+				<otherwise>
+					and 1 = 2
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+
 	<!-- 参数为String并用于判断时，只能用一下的参数名称获取 -->
 	<select id="getUsers" parameterType="String" resultType="Map">
 		select u.userName,u.password,ga.authority
