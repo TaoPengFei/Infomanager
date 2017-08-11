@@ -59,6 +59,12 @@ angular.module('cBoard').config(['$stateProvider', function ($stateProvider) {
             url: '/roleMenu',
             templateUrl: 'org/cboard/view/config/roleMenu.html',
             controller: 'roleMenuCtrl'
+        })
+        //datatables路由配置
+        .state('config.datatables', {
+            url: '/datatables',
+            templateUrl: 'org/cboard/view/config/dataTables.html',
+            controller: 'dataTablesCtrl'
         });
     }
 ]);

@@ -60,6 +60,9 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
 
+    <!-- ngGrid -->
+    <link rel="stylesheet" href="plugins/ng-grid-2.0.12/ng-grid.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -80,6 +83,8 @@
     <script src="lib/ui-bootstrap-tpls-2.1.3.min.js"></script>
     <script src="lib/angular-translate.js"></script>
     <script src="lib/angular-translate-loader-partial.js"></script>
+
+
 
     <script src="lib/underscore-min.js"></script>
     <script src="lib/numbro.min.js"></script>
@@ -103,11 +108,17 @@
     <script src="plugins/ace/ace.js"></script>
     <script src="plugins/ui-ace/ui-ace.min.js"></script>
 
-    <!--
+
     <script src="plugins/datatables/jquery.dataTables.js"></script>
     <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
-    -->
+
+    <script src="plugins/ng-grid-2.0.12/ng-grid.debug.js"></script>
+
+    <!-- boostrap验证提示 -->
+    <script src="plugins/bootstrapvalidator/bootstrapValidator.min.js"></script>
+    <link rel="stylesheet" href="plugins/bootstrapvalidator/bootstrapValidator.min.css">
+
     <!--<link rel="stylesheet" href="css/ui-select.min.css">-->
     <link rel="stylesheet" href="css/select.css">
     <style>
@@ -175,6 +186,16 @@
         }
         .falseClass{
         }
+
+        /* ================ tpfPagination ================ */
+        .page-list .pagination {float:left;}
+        .page-list .pagination span {cursor: pointer;}
+        .page-list .pagination .separate span{cursor: default; border-top:none;border-bottom:none;}
+        .page-list .pagination .separate span:hover {background: none;}
+        .page-list .page-total {float:left; margin: 25px 20px;}
+        .page-list .page-total input, .page-list .page-total select{height: 26px; border: 1px solid #ddd;}
+        .page-list .page-total input {width: 40px; padding-left:3px;}
+        .page-list .page-total select {width: 50px;}
     </style>
 </head>
 <!--
@@ -231,12 +252,12 @@ desired effect
 </div>
 <!-- ./wrapper -->
 
-<!--
+
 <script src="org/cboard/util/CBoardEChartRender.js"></script>
 <script src="org/cboard/util/CBoardCommonUtils.js"></script>
 <script src="org/cboard/util/CBoardKpiRender.js"></script>
 <script src="org/cboard/util/CBoardTableRender.js"></script>
--->
+
 
 <!-- AngularJS-->
 <script src="org/cboard/ng-app.js"></script>
@@ -255,6 +276,7 @@ desired effect
 <script src="org/cboard/controller/config/userCtrl.js"></script>
 <script src="org/cboard/controller/config/roleCtrl.js"></script>
 <script src="org/cboard/controller/config/roleMenuCtrl.js"></script>
+<script src="org/cboard/controller/config/dataTablesCtrl.js"></script>
 
 
 <script src="org/cboard/service/dashboard/dashboardService.js"></script>
@@ -269,9 +291,13 @@ desired effect
 <script src="org/cboard/service/chart/chartRadarService.js"></script>
 <script src="org/cboard/service/chart/chartService.js"></script>
 <script src="org/cboard/service/chart/chartTableService.js"></script>
-<script src="org/cboard/directive/dashboard/dashboardWidget.js"></script>
 
-<!--
+
+<script src="org/cboard/directive/dashboard/dashboardWidget.js"></script>
+<script src="org/cboard/directive/config/tm.pagination.js"></script>
+<script src="org/cboard/directive/config/ensureRoleUnique.js"></script>
+
+
 <script type="text/ng-template" id="echartContent">
     <div class="col-md-{{widget.width}}">
         <div class="box">
@@ -326,7 +352,7 @@ desired effect
         </div>
     </div>
 </script>
--->
+
 <!-- iCheck -->
 <script src="plugins/iCheck/icheck.min.js"></script>
 <script>

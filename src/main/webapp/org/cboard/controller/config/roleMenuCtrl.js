@@ -16,7 +16,7 @@ cBoard.controller('roleMenuCtrl', function ($rootScope, $scope, $http, dataServi
     var getRoleNameList = function () {
         $http({
             method: 'get',
-            url: '/role/roleLoad.do'
+            url: '../role/roleLoad.do'
         }).success(function (response) {
             $scope.roleNameList = response;
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
@@ -30,7 +30,7 @@ cBoard.controller('roleMenuCtrl', function ($rootScope, $scope, $http, dataServi
         $scope.$watch("selectedRoleName",function () {
             $http({
                 method:'post',
-                url:'/roleMenu/getMenus.do',
+                url:'../roleMenu/getMenus.do',
                 data :{
                     roleName:$scope.selectedRoleName
                 },
@@ -88,7 +88,7 @@ cBoard.controller('roleMenuCtrl', function ($rootScope, $scope, $http, dataServi
          });
          */
         $.ajax({
-            url:'/roleMenu/insertRoleMenu.do',
+            url:'../roleMenu/insertRoleMenu.do',
             dataType:"json",
             type:"POST",
             data:{
@@ -113,7 +113,7 @@ cBoard.controller('roleMenuCtrl', function ($rootScope, $scope, $http, dataServi
     $scope.removeMenu = function () {
         console.log("removeMenu...");
         $.ajax({
-            url:'/roleMenu/deleteRoleMenu.do',
+            url:'../roleMenu/deleteRoleMenu.do',
             dataType:"json",
             type:"POST",
             data:{
