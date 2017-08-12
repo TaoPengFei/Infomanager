@@ -13,25 +13,22 @@
     <div class="modal-body">
         <div class="row">
             <div class="col-md-12 column">
-                <div class="alert alert-danger" ng-show="form.newRole.$error.ensureRoleUnique">
+                <!--<div class="alert alert-danger" ng-show="roleForm.newRole.$error.ifRole">
                     <a class="close" data-dismiss="alert">×</a>
                     <strong>
-                        Info
-                    </strong>这里是信息提示信息
-                </div>
+                        提示：
+                    </strong>角色已存在！
+                </div>-->
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon">角色名称</span>
                     <!--<input type="text" class="form-control" placeholder="请确定输入的角色名称是否已经存在..." id="newRole" ng-model="newRole">-->
                     <input type="text" class="form-control" placeholder="请确定输入的角色名称是否已经存在..." id="newRole" ng-model="newRole"
                            name="newRole" ng-maxlength="20" required if-role>
-                    <!--<span class="error" ng-show="form.newRole.$error.ensureRoleUnique">提示：角色已存在！</span>-->
-                    <!--<a class="glyphicon glyphicon-remove btn form-control-feedback" style="pointer-events:auto"></a>-->
-                    <!--<span  class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>-->
-                    <!--<span  class="glyphicon glyphicon-remove form-control-feedback text-danger rigt"></span>-->
-                    <!--<span class="error" ng-show="registerForm.$submitted && registerForm.mobile.$error.required">*手机号不能为空</span>-->
-                    <!--<span class="error" ng-show="registerForm.$submitted && registerForm.mobile.$error.pattern">*手机号地址不合法</span>-->
-
+                    <span  class="glyphicon glyphicon-ok form-control-feedback text-success rigt"
+                           ng-show="roleForm.newRole.$valid"></span>
+                    <span  class="glyphicon glyphicon-remove form-control-feedback text-danger rigt"
+                           ng-show="roleForm.newRole.$error.ifRole"></span>
                 </div>
                 <span ng-show="roleForm.newRole.$error.ifRole" style="color:red">提示：角色已存在！</span>
             </div>
@@ -49,7 +46,8 @@
 
     <!-- 模态框footer -->
     <div class="modal-footer">
-        <button type="submit" name="submit" class="btn btn-primary" id="btn_save" ng-click="save()" ng-disabled="!newRole;inputStatus">保存</button>
+        <!--<button type="submit" name="submit" class="btn btn-primary" id="btn_save" ng-click="save()" ng-disabled="!newRole;!inputStatus">保存</button>-->
+        <button type="submit" name="submit" class="btn btn-primary" id="btn_save" ng-click="save()" ng-disabled="roleForm.newRole.$error.ifRole">保存</button>
         <!--
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
         -->
