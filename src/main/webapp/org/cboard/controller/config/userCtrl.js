@@ -148,8 +148,16 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                getRoleList();
-                console.log($uibModalInstance)
+                $http({
+                    method: 'get',
+                    url: '../role/roleLoad.do'
+                }).success(function (response) {
+                    $scope.roleList_1 = response;
+                    console,log($scope.roleList_1);
+                }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                    ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                });
+                // console.log($uibModalInstance)
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };

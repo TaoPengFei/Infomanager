@@ -17,9 +17,8 @@
     if(user != null){
         userName = user.getName();
     }else{
-        //response.sendRedirect(url+"login.jsp");
-        response.sendRedirect(url+"login.jsp");
-        //response.sendRedirect(url+"login.html");
+//        response.sendRedirect(url+"login.jsp");
+        response.sendRedirect(url+"login.html");
         //request.getRequestDispatcher(url+"login.jsp").forward(request,response);
     }
 %>
@@ -265,13 +264,6 @@ desired effect
 <script src="org/cboard/controller/cboard/cBoardCtrl.js"></script>
 <script src="org/cboard/controller/dashboard/dashboardViewCtrl.js"></script>
 
-<!--
-<script src="org/cboard/controller/config/widgetCtrl.js"></script>
-<script src="org/cboard/controller/config/datasourceCtrl.js"></script>
-<script src="org/cboard/controller/config/boardCtrl.js"></script>
-<script src="org/cboard/controller/config/categoryCtrl.js"></script>
-<script src="org/cboard/controller/config/datasetCtrl.js"></script>
--->
 
 <script src="org/cboard/controller/config/userCtrl.js"></script>
 <script src="org/cboard/controller/config/roleCtrl.js"></script>
@@ -355,7 +347,7 @@ desired effect
 
 <!-- iCheck -->
 <script src="plugins/iCheck/icheck.min.js"></script>
-<script>
+<script type="text/javascript">
     $(function () {
         $('input').iCheck({
             checkboxClass: 'icheckbox_square-blue',
@@ -363,9 +355,9 @@ desired effect
             increaseArea: '20%' // optional
         });
     });
+
+//    console.log(window);
 </script>
-
-
 
 </body>
 </html>

@@ -56,7 +56,8 @@ public class LoginController {
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request){
 		SecurityUtils.getSubject().logout();  
-		return "redirect:login";
+//		return "redirect:login";
+		return "redirect:login.html";
 	}
 	
 	/** 

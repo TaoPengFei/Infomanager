@@ -8,14 +8,14 @@ cBoard.directive('ifRole', ['$http', function($http) {
         require: 'ngModel',
         link: function(scope, ele, attrs, ngModelController) {
             scope.$watch(attrs.ngModel,function () {
-                /*console.log(scope);
+                console.log(scope);
                 console.log(ele);
                 console.log(attrs);
                 console.log(ngModelController);
                 console.log(ngModelController.$valid);
                 console.log(attrs.ngModel);
 
-                scope.inputStatus = ngModelController.$valid;*/
+                scope.inputStatus = ngModelController.$valid;
                 $http({
                     method: 'get',
                     url: '../role/getRoles.do',
@@ -23,7 +23,7 @@ cBoard.directive('ifRole', ['$http', function($http) {
                         roleName: ngModelController.$modelValue
                     }
                 }).success(function (response) {
-                    // console.log(response);
+                    console.log(response);
                     if (response.code === 1) {
                         ngModelController.$setValidity('ifRole', false);
                         return newRole;

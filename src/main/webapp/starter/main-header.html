@@ -20,14 +20,15 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- The user image in the navbar-->
-                    <img src="{{user.avatar}}" class="user-image">
+                    <img src="{{avatar}}" class="user-image">
                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                    <span class="hidden-xs">{{user.username}}</span>
+                    <!--<span class="hidden-xs">{{user.username}}</span>-->
+                    <span class="hidden-xs" id="user">{{username}}</span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
                     <li class="user-header">
-                        <img src="{{user.avatar}}" class="img-circle">
+                        <img src="{{avatar}}" class="img-circle">
 
                         <p>
                             {{user.username + ' - ' + user.company + ' ' + user.department}}
@@ -55,7 +56,8 @@
                             <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
                         <!--</div>-->
                         <div class="pull-right">
-                            <a href="/j_spring_cas_security_logout" class="btn btn-default btn-flat">{{'HEADER.SIGN_OUT'|translate}}</a>
+                            <!--<a href="/j_spring_cas_security_logout" class="btn btn-default btn-flat">{{'HEADER.SIGN_OUT'|translate}}</a>-->
+                            <a href="/logout" class="btn btn-default btn-flat">注销</a>
                         </div>
                     </li>
                 </ul>

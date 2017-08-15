@@ -29,7 +29,7 @@
 	-->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring-mybatis.xml,classpath:spring-redis.xml,classpath*:application-shiro.xml</param-value>
+		<param-value>classpath:spring-mybatis.xml,classpath:spring-redis.xml,classpath*:application-shiro.xml,classpath:spring-mvc.xml</param-value>
 	</context-param>
 	<!-- 编码过滤器 -->
 	<!-- Shiro Filter is defined in the spring application context: -->
@@ -147,6 +147,6 @@
 
 
 	<welcome-file-list>
-		<welcome-file>login.jsp</welcome-file>
+		<welcome-file>login.html</welcome-file>
 	</welcome-file-list>
 </web-app>

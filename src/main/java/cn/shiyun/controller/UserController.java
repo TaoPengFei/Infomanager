@@ -29,18 +29,26 @@ public class UserController {
 		return "user";
 	}
 
-	@RequestMapping("login.do")
+	@RequestMapping("/login.do")
 	@ResponseBody
-	public Map<String, Object> login(User user, HttpSession session) {
+	public Map<String, Object> login(User user, String kaptchaimage, HttpSession session, HttpServletRequest request) {
 		Map<String, Object> result = new HashMap<String, Object>();
-		user = userService.getUser(user);
-		if (user != null) {
-			session.setAttribute("User", user);
-			result.put("code", 1);
-			result.put("msg", "success");
-		} else {
-			result.put("code", 0);
-			result.put("msg", "帐户或密码错误");
+		String kaptchaExpected = (String)request.getSession().getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
+		System.out.println(kaptchaExpected);
+		if(kaptchaExpected.equals(kaptchaimage)){
+
+			user = userService.getUser(user);
+			if (user != null) {
+				session.setAttribute("User", user);
+				result.put("code", 1);
+				result.put("msg", "success");
+			} else {
+				result.put("code", 0);
+				result.put("msg", "帐户或密码错误");
+			}
+		}else{
+			result.put("code", 2);
+			result.put("msg", "验证码错误");
 		}
 
 		return result;
