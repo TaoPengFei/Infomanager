@@ -20,7 +20,7 @@
                 <!--
                 <span>{{'SIDEBAR.C_DASHBOARD'|translate}}</span>
                 -->
-                <span>仪表盘</span>
+                <span>{{'SIDEBAR.MY_DASHBOARD'|translate}}</span>
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <!--
@@ -48,7 +48,7 @@
                 <!--
                 <span>{{'SIDEBAR.MY_DASHBOARD'|translate}}</span>
                 -->
-                <span>综合报表</span>
+                <span>{{'SIDEBAR.MY_REPORTER'|translate}}</span>
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <!--
@@ -66,7 +66,7 @@
                 <!--
                 <span>{{'SIDEBAR.CONFIG'|translate}}</span>
                 -->
-                <span>权限控制</span>
+                <span>{{'SIDEBAR.CONFIG.MENU'|translate}}</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
@@ -103,17 +103,18 @@
 
 
                 <li ui-sref-active="active">
-                    <a ui-sref="config.user"><i class="fa fa-puzzle-piece"></i>人员维护</a>
+                    <a ui-sref="config.user"><i class="fa fa-puzzle-piece"></i>{{'SIDEBAR.CONFIG.MENU_USER'|translate}}</a>
                 </li>
                 <li ui-sref-active="active">
-                    <a ui-sref="config.role"><i class="fa fa-puzzle-piece"></i>角色维护</a>
+                    <a ui-sref="config.role"><i class="fa fa-puzzle-piece"></i>{{'SIDEBAR.CONFIG.MENU_ROLE'|translate}}</a>
                 </li>
                 <li ui-sref-active="active">
-                    <a ui-sref="config.roleMenu"><i class="fa fa-puzzle-piece"></i>角色菜单维护</a>
+                    <a ui-sref="config.roleMenu"><i class="fa fa-puzzle-piece"></i>{{'SIDEBAR.CONFIG.MENU_ROLE_MENU'|translate}}</a>
                 </li>
-                <li ui-sref-active="active">
+
+                <!--<li ui-sref-active="active">
                     <a ui-sref="config.datatables"><i class="fa fa-puzzle-piece"></i>渲染DataTables组件</a>
-                </li>
+                </li>-->
 
                 <!--
                 <li ui-sref-active="active">

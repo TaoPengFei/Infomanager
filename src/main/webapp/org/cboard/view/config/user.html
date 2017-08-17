@@ -4,23 +4,13 @@
         <div class="row" style="margin-right: 0px;">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
                 <div class="input-group">
-                    <span class="input-group-addon">用户名</span>
-                    <input type="text" placeholder = "请输入..." class="form-control glyphicon-remove" id="userName" ng-model="userName">
-                    <!--<input type="text" placeholder = "请输入..." class="glyphicon glyphicon-remove form-control-feedback text-danger rigt" id="userName" ng-model="userName">-->
-                    <!--<span class="glyphicon glyphicon-ok form-control-feedback text-success rigt" ></span>-->
+                    <span class="input-group-addon">{{'CONFIG.MENU_USER.USER_NAME'|translate}}</span>
+                    <input type="text" placeholder = "{{'CONFIG.MENU_USER.USER_SEARCH'|translate}}" class="form-control glyphicon-remove" id="userName" ng-model="userName">
                 </div>
             </div>
             <div class="pull-right" style="margin-top: 10xp;">
-                <!--
-                <button type="button" class="btn btn-primary  " id='queryEmp' ng-click="queryUser()">查询</button>
-
-                -->
-                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addUser()">新增</button>
-                <button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">打印</button>
-                <!--
-                &nbsp<button type="button" class="btn btn-primary " id='flagUser'>淘汰</button>
-                &nbsp<button type="button" class="btn btn-info pull-right" id='empreset'>重置</button>
-                -->
+                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addUser()">{{'CONFIG.MENU_USER.ADD_USER'|translate}}</button>
+                <button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">{{'CONFIG.MENU_USER.PRINT'|translate}}</button>
             </div>
         </div>
     </form>
@@ -56,23 +46,19 @@
                     <td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>
                     <td>
                         <button type="button" class="btn btn-info btn-xs" ng-click="modifyUser(row, $event)">
-                            <span class="glyphicon glyphicon-pencil"></span>修改
+                            <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_USER.MODIFY'|translate}}
                         </button>
-                        <!--
-                        <button type="button" class="btn btn-success btn-xs" ng-class='setStyle(x.enabled)' ng-click="enableUser(row, $event)">启用</button>
-                        <button type="button" class="btn btn-danger btn-xs" ng-class='setStyle(x.enabled)' ng-click="eliminateUser(row, $event)">淘汰</button>
-                        -->
                         <button type="button" class="btn btn-success btn-xs"
                                 ng-class="{true:'trueClass',false:'falseClass'}[row.enabled]"
                                 ng-disabled="{{ row.enabled ? 'true' : 'false' }}"
                                 ng-click="enableUser(row, $event)">
-                            <span class="glyphicon glyphicon-ok-circle"></span>启用
+                            <span class="glyphicon glyphicon-ok-circle"></span>{{'CONFIG.MENU_USER.ENABLE_OK'|translate}}
                         </button>
                         <button type="button" class="btn btn-danger btn-xs"
                                 ng-class="{true:'falseClass',false:'trueClass'}[row.enabled]"
                                 ng-disabled="{{ row.enabled ? 'false' : 'true' }}"
                                 ng-click="enableUser(row, $event)">
-                            <span class="glyphicon glyphicon-remove-circle"></span>淘汰
+                            <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_USER.ENABLE_NO'|translate}}
                         </button>
                     </td>
                 </tr>

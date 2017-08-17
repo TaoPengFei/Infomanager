@@ -1,8 +1,11 @@
 /**
- * Created by 陶鹏飞 on 2017/8/4.
+ * Created by 陶鹏飞 on 2017/8/16.
  */
-// CBoard settings
+// en/cn: Switch language to Chinese
 var settings = {
-    //preferredLanguage: "en" // en/cn: Switch language to Chinese
-    preferredLanguage: "cn"
+    // preferredLanguage: "en"
+    // preferredLanguage: "cn"
+    /*preferredLanguage: (function () {
+        return "cn";
+    })()*/
 }

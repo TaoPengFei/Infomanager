@@ -142,5 +142,19 @@ angular.module('cBoard').config(function ($translateProvider, $translatePartialL
         urlTemplate: '/i18n/{lang}/{part}.json'
     });
 
-    $translateProvider.preferredLanguage(settings.preferredLanguage);
+    // console.log(settings.preferredLanguage);
+    // $translateProvider.preferredLanguage(settings.preferredLanguage);
+    /*$translateProvider.preferredLanguage(function () {
+        return "en";
+    });*/
+    $translateProvider.preferredLanguage(
+        (function () {
+            // return "en";
+            console.log(document.URL.split('?')[1].split("=")[1]);
+            var thisURL = document.URL;
+            var  getval =thisURL.split('?')[1];
+            var showval= getval.split("=")[1];
+            return showval;
+        })()
+    );
 });

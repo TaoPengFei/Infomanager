@@ -9,112 +9,55 @@
     "CONFIRM_DELETE": "Confirm to Delete!!!",
     "TIP": "Tip",
     "SUCCESS": "Success!",
-    "FAIL": "Fail!",
-    "DEFAULT_CATEGORY": "Default Category"
-  },
-  "SIDEBAR": {
-    "C_DASHBOARD": "Dashboard",
-    "MY_DASHBOARD": "My DashBoard",
-    "CONFIG": "Configuration",
-    "DATA_SOURCE": "DataSource",
-    "CUBE": "Cube",
-    "WIDGET": "Widget",
-    "DASHBOARD": "Dashboard",
-    "DASHBOARD_CATEGORY": "Dashboard Category"
+    "FAIL": "Fail!"
   },
   "HEADER": {
     "SIGN_OUT": "SignOut"
   },
-  "CONFIG": {
-    "COMMON": {
-      "CUSTOM_EXPRESSION": "Calculated Measures"
+  "SIDEBAR": {
+    "MY_DASHBOARD": "My Dashboard",
+    "MY_REPORTER": "My Reporter",
+    "CONFIG": {
+      "MENU": "Permission",
+      "MENU_USER": "User",
+      "MENU_ROLE": "Role",
+      "MENU_ROLE_MENU": "Role Menu"
+    }
+  },
+  "CONFIG":{
+    "MENU_USER":{
+      "USER_NAME": "User",
+      "USER_SEARCH": "--- Please enter ---",
+      "ADD_USER": "Add",
+      "PRINT": "Print",
+      "MODIFY": "Modify",
+      "ENABLE_OK": "Yes",
+      "ENABLE_NO": "No",
+      "USER_ROLE": "User Role",
+      "NEW_PWD": "New Password",
+      "CONFIRM_PWD": "Confirm Password",
+      "DESC": "Describe",
+      "SAVE": "Save"
     },
-    "DATA_SOURCE": {
-      "DATA_SOURCE_HEADER": "Data Source(s)",
-      "DATA_PROVIDER": "Data Source Type",
-      "NAME": "Data Source Name",
-      "TEST": "Test"
+    "MENU_ROLE":{
+      "ROLE_NAME": "Role",
+      "ROLE_SEARCH": "--- Please enter ---",
+      "ADD_ROLE": "Add",
+      "PRINT": "Print",
+      "MODIFY": "Modify",
+      "DELETE": "Delete",
+      "ROLE_PLACEHOLDER": "Please make sure that the name of the input role already exists!",
+      "IF_ROLE": "Hint: the role already exists!",
+      "DESC": "Describe",
+      "SAVE": "Save"
     },
-    "WIDGET": {
-      "WIDGET": "Widget",
-      "DATA_SOURCE": "Data Source",
-      "DATASET": "Cube",
-      "LOAD_DATA": "Load Data",
-      "NAME": "Widget Name",
-      "CATEGORY": "Widget Category",
-      "WIDGET_TYPE": "Widget Type",
-      "CANCEL": "Cancel",
-      "SAVE": "Save",
-      "PREVIEW": "Preview",
-      "EXIST_QUERY": "Exist Cube",
-      "NEW_QUERY": "New Query",
-      "SWITCH": "Switch",
-      "ROW": "Row",
-      "GROUP": "Group",
-      "VALUE": "Value",
-      "VALUE_AXIS": "Value Axis",
-      "FILTER": "Filter",
-      "LABEL": "Label",
-      "FORMATTER": "Formatter",
-      "STYLE": "Style",
-      "CHART": "Chart",
-      "ADD_NEW_AXIS": "Add New Axis",
-      "ADD": "Add",
-      "OPTIONAL": "Selects",
-      "ALIAS": "Alias",
-      "MORE": "More",
-      "EXAMPLE": "Example",
-      "FUNNEL": "Funnel",
-      "SANKEY": "Sankey",
-      "TABLE": "Table",
-      "KPI": "KPI",
-      "PIE": "Pie",
-      "LINE_BAR": "Line/Bar",
-      "LINE": "Line",
-      "BAR": "Bar",
-      "STACKED_BAR": "Stacked Bar",
-      "AQUA": "Blue",
-      "RED": "Red",
-      "YELLOW": "Yellow",
-      "GREEN": "Green",
-      "EXPRESSION": "Calculated Measures",
-      "COLUMN": "Column",
-      "AGGREGATE": "Aggregate",
-      "EXPRESSION_TEXT": "Expression Text",
-      "CHECK": "Check",
-      "FIND": "Find",
-      "EQUAL": "Equal",
-      "NOT_EQUAL": "Not Equal",
-      "HORIZONTAL": "Horizontal",
-      "VERTICAL": "Vertical",
-      "RADAR": "Radar"
-    },
-    "DASHBOARD": {
-      "CATEGORY": "Category",
-      "MY_DASHBOARD": "Private DashBoard",
-      "DASHBOARD": "Dashboard",
-      "NAME": "Name",
-      "ADD_ROW": "Add Row",
-      "ADD_COLUMN": "Add Column",
-      "ROW": "Row",
-      "HEIGHT": "Row Height(px)",
-      "WIDTH": "Width",
-      "WIDGET": "Widget",
-      "PREVIEW": "Preview"
-    },
-    "CATEGORY": {
-      "NAME": "Category Name",
-      "CATEGORY": "Category"
-    },
-    "DATASET": {
-      "DATASET": "Cube",
-      "NAME": "Name",
-      "CATEGORY": "Category",
-      "LOAD_DATA": "Load Data",
-      "DATASOURCE": "Datasource",
-      "ADD": "Add",
-      "REAL_TIME_INTERVAL": "Real Time Interval(s)",
-      "REAL_TIME_TIP": "If You don't need refresh, just leave it as BLANK"
+    "MENU_ROLE_MENU":{
+      "USER_ROLE_NAME": "User Roles",
+      "USER_ROLE_SEARCH": "--- Please enter ---",
+      "ROLE_WITHOUT_MENU": "Role Not Added Menu",
+      "ROLE_WITH_MENU": "Role Existing Menu",
+      "ADD_USER_ROLE": "Add",
+      "DELETE": "Delete"
     }
   }
 }

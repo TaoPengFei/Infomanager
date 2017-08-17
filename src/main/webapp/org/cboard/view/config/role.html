@@ -4,14 +4,15 @@
         <div class="row" >
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
                 <div class="input-group">
-                    <span class="input-group-addon">角色名称</span>
-                    <input type="text"  placeholder = "请输入..." class="form-control" id="roleName" ng-model="roleName">
+                    <!--<span class="input-group-addon">角色名称</span>{{'CONFIG.MENU_ROLE.ADD_USER'|translate}}-->
+                    <span class="input-group-addon">{{'CONFIG.MENU_ROLE.ROLE_NAME'|translate}}</span>
+                    <input type="text"  placeholder = "{{'CONFIG.MENU_ROLE.ROLE_SEARCH'|translate}}" class="form-control" id="roleName" ng-model="roleName">
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-6 col-xs-12 column">
                 <div class="pull-right" style="margin-top: 10xp;">
-                    <button type="button" class="btn btn-primary" id='addRole' ng-click="addRole()">新增</button>
-                    <button type="button" class="btn btn-primary" id='delRole' ng-click="printRole()">打印</button>
+                    <button type="button" class="btn btn-primary" id='addRole' ng-click="addRole()">{{'CONFIG.MENU_ROLE.ADD_ROLE'|translate}}</button>
+                    <button type="button" class="btn btn-primary" id='delRole' ng-click="printRole()">{{'CONFIG.MENU_ROLE.PRINT'|translate}}</button>
                     <!--
                     <button type="button" class="btn btn-primary" id='delRole' ng-click="multipleDelRole()">删除</button>
                     <!--
@@ -49,10 +50,10 @@
                     <td>{{ row.roleDesc }}</td>
                     <td>
                         <button type="button" class="btn btn-info btn-xs" ng-click="editRole(row, $event)">
-                            <span class="glyphicon glyphicon-pencil"></span>修改
+                            <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_ROLE.MODIFY'|translate}}
                         </button>
                         <button type="button" class="btn btn-danger btn-xs" ng-click="singleDelRole(row, $event)">
-                            <span class="glyphicon glyphicon-trash"></span>删除
+                            <span class="glyphicon glyphicon-trash"></span>{{'CONFIG.MENU_ROLE.DELETE'|translate}}
                         </button>
                     </td>
                 </tr>

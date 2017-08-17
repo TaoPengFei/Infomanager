@@ -5,6 +5,7 @@
 cBoard.controller('roleMenuCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
     var translate = $filter('translate');
+    var translate = $filter('translate');
     $scope.optFlag = 'none';
     $scope.curDataset = {data: {expressions: []}};
     $scope.curWidget = {};var translate = $filter('translate');
