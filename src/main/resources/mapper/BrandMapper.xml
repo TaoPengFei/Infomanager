@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.BrandDao"> 
+<!-- <cache type="cn.shiyun.utils.RedisCache"/> -->
+ 
+    <resultMap type="Brand" id="brand"> 
+        <result property="BrandId" column="BRANDID"/> 
+        <result property="BrandCode" column="BRANDCODE"/> 
+        <result property="BrandName" column="BRANDNAME"/> 
+        <result property="BrandDesc" column="BRANDDESC"/>
+        <result property="BrandSeq" column="BRANDSWQ"/> 
+        <result property="pBrandId" column="PBRANDID"/>
+        <result property="Status" column="STATUS"/> 
+    </resultMap> 
+    
+     <select id="selectBrand" resultType="Map">
+        select BrandId,BrandCode,BrandName,BrandDesc,BrandSeq,pBrandId,`Status` from bi.sy_brand
+    </select>
+    
+    <select id="selectBrandCount" resultType="Int">
+        select count(*) from bi.sy_brand
+    </select>
+    
+     <insert id="addBrand">
+		insert into bi.sy_brand(BrandCode,BrandName,BrandDesc,BrandSeq,pBrandId,`Status`,CreateTime,UpdateTime) values
+		(#{BrandCode},#{BrandName},#{BrandDesc},0,#{pBrandId},0,now(),now())
+		</insert>
+     
+     <delete id="deleteBrand">
+         delete from bi.sy_brand where BrandId=#{BrandId} and pBrandId in
+          <foreach collection="pBrandId" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+    
+    <update id="updateBrand">
+	    update bi.sy_brand  
+	    <set>
+	    
+		    <if test="BrandCode != null and BrandCode !='' ">
+		        BrandCode=#{BrandCode},
+		    </if>
+	   
+		    <if test="BrandName != null and BrandName !='' ">
+		        BrandName=#{BrandName},
+		    </if>
+	    
+		    <if test="BrandDesc != null and BrandDesc !='' ">
+		        BrandDesc=#{BrandDesc},
+		    </if>
+		    UpdateTime=now()
+	    </set>
+	    where  BrandId=#{BrandId} and pBrandId=#{pBrandId}
+	</update>
+    
+</mapper> 

@@ -1,0 +1,24 @@
+<div class="form-group">
+    <h3 class="box-title" style="color: red">{{'CONFIG.MENU_BRAND.BRAND_PARENT'|translate}}{{curBrand}}</h3>
+</div>
+<!-- 子品牌编码 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_BRAND.BRAND_CODE'|translate}}</label>
+    <input class="form-control input-sm"/>
+</div>
+<!-- 子品牌名称 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_BRAND.BRAND_SUB_NAME'|translate}}</label>
+    <input class="form-control input-sm"/>
+</div>
+<!-- 子品牌描述 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_BRAND.BRAND_DESC'|translate}}</label>
+    <!--<input ng-model="" class="form-control input-sm"/>-->
+    <textarea class="form-control" rows="3" col="12" id="brandDesc" placeholder=""></textarea>
+</div>
+<div class="form-group">
+    <button type="submit" class="btn btn-danger pull-right">{{'COMMON.CANCEL'|translate}}</button>
+    <button type="submit" ng-click="saveNew()" class="btn btn-success pull-right" style="margin-right: 5px">{{'COMMON.SAVE'|translate}}</button>
+    <!--<button type="submit" ng-click="test()" class="btn btn-success pull-right" style="margin-right: 5px">{{'CONFIG.DATA_SOURCE.TEST'|translate}}</button>-->
+</div>

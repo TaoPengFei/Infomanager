@@ -65,6 +65,12 @@ angular.module('cBoard').config(['$stateProvider', function ($stateProvider) {
             url: '/datatables',
             templateUrl: 'org/cboard/view/config/dataTables.html',
             controller: 'dataTablesCtrl'
+        })
+        //brand路由配置
+        .state('config.brand', {
+            url: '/brand',
+            templateUrl: 'org/cboard/view/config/brand.html',
+            controller: 'brandCtrl'
         });
     }
 ]);
@@ -151,10 +157,11 @@ angular.module('cBoard').config(function ($translateProvider, $translatePartialL
         (function () {
             // return "en";
             console.log(document.URL.split('?')[1].split("=")[1]);
+            console.log(document.URL.split('?')[1].split("=")[1].substr(0,2));
             var thisURL = document.URL;
-            var  getval =thisURL.split('?')[1];
+            var getval =thisURL.split('?')[1];
             var showval= getval.split("=")[1];
-            return showval;
+            return showval.substr(0,2);
         })()
     );
 });

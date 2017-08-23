@@ -21,7 +21,8 @@
       "MENU": "权限配置",
       "MENU_USER": "人员维护",
       "MENU_ROLE": "角色维护",
-      "MENU_ROLE_MENU": "角色菜单维护"
+      "MENU_ROLE_MENU": "角色菜单维护",
+      "MENU_BRAND": "品牌维护"
     }
   },
   "CONFIG":{
@@ -58,6 +59,15 @@
       "ROLE_WITH_MENU": "角色已有菜单",
       "ADD_USER_ROLE": "新增",
       "DELETE": "删除"
+    },
+    "MENU_BRAND":{
+      "BRAND_NAME": "品牌树",
+      "BRAND_ADD": "添加子品牌",
+      "BRAND_PARENT": "当前主品牌：",
+      "BRAND_CODE": "子品牌编码",
+      "BRAND_SUB_NAME": "子品牌名称",
+      "BRAND_DESC": "子品牌描述"
+
     }
   }
 }

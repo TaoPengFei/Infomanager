@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.AreaDao"> 
+ 
+    
+     <select id="getArea" resultType="Map">
+     select AreaId,AreaCode,AreaName,AreaDesc,AreaSeq,pAreaId,`Status` from bi.sy_area
+    </select>
+    
+    <select id="getAreaCount" resultType="Int">
+    select count(*) from bi.sy_area
+    </select>
+    
+     <insert id="addArea" parameterType="Map">
+		insert into bi.sy_area(AreaCode,AreaName,AreaDesc,AreaSeq,pAreaId,`Status`,CreateTime,UpdateTime) values
+		(#{AreaCode},#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now())
+		</insert>
+     
+     <delete id="deleteArea">
+         delete from bi.sy_area where pAreaId=#{pAreaId} and AreaId in
+          <foreach collection="AreaId" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+    
+    <update id="updateArea">
+	    update bi.sy_area  
+	    <set>
+	    
+		    <if test="AreaCode != null and AreaCode !='' ">
+		        AreaCode=#{AreaCode},
+		    </if>
+	   
+		    <if test="AreaName != null and AreaName !='' ">
+		        AreaName=#{AreaName},
+		    </if>
+	    
+		    <if test="AreaDesc != null and AreaDesc !='' ">
+		        AreaDesc=#{AreaDesc},
+		    </if>
+		    UpdateTime=now()
+	    </set>
+	    where  AreaId=#{AreaId} and pAreaId=#{pAreaId}
+	</update>
+    
+</mapper> 

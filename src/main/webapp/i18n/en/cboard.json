@@ -21,7 +21,8 @@
       "MENU": "Permission",
       "MENU_USER": "User",
       "MENU_ROLE": "Role",
-      "MENU_ROLE_MENU": "Role Menu"
+      "MENU_ROLE_MENU": "Role Menu",
+      "MENU_BRAND": "Brand"
     }
   },
   "CONFIG":{
@@ -58,6 +59,14 @@
       "ROLE_WITH_MENU": "Role Existing Menu",
       "ADD_USER_ROLE": "Add",
       "DELETE": "Delete"
+    },
+    "MENU_BRAND":{
+      "BRAND_NAME": "Brand Tree",
+      "BRAND_ADD": "Add Sub Brand",
+      "BRAND_PARENT": "Current Main Brand：",
+      "BRAND_CODE": "Sub Brand Code",
+      "BRAND_SUB_NAME": "Sub Brand Name",
+      "BRAND_DESC": "Sub Brand Describe"
     }
   }
 }
