@@ -16,7 +16,8 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <ul tree id="treeDemo" class="ztree" ng-model="selectNode"></ul>
                             <!--<pre>
-                                {{selectNode | json}}
+                                &lt;!&ndash;{{selectNode | json}}&ndash;&gt;
+                                {{zNodesJSON | json}}
                             </pre>-->
                         </div>
                     </div>
@@ -37,9 +38,9 @@
                 </div>
                 <div class="box-body">
                     <div ng-show="optFlag == 'addBrand'"
-                         ng-include="'org/cboard/view/config/brand/addBrand.html'"></div>
+                         ng-include="'org/cboard/view/config/brand/addBrand.html'"></div> <!--losing scope when using ng-include-->
                     <div ng-show="optFlag == 'editBrand'"
-                         ng-include="'org/cboard/view/config/brand/editBrand.html'"></div>
+                         ng-include="'org/cboard/view/config/brand/editBrand.html'"></div> <!--losing scope when using ng-include-->
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">

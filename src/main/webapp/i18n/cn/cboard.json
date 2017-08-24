@@ -63,10 +63,14 @@
     "MENU_BRAND":{
       "BRAND_NAME": "品牌树",
       "BRAND_ADD": "添加子品牌",
-      "BRAND_PARENT": "当前主品牌：",
+      "BRAND_PARENT": "当前主品牌",
       "BRAND_CODE": "子品牌编码",
       "BRAND_SUB_NAME": "子品牌名称",
-      "BRAND_DESC": "子品牌描述"
+      "BRAND_DESC": "子品牌描述",
+      "BRAND_EDIT": "修改品牌",
+      "EDIT_CODE": "品牌编码",
+      "EDIT_NAME": "品牌名称",
+      "EDIT_DESC": "品牌描述"
 
     }
   }

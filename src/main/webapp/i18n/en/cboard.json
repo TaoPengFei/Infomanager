@@ -63,10 +63,14 @@
     "MENU_BRAND":{
       "BRAND_NAME": "Brand Tree",
       "BRAND_ADD": "Add Sub Brand",
-      "BRAND_PARENT": "Current Main Brand：",
+      "BRAND_PARENT": "Current Main Brand",
       "BRAND_CODE": "Sub Brand Code",
       "BRAND_SUB_NAME": "Sub Brand Name",
-      "BRAND_DESC": "Sub Brand Describe"
+      "BRAND_DESC": "Sub Brand Describe",
+      "BRAND_EDIT": "Edit Brand",
+      "EDIT_CODE": "Edit Brand Code",
+      "EDIT_NAME": "Edit Brand Name",
+      "EDIT_DESC": "Edit Brand Describe"
     }
   }
 }
