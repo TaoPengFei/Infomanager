@@ -1,15 +1,12 @@
 /**
- * Created by 陶鹏飞 on 2017/8/21.
+ * Created by 陶鹏飞 on 2017/8/25.
  */
-// 'use strict';
 
-cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($http, $interval, $filter, $log) {
+cBoard.directive('area', ['$http', '$interval', '$filter', '$log', function ($http, $interval, $filter, $log) {
     return {
         require: '?ngModel',
-        // scope: true,     //坑，这是一个坑呀！
         restrict: 'A',
         link: function ($scope, element, attrs, ngModel) {
-            //var opts = angular.extend({}, $scope.$eval(attrs.nlUploadify));
             var setting = {
                 view: {
                     dblClickExpand: dblClickExpand,
@@ -32,7 +29,6 @@ cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($h
                     }
                 }
             };
-
             function dblClickExpand(treeId, treeNode) {
                 return treeNode.level > 0;
             };
@@ -48,60 +44,60 @@ cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($h
                 var delbtn = $("#delBtn_" + treeNode.id);
                 if (addbtn) addbtn.bind("click", function () {
                     $scope.$apply(function () {
-                        $scope.curBrand = treeNode.name;
+                        $scope.curArea = treeNode.name;
                         //提交父ID参数
                         $scope.pId = treeNode.id;
                     });
-                    $scope.addBrand.Code = "";
-                    $scope.addBrand.Name = "";
-                    $scope.addBrand.Desc = "";
-                    $scope.newDs();
+                    $scope.addArea.Code = "";
+                    $scope.addArea.Name = "";
+                    $scope.addArea.Desc = "";
+                    $scope.optFlagArea = 'addArea';
                 });
                 if (editbtn) editbtn.bind("click", function () {
                     $scope.$apply(function () {
                         //提交父ID参数
-                        $scope.curBrandpId = treeNode.pId;
-                        $scope.curBrandId = treeNode.id;
-                        $scope.editBrand.Code = treeNode.code;
-                        $scope.editBrand.Name = treeNode.name;
-                        $scope.editBrand.Desc = treeNode.desc;
+                        $scope.curAreapId = treeNode.pId;
+                        $scope.curAreaId = treeNode.id;
+                        $scope.editArea.Code = treeNode.code;
+                        $scope.editArea.Name = treeNode.name;
+                        $scope.editArea.Desc = treeNode.desc;
                     });
-                    $scope.editDs();
+                    $scope.optFlagArea = 'editArea';
                 });
                 if (delbtn) delbtn.bind("click", function () {
-                    $scope.optFlag = 'none';
-                    $scope.searchTree(treeNode);
-                    $scope.delBrand();
+                    $scope.optFlagArea = 'none';
+                    $scope.searchAreaTree(treeNode);
+                    $scope.delArea();
                 });
             };
 
-            var reloadTree = function () {
+            var reloadAreaTree = function () {
                 $http({
                     method: 'get',
-                    url: '/brand/selectBrand.do'
+                    url: '/area/getArea.do'
                 }).success(function (response) {
                     let zNodes = [];
                     zNodes = _.map(response.data, function (obj, iteratee, context) {
                         let newArr = [];
                         newArr.push({
-                            "id": obj.BrandId,
-                            "pId": obj.pBrandId,
-                            "name": obj.BrandName,
-                            "desc": obj.BrandDesc,
-                            "code": obj.BrandCode,
+                            "id": obj.AreaId,
+                            "pId": obj.pAreaId,
+                            "name": obj.AreaName,
+                            "desc": obj.AreaDesc,
+                            "code": obj.AreaCode,
                             "open": true
                         });
                         return newArr[0];
-                    })
+                    });
                     $.fn.zTree.init(element, setting, zNodes);
                 })
             };
-            reloadTree();
+            reloadAreaTree();
             //监听的数据是一个函数，该函数必须先在父作用域定义
-            $scope.$watch("treeStatus", function (newValue, oldValue, $scope) {
+            $scope.$watch("treeStatusArea", function (newValue, oldValue, $scope) {
                 if (newValue && !oldValue) {
-                    reloadTree();
-                    $scope.treeStatus = "";
+                    reloadAreaTree();
+                    $scope.treeStatusArea = "";
                 }
             }, true);
         }

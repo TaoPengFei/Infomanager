@@ -22,7 +22,8 @@
       "MENU_USER": "人员维护",
       "MENU_ROLE": "角色维护",
       "MENU_ROLE_MENU": "角色菜单维护",
-      "MENU_BRAND": "品牌维护"
+      "MENU_BRAND": "品牌维护",
+      "MENU_AREA": "区域维护"
     }
   },
   "CONFIG":{
@@ -71,7 +72,18 @@
       "EDIT_CODE": "品牌编码",
       "EDIT_NAME": "品牌名称",
       "EDIT_DESC": "品牌描述"
-
+    },
+    "MENU_AREA":{
+      "AREA_NAME": "区域树",
+      "AREA_ADD": "添加子区域",
+      "AREA_PARENT": "当前主区域",
+      "AREA_CODE": "子区域编码",
+      "AREA_SUB_NAME": "子区域名称",
+      "AREA_DESC": "子区域描述",
+      "AREA_EDIT": "修改区域",
+      "EDIT_CODE": "区域编码",
+      "EDIT_NAME": "区域名称",
+      "EDIT_DESC": "区域描述"
     }
   }
 }

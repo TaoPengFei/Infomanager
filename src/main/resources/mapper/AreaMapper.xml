@@ -18,13 +18,20 @@
 		(#{AreaCode},#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now())
 		</insert>
      
-     <delete id="deleteArea">
+     <!--<delete id="deleteArea">
          delete from bi.sy_area where pAreaId=#{pAreaId} and AreaId in
           <foreach collection="AreaId" item="item" open="(" separator="," close=")">
      	 	#{item}
      	 </foreach>
-     </delete>
-    
+     </delete>-->
+
+	<delete id="deleteArea">
+		delete from bi.sy_area where AreaId in
+		<foreach collection="AreaId" item="item" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
     <update id="updateArea">
 	    update bi.sy_area  
 	    <set>

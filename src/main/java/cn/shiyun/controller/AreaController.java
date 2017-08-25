@@ -40,7 +40,7 @@ public class AreaController {
 		if(list !=null && list.size()>0) {
 			result.put("count", count);
 			result.put("code", 1);
-			result.put("date", list);
+			result.put("data", list);
 		}else {
 			result.put("count", 0);
 			result.put("code", 0);
@@ -75,14 +75,24 @@ public class AreaController {
 		@ResponseBody
 		public Map<String, Object> deleteArea(@RequestBody Map<String,Object> param){
 			Map<String, Object> result = new HashMap<String, Object>();
-			
+			ArrayList array = (ArrayList) param.get("AreaId");
+
+			int area ;
+			for(int i = 0 ; i < array.size() ; i++) {
+				area = (int) array.get(i);
+				if (area == 0) {
+					result.put("code", 0);
+					result.put("msg", "禁止删除root!");
+					return result;
+				}
+			}
 			int rowCount = areaService.deleteArea(param);
-			if(rowCount > 0){
+			if (rowCount > 0) {
 				result.put("code", 1);
-				result.put("msg", "删除成功");
-			}else{
-				result.put("code", 0);
-				result.put("msg", "删除失败");
+				result.put("msg", "删除成功!");
+			} else {
+				result.put("code", -1);
+				result.put("msg", "删除失败!");
 			}
 			return result;
 		}

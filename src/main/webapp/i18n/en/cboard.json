@@ -22,7 +22,8 @@
       "MENU_USER": "User",
       "MENU_ROLE": "Role",
       "MENU_ROLE_MENU": "Role Menu",
-      "MENU_BRAND": "Brand"
+      "MENU_BRAND": "Brand",
+      "MENU_AREA": "Area"
     }
   },
   "CONFIG":{
@@ -71,6 +72,18 @@
       "EDIT_CODE": "Edit Brand Code",
       "EDIT_NAME": "Edit Brand Name",
       "EDIT_DESC": "Edit Brand Describe"
+    },
+    "MENU_AREA":{
+      "AREA_NAME": "Area Tree",
+      "AREA_ADD": "Add Sub Area",
+      "AREA_PARENT": "Current Main Area",
+      "AREA_CODE": "Sub Area Code",
+      "AREA_SUB_NAME": "Sub Area Name",
+      "AREA_DESC": "Sub Area Describe",
+      "AREA_EDIT": "Edit Area",
+      "EDIT_CODE": "Edit Area Code",
+      "EDIT_NAME": "Edit Area Name",
+      "EDIT_DESC": "Edit Area Describe"
     }
   }
 }

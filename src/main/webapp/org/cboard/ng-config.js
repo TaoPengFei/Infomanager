@@ -71,6 +71,12 @@ angular.module('cBoard').config(['$stateProvider', function ($stateProvider) {
             url: '/brand',
             templateUrl: 'org/cboard/view/config/brand.html',
             controller: 'brandCtrl'
+        })
+        //area路由配置
+        .state('config.area', {
+            url: '/area',
+            templateUrl: 'org/cboard/view/config/area.html',
+            controller: 'areaCtrl'
         });
     }
 ]);
