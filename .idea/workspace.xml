@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f60b685-810f-46f5-9b79-8ed9eca95c0b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/RoleMenuTreeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/RoleMenuTreeDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/service/RoleMenuTreeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/service/RoleMenuTreeServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RoleMenuMapperTree.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/RoleMenuTreeControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3" afterPath="$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Infomanager_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Infomanager_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Infomanager.iml" afterPath="$PROJECT_DIR$/Infomanager.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BrandController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BrandController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18n/cn/cboard.json" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/cn/cboard.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18n/en/cboard.json" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/en/cboard.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/brandTree.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/brandTree.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/addBrand.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/addBrand.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/editBrand.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/editBrand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java" />
     </list>
     <ignored path="Infomanager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,80 +53,7 @@
     <favorites_list name="Infomanager" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="brandCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="106" column="3" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
-              <folding>
-                <element signature="e#812#856#0" expanded="false" />
-                <element signature="e#863#886#0" expanded="false" />
-                <element signature="e#919#1004#0" expanded="false" />
-                <element signature="e#2324#2348#0" expanded="false" />
-                <element signature="e#2383#3691#0" expanded="false" />
-                <element signature="e#3697#3718#0" expanded="false" />
-                <element signature="e#3750#3790#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="brandTree.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/brandTree.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
-              <folding>
-                <element signature="e#424#507#0" expanded="false" />
-                <element signature="e#559#816#0" expanded="false" />
-                <element signature="e#633#660#0" expanded="false" />
-                <element signature="e#840#1040#0" expanded="false" />
-                <element signature="e#962#1022#0" expanded="false" />
-                <element signature="e#1444#2080#0" expanded="false" />
-                <element signature="e#3396#3458#0" expanded="false" />
-                <element signature="e#3487#4388#0" expanded="false" />
-                <element signature="e#4417#5068#0" expanded="false" />
-                <element signature="e#5207#5346#0" expanded="false" />
-                <element signature="e#5225#5289#0" expanded="false" />
-                <element signature="e#5360#6883#0" expanded="false" />
-                <element signature="e#8267#8784#0" expanded="false" />
-                <element signature="e#8315#8727#0" expanded="false" />
-                <element signature="e#8848#9173#0" expanded="false" />
-                <element signature="e#8961#9009#0" expanded="false" />
-                <element signature="e#9233#10167#0" expanded="false" />
-                <element signature="e#10207#10283#0" expanded="false" />
-                <element signature="e#10401#10633#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addBrand.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/addBrand.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#4;n#!!top" expanded="true" />
-                <marker date="1503552751889" expanded="false" signature="1468:1485" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="brand.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -151,9 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/datasourceCtrl.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/datasetCtrl.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/widget.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/roleMenu.js" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/RoleMenuController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/dataset.html" />
@@ -197,11 +119,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/i18n/en/cboard.json" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/addBrand.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/editBrand.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BrandController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/service/RoleMenuTreeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/RoleMenuTreeDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/RoleMenuTreeControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BrandController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/brandTree.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js" />
       </list>
     </option>
   </component>
@@ -284,6 +209,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -598,48 +526,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Infomanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Infomanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="brand" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -805,36 +691,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Infomanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Infomanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -864,9 +720,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -885,40 +738,14 @@
       <recent name="cn.shiyun.cache" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\webapp\org\cboard\view\config\brand" />
-      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\dao" />
+      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\test\java\cn\shiyun\controller" />
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\controller" />
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\resources\mapper" />
+      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\dao" />
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\service" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Infomanager">
-    <configuration default="false" name="BrandControllerTest.testAddBrand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cn.shiyun.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Infomanager" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="cn.shiyun.controller" />
-      <option name="MAIN_CLASS_NAME" value="cn.shiyun.controller.BrandControllerTest" />
-      <option name="METHOD_NAME" value="testAddBrand" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="AreaControllerTest.testGetArea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1010,6 +837,32 @@
       <option name="PACKAGE_NAME" value="cn.shiyun.controller" />
       <option name="MAIN_CLASS_NAME" value="cn.shiyun.controller.AreaControllerTest" />
       <option name="METHOD_NAME" value="testUpdateBrand" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BrandControllerTest.testDeleteBrand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.shiyun.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Infomanager" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cn.shiyun.controller" />
+      <option name="MAIN_CLASS_NAME" value="cn.shiyun.controller.BrandControllerTest" />
+      <option name="METHOD_NAME" value="testDeleteBrand" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1617,19 +1470,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Infomanager" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BrandControllerTest.testAddBrand" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testGetArea" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testAddArea" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testDeleteBrand" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testUpdateBrand" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testGetArea" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testAddArea" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testDeleteBrand" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testUpdateBrand" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.BrandControllerTest.testDeleteBrand" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testUpdateBrand" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testDeleteBrand" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testAddArea" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testGetArea" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BrandControllerTest.testAddBrand" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BrandControllerTest.testDeleteBrand" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testUpdateBrand" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testDeleteBrand" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testAddArea" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AreaControllerTest.testGetArea" />
       </list>
     </recent_temporary>
   </component>
@@ -1681,6 +1534,7 @@
       <workItem from="1503491722806" duration="12041000" />
       <workItem from="1503537184256" duration="22040000" />
       <workItem from="1503576821666" duration="8923000" />
+      <workItem from="1503625134988" duration="7941000" />
     </task>
     <task id="LOCAL-00001" summary="add JUnitTest">
       <created>1500531112693</created>
@@ -1707,39 +1561,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AreaControllerTest_testAddArea - 2017.08.23 at 16h 29m 20s.xml">
-      <configuration name="AreaControllerTest.testAddArea" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 07m 48s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AreaControllerTest_testAddArea - 2017.08.23 at 16h 30m 26s.xml">
-      <configuration name="AreaControllerTest.testAddArea" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 08m 07s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AreaControllerTest_testDeleteBrand - 2017.08.23 at 16h 31m 08s.xml">
-      <configuration name="AreaControllerTest.testDeleteBrand" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 09m 02s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AreaControllerTest_testGetArea - 2017.08.23 at 16h 28m 44s.xml">
-      <configuration name="AreaControllerTest.testGetArea" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 09m 47s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AreaControllerTest_testUpdateBrand - 2017.08.23 at 16h 33m 25s.xml">
-      <configuration name="AreaControllerTest.testUpdateBrand" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 12m 05s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BrandControllerTest_testAddBrand - 2017.08.23 at 14h 34m 15s.xml">
-      <configuration name="BrandControllerTest.testAddBrand" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 13m 06s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BrandControllerTest_testAddBrand - 2017.08.23 at 14h 36m 19s.xml">
-      <configuration name="BrandControllerTest.testAddBrand" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 13m 27s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BrandControllerTest_testAddBrand - 2017.08.23 at 14h 36m 57s.xml">
-      <configuration name="BrandControllerTest.testAddBrand" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 14m 02s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BrandControllerTest_testAddBrand - 2017.08.23 at 14h 37m 21s.xml">
-      <configuration name="BrandControllerTest.testAddBrand" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 16m 20s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BrandControllerTest_testAddBrand - 2017.08.23 at 14h 38m 06s.xml">
-      <configuration name="BrandControllerTest.testAddBrand" configurationId="JUnit" />
+    <history-entry file="BrandControllerTest_testDeleteBrand - 2017.08.25 at 11h 16m 44s.xml">
+      <configuration name="BrandControllerTest.testDeleteBrand" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="405672000" />
+    <option name="totallyTimeSpent" value="413613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1763,19 +1617,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19003476" sideWeight="0.26233906" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34530708" sideWeight="0.4956943" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33108866" sideWeight="0.73766094" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19753087" sideWeight="0.73766094" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.49785408" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.4914163" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26998842" sideWeight="0.48497853" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25104168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3869116" sideWeight="0.7773605" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38608307" sideWeight="0.7773605" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1804,7 +1658,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1813,40 +1667,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3/css/zTreeStyle/img/zTreeStandard.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/underscore-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="4" column="1282" selection-start-line="4" selection-start-column="1282" selection-end-line="4" selection-end-column="1282" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="130" column="4" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3/css/metroStyle/metroStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3/js/jquery.ztree.excheck.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3/js/jquery.ztree.exedit.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1882,13 +1702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/BrandDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -2074,13 +1887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/BrandServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="52" column="41" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/editBrand.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -2092,39 +1898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="73" column="63" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding>
-            <marker date="1503469427983" expanded="true" signature="768:856" ph="select Brand... sy_brand" />
-            <marker date="1503469427983" expanded="true" signature="936:968" ph="select count... sy_brand" />
-            <marker date="1503469427983" expanded="true" signature="1018:1199" ph="insert into bi.sy_brand... " />
-            <marker date="1503469427983" expanded="true" signature="1499:1944" ph="update bi.sy... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BrandController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-          <folding>
-            <element signature="method#selectBrand#0;class#BrandController#0" expanded="false" />
-            <element signature="method#addBrand#0;class#BrandController#0" expanded="false" />
-            <element signature="e#3177#3193#0" expanded="false" />
-            <element signature="e#3878#3894#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2146,70 +1919,157 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="58" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="106" column="3" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
-          <folding>
-            <element signature="e#812#856#0" expanded="false" />
-            <element signature="e#863#886#0" expanded="false" />
-            <element signature="e#919#1004#0" expanded="false" />
-            <element signature="e#2324#2348#0" expanded="false" />
-            <element signature="e#2383#3691#0" expanded="false" />
-            <element signature="e#3697#3718#0" expanded="false" />
-            <element signature="e#3750#3790#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand/addBrand.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="324">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#1;n#div#4;n#!!top" expanded="false" />
             <marker date="1503552751889" expanded="false" signature="1468:1485" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/RoleMenuTreeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/RoleMenuTreeControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMenuMapperTree.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <marker date="1503625920868" expanded="true" signature="353:638" ph="select am.au... authoritie_menus" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="n#select#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" expanded="false" />
+            <marker date="1503625936994" expanded="true" signature="768:856" ph="select Brand... sy_brand" />
+            <marker date="1503625936994" expanded="true" signature="936:968" ph="select count... sy_brand" />
+            <marker date="1503625936994" expanded="true" signature="1040:1221" ph="insert into bi.sy_brand... " />
+            <marker date="1503625936994" expanded="true" signature="1496:1941" ph="update bi.sy... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/BrandServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/BrandDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/RoleMenuTreeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/RoleMenuTreeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
           <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+          <folding>
+            <element signature="method#testAddBrand#0;class#BrandControllerTest#0" expanded="false" />
+            <element signature="method#testUpdateBrand#0;class#BrandControllerTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BrandController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="109" column="30" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
+          <folding>
+            <element signature="method#selectBrand#0;class#BrandController#0" expanded="false" />
+            <element signature="method#addBrand#0;class#BrandController#0" expanded="false" />
+            <element signature="e#3177#3193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/brandTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
+        <state relative-caret-position="358">
+          <caret line="104" column="17" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
           <folding>
-            <element signature="e#424#507#0" expanded="false" />
-            <element signature="e#559#816#0" expanded="false" />
-            <element signature="e#633#660#0" expanded="false" />
-            <element signature="e#840#1040#0" expanded="false" />
-            <element signature="e#962#1022#0" expanded="false" />
-            <element signature="e#1444#2080#0" expanded="false" />
-            <element signature="e#3396#3458#0" expanded="false" />
-            <element signature="e#3487#4388#0" expanded="false" />
-            <element signature="e#4417#5068#0" expanded="false" />
-            <element signature="e#5207#5346#0" expanded="false" />
-            <element signature="e#5225#5289#0" expanded="false" />
-            <element signature="e#5360#6883#0" expanded="false" />
-            <element signature="e#8267#8784#0" expanded="false" />
-            <element signature="e#8315#8727#0" expanded="false" />
-            <element signature="e#8848#9173#0" expanded="false" />
-            <element signature="e#8961#9009#0" expanded="false" />
-            <element signature="e#9233#10167#0" expanded="false" />
-            <element signature="e#10207#10283#0" expanded="false" />
-            <element signature="e#10401#10633#0" expanded="false" />
+            <element signature="e#2164#2328#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="e#726#749#0" expanded="false" />
+            <element signature="e#781#825#0" expanded="false" />
+            <element signature="e#832#855#0" expanded="false" />
+            <element signature="e#888#973#0" expanded="false" />
+            <element signature="e#980#1004#0" expanded="false" />
+            <element signature="e#1038#2287#0" expanded="false" />
+            <element signature="e#2293#2317#0" expanded="false" />
+            <element signature="e#2352#3660#0" expanded="false" />
+            <element signature="e#3666#3690#0" expanded="false" />
+            <element signature="e#4797#4818#0" expanded="false" />
+            <element signature="e#4850#4890#0" expanded="false" />
+            <element signature="e#4896#4924#0" expanded="false" />
+            <element signature="e#4967#5259#0" expanded="false" />
+            <element signature="e#5297#5326#0" expanded="false" />
+            <element signature="e#5392#5992#0" expanded="false" />
           </folding>
         </state>
       </provider>

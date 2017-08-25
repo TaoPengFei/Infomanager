@@ -23,14 +23,14 @@
         select count(*) from bi.sy_brand
     </select>
     
-     <insert id="addBrand">
+     <insert id="addBrand" parameterType="Brand">
 		insert into bi.sy_brand(BrandCode,BrandName,BrandDesc,BrandSeq,pBrandId,`Status`,CreateTime,UpdateTime) values
 		(#{BrandCode},#{BrandName},#{BrandDesc},0,#{pBrandId},0,now(),now())
 		</insert>
      
      <delete id="deleteBrand">
-         delete from bi.sy_brand where BrandId=#{BrandId} and pBrandId in
-          <foreach collection="pBrandId" item="item" open="(" separator="," close=")">
+         delete from bi.sy_brand where BrandId in
+          <foreach collection="BrandId" item="item" open="(" separator="," close=")">
      	 	#{item}
      	 </foreach>
      </delete>

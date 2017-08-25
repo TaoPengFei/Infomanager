@@ -24,6 +24,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration(locations = { "classpath:spring-mvc.xml",  
         "classpath:spring-mybatis.xml"})
@@ -56,8 +57,6 @@ public class BrandControllerTest {
         JSONArray json = new JSONArray();
         JSONObject jo1 = new JSONObject();
         jo1.put("pBrandId", "1");
-		jo1.put("BrandCode", "苏丹红1号");
-		jo1.put("BrandName", "苏丹红1号");
        
 //   这个就是前段需要传的json的array     [{"outletid":2,"username":"admin"},{"outletid":3,"username":"admin"}]
         String requestjson = jo1.toString();
@@ -76,12 +75,11 @@ public class BrandControllerTest {
 //		delete 需要传的参数和insert不一样，是 BrandSeq:1 pBrandId:[2,3] 这种json格式
 		
 		JSONArray json1 = new JSONArray();
-		json1.put(2);
-		json1.put(3);
-		json1.put(4);
+
+		json1.put(0);
+
         JSONObject jo = new JSONObject();
-        jo.put("BrandSeq", 1);
-        jo.put("pBrandId", json1);
+        jo.put("BrandId", json1);
         
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}
         String requestjson = jo.toString();

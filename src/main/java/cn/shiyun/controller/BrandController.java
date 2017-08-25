@@ -100,19 +100,24 @@ public class BrandController {
     @ResponseBody
     public Map<String, Object> deleteBrand(@RequestBody Map<String, Object> param) {
         Map<String, Object> result = new HashMap<String, Object>();
-        if ((Integer) param.get("BrandId") != 0) {
-            int rowCount = brandService.deleteBrand(param);
+        ArrayList array = (ArrayList) param.get("BrandId");
+        int brand ;
+        for(int i = 0 ; i < array.size() ; i++) {
+            brand = (int) array.get(i);
+            if (brand == 0) {
+                result.put("code", 0);
+                result.put("msg", "禁止删除root!");
+                return result;
+            }
+        }
+        int rowCount = brandService.deleteBrand(param);
             if (rowCount > 0) {
                 result.put("code", 1);
                 result.put("msg", "删除成功!");
             } else {
-                result.put("code", 0);
+                result.put("code", -1);
                 result.put("msg", "删除失败!");
             }
-        } else {
-            result.put("code", -1);
-            result.put("msg", "禁止删除Root!");
-        }
         return result;
     }
 
