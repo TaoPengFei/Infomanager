@@ -6,11 +6,25 @@
     
      <select id="getMenuTreeByRole" parameterType="String" resultType="Map">
      	<if test="_parameter != null and _parameter != ''">
-        	select am.authoritie roleName,m.menuid,m.menuname,m.menuurl,m.pid,
-        	m.orders,m.icon,m.deletetag,m.modifytime,m.menuname_en
-        	from authoritie_menus am ,menus m
-        	where am.menuid=m.menuid and am.authoritie=#{_parameter} and m.deletetag =0
-        	order by m.menuid
+
+            (select m.menuid,m.menuname,m.menuurl,m.pid,
+            m.orders,m.icon,m.deletetag,m.modifytime,m.menuname_en
+            from authoritie_menus am ,menus m
+            where am.menuid=m.menuid and am.authoritie=#{_parameter} and m.deletetag =0
+            order by m.menuid)
+            union
+            (select menuid,menuname,menuurl,pid,
+            orders,icon,deletetag,modifytime,menuname_en
+            from menus where menuid in
+            (select DISTINCT pid
+            from authoritie_menus am ,menus m
+            where am.menuid=m.menuid and am.authoritie=#{_parameter} and m.deletetag =0
+            order by m.menuid
+            )
+            )
+            union
+            (select menuid,menuname,menuurl,pid,orders,icon,deletetag,modifytime,menuname_en
+            from menus WHERE pid =-1)
         </if>
     </select>
     
@@ -20,10 +34,22 @@
          <where> 
      	<if test="_parameter != null and _parameter != ''">
         	menuid not in (select menuid from authoritie_menus where authoritie= #{_parameter}) 
-        	and deletetag=0
+        	and deletetag=0 and menuid != 0
         </if>
         </where>
-    </select>
+         UNION
+         (select menuid,menuname,menuurl,pid,
+         orders,icon,deletetag,modifytime,menuname_en
+         from menus where menuid in
+         (select DISTINCT pid
+         from menus where menuid not in (select menuid from authoritie_menus where  authoritie= #{_parameter}) )
+         and deletetag=0 )
+         union
+         (select menuid,menuname,menuurl,pid,orders,icon,deletetag,modifytime,menuname_en
+         from menus WHERE pid =-1)
+
+
+     </select>
      
      <insert id="insertRoleMenuTree" parameterType="Map">
      	 insert into authoritie_menus(authoritie,menuid) values

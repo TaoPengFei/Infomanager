@@ -22,6 +22,7 @@
       "MENU_USER": "人员维护",
       "MENU_ROLE": "角色维护",
       "MENU_ROLE_MENU": "角色菜单维护",
+      "MENU_ROLE_MENU_TREE": "角色菜单树",
       "MENU_BRAND": "品牌维护",
       "MENU_AREA": "区域维护"
     }

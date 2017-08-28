@@ -60,6 +60,12 @@ angular.module('cBoard').config(['$stateProvider', function ($stateProvider) {
             templateUrl: 'org/cboard/view/config/roleMenu.html',
             controller: 'roleMenuCtrl'
         })
+        //角色-菜单路由配置
+        .state('config.roleMenuTree', {
+            url: '/roleMenuTree',
+            templateUrl: 'org/cboard/view/config/roleMenuTree.html',
+            controller: 'roleMenuTreeCtrl'
+        })
         //datatables路由配置
         .state('config.datatables', {
             url: '/datatables',
@@ -162,8 +168,8 @@ angular.module('cBoard').config(function ($translateProvider, $translatePartialL
     $translateProvider.preferredLanguage(
         (function () {
             // return "en";
-            console.log(document.URL.split('?')[1].split("=")[1]);
-            console.log(document.URL.split('?')[1].split("=")[1].substr(0,2));
+            /*console.log(document.URL.split('?')[1].split("=")[1]);
+            console.log(document.URL.split('?')[1].split("=")[1].substr(0,2));*/
             var thisURL = document.URL;
             var getval =thisURL.split('?')[1];
             var showval= getval.split("=")[1];

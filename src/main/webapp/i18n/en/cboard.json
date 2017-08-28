@@ -22,6 +22,7 @@
       "MENU_USER": "User",
       "MENU_ROLE": "Role",
       "MENU_ROLE_MENU": "Role Menu",
+      "MENU_ROLE_MENU_TREE": "Role Menu Tree",
       "MENU_BRAND": "Brand",
       "MENU_AREA": "Area"
     }

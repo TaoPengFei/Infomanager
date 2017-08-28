@@ -112,7 +112,7 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
     var getRolesList = function () {
         $http({
             method: 'get',
-            url: '../role/getRoles.do',
+            url: '/role/getRoles.do',
             params: {
                 roleName: $scope.roleName
             }
@@ -129,7 +129,7 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
     $scope.$watch("roleName", function () {
         $http({
             method: 'post',
-            url: '../role/getRoles.do',
+            url: '/role/getRoles.do',
             data: {
                 roleName: $scope.roleName
             }
@@ -178,7 +178,7 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
                 $scope.save = function () {
                     $http({
                         method: 'post',
-                        url: '../role/addRole.do',
+                        url: '/role/addRole.do',
                         data: {
                             roleName: $scope.newRole,
                             roleDesc: $scope.newDesc
@@ -212,7 +212,7 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
     $scope.singleDelRole = function (current, $event) {
         $http({
             method: 'post',
-            url: '../role/delRole.do',
+            url: '/role/delRole.do',
             data: {
                 roleName: current.roleName
             }

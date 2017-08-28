@@ -1,5 +1,6 @@
 package cn.shiyun.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,12 +30,14 @@ public class RoleMenuTreeController {
 	}
 	
 	//查询权限
-	@RequestMapping(value="/{roleName}")
+	/*@RequestMapping(value="/{roleName}")*/
+	@RequestMapping("getMenusTree.do")
 	@ResponseBody
-	public Map<String, Object> getMenusTree(@PathVariable String roleName){
+//	public Map<String, Object> getMenusTree(@PathVariable String roleName){
+	public Map<String, Object> getMenusTree(@RequestParam String roleName) throws UnsupportedEncodingException {
 		//String roleName = param.get("roleName").toString();
 		Map<String, Object> result = new HashMap<String, Object>();
-		
+		roleName = new String(roleName.getBytes("ISO-8859-1"), "UTF-8");
 		//角色已有的菜单
 		List<Map<String,Object>> menuWithRole = roleMenuTreeService.getMenuTreeByRole(roleName);
 		//角色没有的菜单
