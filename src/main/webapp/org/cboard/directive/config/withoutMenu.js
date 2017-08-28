@@ -21,6 +21,9 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log', function (
                         inner: true
                     }
                 },
+                check: {
+                    enable: true
+                },
                 view: {
                     dblClickExpand: false,
                     // dblClickExpand: dblClickExpand,
@@ -133,6 +136,16 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log', function (
                     for (var i = 0; i < nodes.length; i++) { //设置节点展开
                         treeObj.expandNode(nodes[i], true, false, true);
                     }
+                    ;
+                    //去掉选框
+                    if (nodes.length > 0) {
+                        for (var i = 0; i < nodes.length; i++) {
+                            if (nodes[i].isParent) {//找到父节点
+                                nodes[i].nocheck = true;//nocheck为true表示没有选择框
+                            }
+                        }
+                    };
+                    $(".ztree>li>span.chk").hide();//隐藏root节点选择框
                 })
             })
             //监听的数据是一个函数，该函数必须先在父作用域定义

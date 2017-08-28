@@ -1,9 +1,6 @@
 /**
  * Created by 陶鹏飞 on 2017/8/26.
  */
-/**
- * Created by 陶鹏飞 on 2017/8/25.
- */
 cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
     var translate = $filter('translate');
@@ -24,6 +21,9 @@ cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataS
     }
     getRoleNameList();
 
+    /**
+     * 修改已添加的菜单
+     */
     $scope.withMenuEdit = function () {
         console.log("withMenuEdit...");
         $uibModal.open({
@@ -51,6 +51,9 @@ cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataS
         });
     };
 
+    /**
+     * 修改未添加的菜单
+     */
     $scope.withoutMenuEdit = function () {
         console.log("withoutMenuEdit...");
         $uibModal.open({
