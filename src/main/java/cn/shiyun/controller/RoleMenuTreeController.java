@@ -1,6 +1,7 @@
 package cn.shiyun.controller;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,10 +64,10 @@ public class RoleMenuTreeController {
 		int rowCount = roleMenuTreeService.insertRoleMenuTree(param);
 		if(rowCount > 0){
 			result.put("code", 1);
-			result.put("msg", "新增成功");
+			result.put("msg", "新增菜单成功！");
 		}else{
 			result.put("code", 0);
-			result.put("msg", "新增失败");
+			result.put("msg", "新增菜单失败！");
 		}
 		return result;
 	}
@@ -79,11 +80,34 @@ public class RoleMenuTreeController {
 		int rowCount = roleMenuTreeService.deleteRoleMenuTree(param);
 		if(rowCount > 0){
 			result.put("code", 1);
-			result.put("msg", "删除成功");
+			result.put("msg", "移除菜单成功！");
 		}else{
 			result.put("code", 0);
-			result.put("msg", "删除失败");
+			result.put("msg", "移除菜单失败！");
 		}
 		return result;
 	}
-}
+
+	//查询全部权限
+	@RequestMapping("getAllMenuTree.do ")
+			@ResponseBody
+			public Map<String, Object> getAllMenuTree(){
+			Map<String, Object> result = new HashMap<String, Object>();
+			List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
+
+
+			list = roleMenuTreeService.getAllMenuTree();
+
+			if(list !=null && list.size()>0) {
+
+			result.put("code", 1);
+				result.put("date", list);
+			}else {
+
+				result.put("code", 0);
+				result.put("msg", "无此权限");
+			}
+				return result;
+				}
+
+			}

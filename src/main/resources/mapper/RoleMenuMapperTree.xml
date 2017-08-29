@@ -64,4 +64,9 @@
      	 	#{item}
      	 </foreach>
      </delete>
+
+    <select id="getAllMenuTree" resultType="Map">
+    select menuid,menuname,menuurl,pid,orders,icon,deletetag,modifytime,menuname_en
+    from menus
+    </select>
 </mapper> 

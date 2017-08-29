@@ -3,7 +3,8 @@
  */
 cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
-    var translate = $filter('translate');
+    // var translate = $filter('translate');
+    $scope.translate = $filter('translate');
     $scope.selectedRoleName = '';
     $scope.selectedMenuWithoutRole = '';
     $scope.selectedMenuWithRole = '';
@@ -79,6 +80,9 @@ cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataS
                 }
             }
         });
-    }
+    };
+
+
+
 
 });

@@ -55,7 +55,7 @@ public class RoleMenuTreeControllerTest {
 		json1.put(1001);
 		json1.put(1002);
         JSONObject jo = new JSONObject();
-        jo.put("roleName", "bb");
+        jo.put("roleName", "陶鹏飞");
         jo.put("menuIds", json1);
        
 //   这个就是前段需要传的json的array     {"roleName":"bb","menuIds":[1001,1002]}
@@ -78,7 +78,7 @@ public class RoleMenuTreeControllerTest {
 		json1.put(1001);
 		json1.put(1002);
         JSONObject jo = new JSONObject();
-        jo.put("roleName", "bb");
+        jo.put("roleName", "陶鹏飞");
         jo.put("menuIds", json1);
         
 //   这个就是前段需要传的json的array    {"roleName":"bb","menuIds":[1001,1002]}
@@ -93,7 +93,16 @@ public class RoleMenuTreeControllerTest {
 
 		System.out.println(responseString);
 	}
-	
-	
+
+	@Test
+	public void getAllMenuTree() throws Exception {
+
+		ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.post("/roleMenuTree/getAllMenuTree.do "));
+				MvcResult mvcResult = resultActions.andReturn();
+		String result = mvcResult.getResponse().getContentAsString();
+		System.out.println("=====客户端获得反馈数据:" + result);
+	}
+
+
 
 }

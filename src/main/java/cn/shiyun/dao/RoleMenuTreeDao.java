@@ -21,5 +21,8 @@ public interface RoleMenuTreeDao {
 
 	//查询没有的权限
 	public List<Map<String, Object>> getMenuNotInRoleMenuTree(String roleName);
+
+	//查询全部权限
+	public List<Map<String, Object>> getAllMenuTree();
 	
 }

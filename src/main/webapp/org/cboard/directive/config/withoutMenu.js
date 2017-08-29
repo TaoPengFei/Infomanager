@@ -3,11 +3,13 @@
  */
 // 'use strict';
 
-cBoard.directive('without', ['$http', '$interval', '$filter', '$log', function ($http, $interval, $filter, $log) {
+cBoard.directive('without', ['$http', '$interval', '$filter', '$log','$uibModal','ModalUtils', function ($http, $interval, $filter, $log, $uibModal, ModalUtils) {
     return {
         require: '?ngModel',
         restrict: 'A',
         link: function ($scope, element, attrs, ngModel) {
+            var withoutDragId;
+            var withoutDragNodes;
             var setting = {
                 edit: {
                     enable: true,
@@ -16,9 +18,11 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log', function (
                     drag: {
                         isCopy: true,
                         isMove: true,
-                        prev: true,
-                        next: true,
+                        prev: false,
+                        next: false,
                         inner: true
+                        // inner: false
+                        // inner: canInner
                     }
                 },
                 check: {
@@ -50,12 +54,32 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log', function (
                 }
             };
 
+            /*function canInner(treeId, nodes, targetNode) {
+                console.log(treeId);
+                console.log(nodes);
+                console.log(targetNode);
+                return !(targetNode && targetNode.level === 0);
+                /!*if(targetNode.id == withoutDragId){
+                    return false;
+                }else{
+                    return true;
+                }*!/
+            };*/
+
             function dblClickExpand(treeId, treeNode) {
                 return treeNode.level > 0;
             };
 
             function beforeDrag(treeId, treeNodes) {
+                /*for (var i = 0, l = treeNodes.length; i < l; i++) {
+                 if (treeNodes[i].drag === false) {
+                 return false;
+                 }
+                 }
+                 return true;*/
                 for (var i = 0, l = treeNodes.length; i < l; i++) {
+                    withoutDragNodes = treeNodes[i];
+                    withoutDragId = treeNodes[i].pId;
                     if (treeNodes[i].drag === false) {
                         return false;
                     }
@@ -64,7 +88,70 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log', function (
             };
 
             function beforeDrop(treeId, treeNodes, targetNode, moveType) {
-                return targetNode ? targetNode.drop !== false : true;
+                // if(targetNode.pId == withoutDragId){
+                if(targetNode.id == withoutDragId){
+                    /**
+                     * 检索树算法：非递归法
+                     */
+                    var withoutNodesJSON = [];
+                    $scope.searchWithoutTree = function (node) {
+                        if (!node) {
+                            return;
+                        }
+                        var stack = [];
+                        stack.push(node);
+                        var tmpNode;
+                        while (stack.length > 0) {
+                            tmpNode = stack.pop();
+                            withoutNodesJSON.push(tmpNode.id);
+                            if (tmpNode.children && tmpNode.children.length > 0) {
+                                var i = tmpNode.children.length - 1;
+                                for (i = tmpNode.children.length - 1; i >= 0; i--) {
+                                    stack.push(tmpNode.children[i]);
+                                }
+                            }
+                        }
+                    };
+                    $scope.searchWithoutTree(withoutDragNodes);
+                    console.log(withoutNodesJSON);
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: '/roleMenuTree/insertRoleMenuTree.do',
+                        data: JSON.stringify({
+                            menuIds: withoutNodesJSON,
+                            roleName: $scope.selectedRoleName
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
+                            $scope.treeStatusArea = response.code;
+                        } else if (response.code === -1) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === -2) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert($scope.translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
+                    return true;
+                }else{
+                    return false;
+                }
+                /*console.log(treeId);
+                 console.log(treeNodes);
+                 console.log(targetNode);
+                 console.log(moveType)*/
+                // return targetNode ? targetNode.drop !== true : false;
+                /*if (treeNodes.pId != null) {
+                 // return targetNode ? targetNode.drop !== false : true;
+                 } else {
+                 console.log(treeNodes);
+                 console.log(targetNode);
+                 return targetNode ? targetNode.drop !== true : false;
+                 }*/
             };
 
             function withTreeOnDblClick(event, treeId, treeNode) {
@@ -144,7 +231,8 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log', function (
                                 nodes[i].nocheck = true;//nocheck为true表示没有选择框
                             }
                         }
-                    };
+                    }
+                    ;
                     $(".ztree>li>span.chk").hide();//隐藏root节点选择框
                 })
             })

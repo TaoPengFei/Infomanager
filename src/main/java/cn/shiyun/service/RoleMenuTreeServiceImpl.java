@@ -41,4 +41,11 @@ public class RoleMenuTreeServiceImpl implements RoleMenuTreeService{
 		return roleMenuTreeDao.deleteRoleMenuTree(param);
 	}
 
+	//查询全部权限
+	@Override
+	public List<Map<String, Object>> getAllMenuTree() {
+
+		return roleMenuTreeDao.getAllMenuTree();
+	}
+
 }

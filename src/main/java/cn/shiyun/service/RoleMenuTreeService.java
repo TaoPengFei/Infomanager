@@ -19,4 +19,7 @@ public interface RoleMenuTreeService {
 	//删除权限
 	public int deleteRoleMenuTree(@RequestBody Map<String, Object> param);
 
+	//查询全部权限
+	public List<Map<String, Object>> getAllMenuTree();
+
 }

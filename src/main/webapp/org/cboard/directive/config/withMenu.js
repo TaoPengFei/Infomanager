@@ -3,11 +3,13 @@
  */
 // 'use strict';
 
-cBoard.directive('with', ['$http', '$interval', '$filter', '$log', function ($http, $interval, $filter, $log) {
+cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','ModalUtils', function ($http, $interval, $filter, $log, $uibModal, ModalUtils) {
     return {
         require: '?ngModel',
         restrict: 'A',
         link: function ($scope, element, attrs, ngModel) {
+            var withDragNodes;
+            var withDragId;
             var setting = {
                 edit: {
                     enable: true,
@@ -16,9 +18,11 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log', function ($ht
                     drag: {
                         isCopy: true,
                         isMove: true,
-                        prev: true,
-                        next: true,
+                        prev: false,
+                        next: false,
                         inner: true
+                        // inner: canInner
+
                     }
                 },
                 view: {
@@ -47,12 +51,24 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log', function ($ht
                 }
             };
 
+            /*function canInner(treeId, nodes, targetNode) {
+                return !(targetNode && targetNode.level === 2);
+            };*/
+
             function dblClickExpand(treeId, treeNode) {
                 return treeNode.level > 0;
             };
 
             function beforeDrag(treeId, treeNodes) {
+                /*for (var i=0,l=treeNodes.length; i<l; i++) {
+                    if (treeNodes[i].drag === false) {
+                        return false;
+                    }
+                }
+                return true;*/
                 for (var i=0,l=treeNodes.length; i<l; i++) {
+                    withDragNodes = treeNodes[i];
+                    withDragId = treeNodes[i].pId;
                     if (treeNodes[i].drag === false) {
                         return false;
                     }
@@ -61,8 +77,76 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log', function ($ht
             };
 
             function beforeDrop(treeId, treeNodes, targetNode, moveType) {
-                return targetNode ? targetNode.drop !== false : true;
+                // return targetNode ? targetNode.drop !== false : true;
+                if(targetNode.id == withDragId){
+                    /**
+                     * 检索树算法：非递归法
+                     */
+                    var withNodesJSON = [];
+                    $scope.searchWithTree = function (node) {
+                        if (!node) {
+                            return;
+                        }
+                        var stack = [];
+                        stack.push(node);
+                        var tmpNode;
+                        while (stack.length > 0) {
+                            tmpNode = stack.pop();
+                            withNodesJSON.push(tmpNode.id);
+                            if (tmpNode.children && tmpNode.children.length > 0) {
+                                var i = tmpNode.children.length - 1;
+                                for (i = tmpNode.children.length - 1; i >= 0; i--) {
+                                    stack.push(tmpNode.children[i]);
+                                }
+                            }
+                        }
+                    };
+                    $scope.searchWithTree(withDragNodes);
+                    console.log(withNodesJSON);
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: '/roleMenuTree/deleteRoleMenuTree.do',
+                        data: JSON.stringify({
+                            menuIds: withNodesJSON,
+                            roleName: $scope.selectedRoleName
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
+                            $scope.treeStatusArea = response.code;
+                        } else if (response.code === -1) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === -2) {
+                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert($scope.translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
+                    return true;
+                }else{
+                    return false;
+                }
             };
+
+            /*function beforeDrag(treeId, treeNodes) {
+                for (var i=0,l=treeNodes.length; i<l; i++) {
+                    dragId = treeNodes[i].pId;
+                    if (treeNodes[i].drag === false) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function beforeDrop(treeId, treeNodes, targetNode, moveType) {
+                if(targetNode.pId == dragId){
+                    return true;
+                }else{
+                    return false;
+                }
+            }*/
 
             function withoutTreeOnDblClick(event, treeId, treeNode) {
                 $scope.withMenuEdit();
