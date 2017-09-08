@@ -78,7 +78,7 @@ cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($h
             var reloadTree = function () {
                 $http({
                     method: 'get',
-                    url: '/brand/selectBrand.do'
+                    url: './brand/selectBrand.do'
                 }).success(function (response) {
                     let zNodes = [];
                     zNodes = _.map(response.data, function (obj, iteratee, context) {

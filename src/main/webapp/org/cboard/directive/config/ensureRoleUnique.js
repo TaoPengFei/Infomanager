@@ -18,7 +18,7 @@ cBoard.directive('ifRole', ['$http', function($http) {
                 scope.inputStatus = ngModelController.$valid;
                 $http({
                     method: 'get',
-                    url: '/role/getRoles.do',
+                    url: './role/getRoles.do',
                     params: {
                         roleName: ngModelController.$modelValue
                     }

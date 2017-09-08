@@ -83,6 +83,12 @@ angular.module('cBoard').config(['$stateProvider', function ($stateProvider) {
             url: '/area',
             templateUrl: 'org/cboard/view/config/area.html',
             controller: 'areaCtrl'
+        })
+        //outlet路由配置
+        .state('config.outlet', {
+            url: '/outlet',
+            templateUrl: 'org/cboard/view/config/outlet.html',
+            controller: 'outletCtrl'
         });
     }
 ]);
@@ -157,7 +163,7 @@ angular.module('cBoard').config(function ($httpProvider) {
 angular.module('cBoard').config(function ($translateProvider, $translatePartialLoaderProvider) {
     $translatePartialLoaderProvider.addPart('cboard');
     $translateProvider.useLoader('$translatePartialLoader', {
-        urlTemplate: '/i18n/{lang}/{part}.json'
+        urlTemplate: './i18n/{lang}/{part}.json'
     });
 
     // console.log(settings.preferredLanguage);

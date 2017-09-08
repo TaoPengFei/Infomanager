@@ -25,6 +25,9 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
 
                     }
                 },
+                /*check: {
+                    enable: true
+                },*/
                 view: {
                     dblClickExpand: false,
                     // dblClickExpand: dblClickExpand,
@@ -69,7 +72,7 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
                 for (var i=0,l=treeNodes.length; i<l; i++) {
                     withDragNodes = treeNodes[i];
                     withDragId = treeNodes[i].pId;
-                    if (treeNodes[i].drag === false) {
+                    if (treeNodes[i].drag === false || !treeNodes[i].getParentNode()) {
                         return false;
                     }
                 }
@@ -106,7 +109,7 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
                     $http({
                         method: 'POST',
                         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-                        url: '/roleMenuTree/deleteRoleMenuTree.do',
+                        url: './roleMenuTree/deleteRoleMenuTree.do',
                         data: JSON.stringify({
                             menuIds: withNodesJSON,
                             roleName: $scope.selectedRoleName
@@ -115,8 +118,9 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
                         if (response.code === 0) {
                             ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
                         } else if (response.code === 1) {
-                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
-                            $scope.treeStatusArea = response.code;
+                            // ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
+                            /*$scope.loadWithoutTree();
+                            $scope.loadWithTree();*/
                         } else if (response.code === -1) {
                             ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
                         } else if (response.code === -2) {
@@ -191,54 +195,51 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
                 });
             };*/
 
-            $scope.$watch("selectedRoleName",function () {
-                $http({
-                    method: 'get',
-                    url: '/roleMenuTree/getMenusTree.do',
-                    params: {
-                        roleName: $scope.selectedRoleName
-                    }
-                }).success(function (response) {
-                    let zNodes = [];
-                    // let arr = [];
-                    console.log(response.menuWithRole);
-                    zNodes = _.map(response.menuWithRole, function (obj, iteratee, context) {
-                        let newArr = [];
-                        newArr.push({
-                            "id": obj.menuid,
-                            "pId": obj.pid,
-                            "name": obj.menuname
-                            /*"desc": obj.BrandDesc,
-                             "code": obj.BrandCode,*/
+            $scope.loadWithTree = function () {
+                $scope.$watch("selectedRoleName",function () {
+                    $http({
+                        method: 'get',
+                        url: './roleMenuTree/getMenusTree.do',
+                        params: {
+                            roleName: $scope.selectedRoleName
+                        }
+                    }).success(function (response) {
+                        let zNodes = [];
+                        // let arr = [];
+                        console.log(response.menuWithRole);
+                        zNodes = _.map(response.menuWithRole, function (obj, iteratee, context) {
+                            let newArr = [];
+                            newArr.push({
+                                "id": obj.menuid,
+                                "pId": obj.pid,
+                                "name": obj.menuname
+                                /*"desc": obj.BrandDesc,
+                                 "code": obj.BrandCode,*/
+                            });
+                            console.log(newArr);
+                            return newArr[0];
                         });
-                        console.log(newArr);
-                        return newArr[0];
-                    });
-                    /*arr.push({
-                        "id": 0,
-                        "pId": -1,
-                        "name": "Root",
-                        "open": true
-                        /!*"desc": obj.BrandDesc,
-                         "code": obj.BrandCode,
-                         "open": true*!/
-                    });
-                    $.fn.zTree.init(element, setting, zNodes.concat(arr));*/
-                    $.fn.zTree.init(element, setting, zNodes);
-                    var treeObj = $.fn.zTree.getZTreeObj("withMenuTree");
-                    var nodes = treeObj.getNodes();
-                    for (var i = 0; i < nodes.length; i++) { //设置节点展开
-                        treeObj.expandNode(nodes[i], true, false, true);
-                    }
-                })
-            })
-            //监听的数据是一个函数，该函数必须先在父作用域定义
-            /*$scope.$watch("roleStatus", function (newValue, oldValue, $scope) {
-                if (newValue && !oldValue) {
-                    reloadWithMenuTree();
-                    $scope.roleStatus = "";
-                }
-            }, true);*/
+                        $.fn.zTree.init(element, setting, zNodes);
+
+                        var treeObj = $.fn.zTree.getZTreeObj("withMenuTree");
+                        var nodes = treeObj.getNodes();
+                        for (var i = 0; i < nodes.length; i++) { //设置节点展开
+                            treeObj.expandNode(nodes[i], true, false, true);
+                        }
+                        //去掉选框
+                        if (nodes.length > 0) {
+                            for (var i = 0; i < nodes.length; i++) {
+                                if (nodes[i].isParent) {//找到父节点
+                                    nodes[i].nocheck = true;//nocheck为true表示没有选择框
+                                }
+                            }
+                        }
+                        ;
+                        $(".ztree>li>span.chk").hide();//隐藏root节点选择框
+                    })
+                });
+            };
+            $scope.loadWithTree();
         }
     }
 }]);

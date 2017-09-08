@@ -104,5 +104,15 @@
 	    where userName=#{userName} and password=#{oldPassword}
 	    
 	</update>
+
+	<select id="getUserForeName" parameterType="User" resultType="User" resultMap="user">
+		SELECT UserName,Password,Description from Users
+		<where>
+			<if test="name != null and name != ''">
+				and UserName=#{name}
+			</if>
+
+		</where>
+	</select>
 	
 </mapper> 

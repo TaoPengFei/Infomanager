@@ -18,4 +18,6 @@ public interface UserService {
 	public int updateUser(User user);
 
 	public int changePassword(Password password);
+
+	public User getUserForeName(User user);
 }

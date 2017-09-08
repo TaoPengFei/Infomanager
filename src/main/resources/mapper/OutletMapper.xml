@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.shiyun.dao.OutletDao">
+
+	 <resultMap type="Outlet" id="outlet">
+		<result property="outletId" column="OutletId" />
+		<result property="areaId" column="AreaId" />
+		<result property="placeId" column="PlaceId"/>
+		<result property="brandId" column="BrandId" />
+	</resultMap> 
+	
+	<select id="getOutlets" parameterType="String"  resultType="Map"> 
+        select distinct
+			a.OutletId,
+  			a.OutletCode,
+ 		    a.OutletName,
+ 		    a.OutletShortName,
+  			a.AreaId,
+ 		    a.PlaceId,
+ 		    a.BrandId,
+ 		    a.Country,
+ 		    a.Region,
+ 		    a.Province,
+ 		    a.City,
+ 		    a.Addr1,
+ 		    a.Addr2,
+ 		    a.Contract,
+ 		    a.TableQty,
+ 		    a.SeatQty,
+ 		    a.EmpQty,
+ 		    a.Area,
+			now() as CreateTime,
+			now() as UpdateTime
+		from bi.dim_outlet a 
+			
+		where
+		 a.OutletId not in 
+		(
+				select OutletId from bi.sy_outlet 
+		)
+		
+	</select>
+	
+	<insert id="insertOutlets">
+			insert into bi.sy_outlet(OutletId,OutletCode,OutletName,OutletShortName,AreaId,PlaceId,BrandId,Country,Region,Province,City,Addr1,Addr2,Contract,TableQty,SeatQty,EmpQty,Area,CreateTime,UpdateTime)
+			  values
+		<foreach collection="list" item="item" index="index" separator="," >  
+	        (#{item.OutletId},#{item.OutletCode},#{item.OutletName},#{item.OutletShortName},#{item.AreaId},#{item.PlaceId},#{item.BrandId},#{item.Country},#{item.Region},#{item.Province},#{item.City},#{item.Addr1},#{item.Addr2},#{item.Contract},#{item.TableQty},#{item.SeatQty},#{item.EmpQty},#{item.Area},now(),now())  
+	    </foreach>  
+						
+	</insert>
+	
+	<select id="getAllOutlets" parameterType="String" resultType="Map">
+		select * from bi.sy_outlet a
+		 <if test="_parameter != null and _parameter != ''">
+			 where  a.OutletName like '%${_parameter}%'
+		</if> 
+	</select>
+	
+	<select id="getAreas" resultType="Map"	> 
+        select 
+        	a.AreaId,
+			a.AreaName_level1
+		from bi.dim_Area a    
+	</select>
+	
+	<select id="getPlaces" resultType="Map"	> 
+        select 
+        	a.PlaceId,
+			a.PlaceName
+		from bi.dim_Place a    
+	</select>
+	
+	<select id="getBrands" resultType="Map"	> 
+        select 
+        	a.BrandId,
+			a.BrandName_level1
+		from bi.dim_Brand a    
+	</select>
+	
+	<update id="updateApbs" parameterType="Outlet">
+	    
+	    update bi.sy_outlet a
+		    <set>
+		    	 <if test="areaId != null and areaId != ''">
+			        a.AreaId = #{areaId},
+			     </if>
+			     <if test="placeId != null and placeId != ''">
+			        a.PlaceId = #{placeId},
+			     </if>
+			     <if test="brandId != null and brandId != ''">
+			        a.BrandId = #{brandId},
+			     </if>
+			     <if test="outletId != null and outletId != ''">
+			        a.OutletId = #{outletId}
+			     </if>
+		    </set>
+		    where a.OutletId = #{outletId}
+		
+	</update>
+	
+	<delete id="deleteOutlets">
+         	delete from bi.sy_outlet where OutletId in
+         <foreach collection="outletId" item="item" open="(" separator="," close=")">
+           	#{item}
+         </foreach> 
+     </delete>
+	
+</mapper> 

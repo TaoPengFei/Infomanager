@@ -88,7 +88,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
     var getUserList = function () {
         $http({
             method: 'get',
-            url: '../user/queryUser.do',
+            url: './user/queryUser.do',
             params: {
                 userName: $scope.userName
             }
@@ -110,7 +110,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
     var getRoleList = function () {
         $http({
             method: 'get',
-            url: '../role/roleLoad.do'
+            url: './role/roleLoad.do'
         }).success(function (response) {
             $scope.roleList = response;
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
@@ -128,7 +128,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
     $scope.$watch("userName", function () {
         $http({
             method: 'post',
-            url: '../user/queryUser.do',
+            url: './user/queryUser.do',
             data: {
                 userName: $scope.userName
             }
@@ -150,7 +150,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
             controller: function ($scope, $uibModalInstance, $http) {
                 $http({
                     method: 'get',
-                    url: '../role/roleLoad.do'
+                    url: './role/roleLoad.do'
                 }).success(function (response) {
                     $scope.roleList_1 = response;
                     console,log($scope.roleList_1);
@@ -197,7 +197,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
     $scope.enableUser = function (current, $event) {
         $http({
             method: 'post',
-            url: '../user/updateUser.do',
+            url: './user/updateUser.do',
             data: {
                 name: current.userName,
                 enabled: !current.enabled

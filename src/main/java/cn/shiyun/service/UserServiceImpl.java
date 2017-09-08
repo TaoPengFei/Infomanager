@@ -71,4 +71,10 @@ public class UserServiceImpl implements UserService{
 		User user = userDao.getUserByUserName(userName);
 		return user;
 	}
+
+	@Override
+	public User getUserForeName(User user) {
+
+		return userDao.getUserForeName(user);
+	}
 }

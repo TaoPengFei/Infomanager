@@ -10,6 +10,7 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log','$uibModal'
         link: function ($scope, element, attrs, ngModel) {
             var withoutDragId;
             var withoutDragNodes;
+            var withoutDragPNodes;
             var setting = {
                 edit: {
                     enable: true,
@@ -25,9 +26,9 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log','$uibModal'
                         // inner: canInner
                     }
                 },
-                check: {
+                /*check: {
                     enable: true
-                },
+                },*/
                 view: {
                     dblClickExpand: false,
                     // dblClickExpand: dblClickExpand,
@@ -43,206 +44,250 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log','$uibModal'
                     }
                 },
                 callback: {
-                    beforeDrag: beforeDrag,
-                    beforeDrop: beforeDrop,
+                    beforeDrag: function (treeId, treeNodes) {
+                        for (var i = 0, l = treeNodes.length; i < l; i++) {
+                            withoutDragNodes = treeNodes[i];
+                            withoutDragId = treeNodes[i].pId;
+                            if(!treeNodes[i].children){
+                                withoutDragPNodes = treeNodes[i].getParentNode();
+                            }
+                            if (treeNodes[i].drag === false || !treeNodes[i].getParentNode()) {
+                                return false;
+                            }
+                        }
+                        return true;
+                    },
+                    beforeDrop: function (treeId, treeNodes, targetNode, moveType) {
+                        //如果有提交到后台的操作，则会先执行if…else…再执行post等提交操作
+                        if(targetNode) {
+                            if(targetNode.children != undefined){
+                                //console.log(targetNode.children[0].name)
+                                //var nodes = targetNode.children;
+                                var name = treeNodes[0].name;
+                                for (i = 0; i < targetNode.children.length; i++) {
+                                    if(targetNode.children[i].name == name){
+                                        alert("Error: This name already exists.");
+                                        return false;
+                                    }
+                                }
+                            }
+                            return true;
+                        }
+                        return false;
+                        /*if(targetNode.id == withoutDragId){
+                            /!**
+                             * 检索树算法：非递归法
+                             *!/
+                            var withoutNodesJSON = [];
+                            $scope.searchWithoutTree = function (node) {
+                                if (!node) {
+                                    return;
+                                }
+                                var stack = [];
+                                stack.push(node);
+                                var tmpNode;
+                                while (stack.length > 0) {
+                                    tmpNode = stack.pop();
+                                    withoutNodesJSON.push(tmpNode.id);
+                                    if (tmpNode.children && tmpNode.children.length > 0) {
+                                        var i = tmpNode.children.length - 1;
+                                        for (i = tmpNode.children.length - 1; i >= 0; i--) {
+                                            stack.push(tmpNode.children[i]);
+                                        }
+                                    }
+                                }
+                            };
+                            $scope.searchWithoutTree(withoutDragNodes);
+                            console.log(withoutNodesJSON);
+                            $http({
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                                url: '/roleMenuTree/insertRoleMenuTree.do',
+                                data: JSON.stringify({
+                                    menuIds: withoutNodesJSON,
+                                    roleName: $scope.selectedRoleName
+                                })
+                            }).success(function (response) {
+                                if (response.code === 0) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                } else if (response.code === 1) {
+                                    // loadWithoutTree();
+                                    /!*$scope.loadWithoutTree();
+                                     $scope.loadWithTree();*!/
+                                    // ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
+                                } else if (response.code === -1) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                } else if (response.code === -2) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                }
+                            }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                                ModalUtils.alert($scope.translate(errorThrown + "!"), "modal-danger", "sm");
+                            });
+                            return true;
+                        }else{
+                            return false;
+                        }*/
+                    },
                     onClick: function (event, treeId, treeNode, clickFlag) {
                         $scope.$apply(function () {
                             ngModel.$setViewValue(treeNode);
                         });
                     },
-                    onDblClick: withTreeOnDblClick
+                    onDblClick: function (event, treeId, treeNode) {
+                        $scope.withoutMenuEdit();
+                        // alert(treeNode ? treeNode.tId + ", " + treeNode.name : "isRoot");
+                    },
+                    onDrop: function(event, treeId, treeNodes, targetNode, moveType, isCopy){
+                        console.log("拖拽完毕");
+                        console.log(targetNode);
+                        /**
+                         * 检索树算法：非递归法
+                         */
+                        var withoutNodesJSON = [];
+                        $scope.searchWithoutTree = function (node) {
+                            if (!node) {
+                                return;
+                            }
+                            var stack = [];
+                            stack.push(node);
+                            var tmpNode;
+                            while (stack.length > 0) {
+                                tmpNode = stack.pop();
+                                withoutNodesJSON.push(tmpNode.id);
+                                if (tmpNode.children && tmpNode.children.length > 0) {
+                                    var i = tmpNode.children.length - 1;
+                                    for (i = tmpNode.children.length - 1; i >= 0; i--) {
+                                        stack.push(tmpNode.children[i]);
+                                    }
+                                }
+                            }
+                        };
+                        if(treeNodes[0].isParent){
+                            $scope.searchWithoutTree(treeNodes[0]);
+                            console.log(withoutNodesJSON);
+                            $http({
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                                url: './roleMenuTree/insertRoleMenuTree.do',
+                                data: JSON.stringify({
+                                    menuIds: withoutNodesJSON,
+                                    roleName: $scope.selectedRoleName
+                                })
+                            }).success(function (response) {
+                                if (response.code === 0) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                } else if (response.code === 1) {
+                                    // loadWithoutTree();
+                                    /*$scope.loadWithoutTree();
+                                     $scope.loadWithTree();*/
+                                    $scope.treeStatusArea = response.code;
+                                    // ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
+                                } else if (response.code === -1) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                } else if (response.code === -2) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                }
+                            }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                                ModalUtils.alert($scope.translate(errorThrown + "!"), "modal-danger", "sm");
+                            });
+                        }else {
+                            $scope.searchWithoutTree(treeNodes[0]);
+                            withoutNodesJSON.push(withoutDragPNodes.id);
+                            console.log(withoutNodesJSON);
+                            $http({
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                                url: './roleMenuTree/insertRoleMenuTree.do',
+                                data: JSON.stringify({
+                                    menuIds: withoutNodesJSON,
+                                    roleName: $scope.selectedRoleName
+                                })
+                            }).success(function (response) {
+                                if (response.code === 0) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                } else if (response.code === 1) {
+                                    // loadWithoutTree();
+                                    /*$scope.loadWithoutTree();
+                                     $scope.loadWithTree();*/
+                                    $scope.treeStatusArea = response.code;
+                                    $scope.loadWithTree();
+                                    // ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
+                                } else if (response.code === -1) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                } else if (response.code === -2) {
+                                    ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
+                                }
+                            }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                                ModalUtils.alert($scope.translate(errorThrown + "!"), "modal-danger", "sm");
+                            });
+                        }
+
+                        // console.log("【源节点】节点id:"+treeNodes[0].id+"  父节点id:"+treeNodes[0].pId+"  级层："+treeNodes[0].level+"  名称："+treeNodes[0].name);
+                        //如果拖拽的是目录
+                        /*if(treeNodes[0].isParent){
+                            $.each(treeNodes[0].children,function(i,treeNode){
+                                console.log("【源节点】子节点"+i+":"+treeNode.id+"  父节点id:"+treeNode.pId+"  级层："+treeNode.level+"  名称："+treeNode.name);
+                            });
+                        }
+                        console.log("【目标节点】 节点id:"+targetNode.id+"  父节点id:"+targetNode.pId+"  级层："+targetNode.level+"  名称："+targetNode.name);*/
+                        //console.log("event:"+event+"--treeId:"+treeId+"--treeNodes:"+treeNodes+"--targetNode:"+targetNode+"--moveType:"+moveType+"--isCopy:"+isCopy);
+                        return true;
+                    }
                 }
             };
-
-            /*function canInner(treeId, nodes, targetNode) {
-                console.log(treeId);
-                console.log(nodes);
-                console.log(targetNode);
-                return !(targetNode && targetNode.level === 0);
-                /!*if(targetNode.id == withoutDragId){
-                    return false;
-                }else{
-                    return true;
-                }*!/
-            };*/
 
             function dblClickExpand(treeId, treeNode) {
                 return treeNode.level > 0;
             };
 
-            function beforeDrag(treeId, treeNodes) {
-                /*for (var i = 0, l = treeNodes.length; i < l; i++) {
-                 if (treeNodes[i].drag === false) {
-                 return false;
-                 }
-                 }
-                 return true;*/
-                for (var i = 0, l = treeNodes.length; i < l; i++) {
-                    withoutDragNodes = treeNodes[i];
-                    withoutDragId = treeNodes[i].pId;
-                    if (treeNodes[i].drag === false) {
-                        return false;
-                    }
-                }
-                return true;
-            };
-
-            function beforeDrop(treeId, treeNodes, targetNode, moveType) {
-                // if(targetNode.pId == withoutDragId){
-                if(targetNode.id == withoutDragId){
-                    /**
-                     * 检索树算法：非递归法
-                     */
-                    var withoutNodesJSON = [];
-                    $scope.searchWithoutTree = function (node) {
-                        if (!node) {
-                            return;
+            $scope.loadWithoutTree = function () {
+                $scope.$watch("selectedRoleName", function () {
+                    $http({
+                        method: 'get',
+                        url: './roleMenuTree/getMenusTree.do',
+                        params: {
+                            roleName: $scope.selectedRoleName
                         }
-                        var stack = [];
-                        stack.push(node);
-                        var tmpNode;
-                        while (stack.length > 0) {
-                            tmpNode = stack.pop();
-                            withoutNodesJSON.push(tmpNode.id);
-                            if (tmpNode.children && tmpNode.children.length > 0) {
-                                var i = tmpNode.children.length - 1;
-                                for (i = tmpNode.children.length - 1; i >= 0; i--) {
-                                    stack.push(tmpNode.children[i]);
+                    }).success(function (response) {
+                        let zNodes = [];
+                        zNodes = _.map(response.menuWithoutRole, function (obj, iteratee, context) {
+                            let newArr = [];
+                            newArr.push({
+                                "id": obj.menuid,
+                                "pId": obj.pid,
+                                "name": obj.menuname
+                                /*"desc": obj.BrandDesc,
+                                 "code": obj.BrandCode,*/
+                            });
+                            return newArr[0];
+                        });
+                        $.fn.zTree.init(element, setting, zNodes);
+                        var treeObj = $.fn.zTree.getZTreeObj("withoutMenuTree");
+                        var nodes = treeObj.getNodes();
+                        for (var i = 0; i < nodes.length; i++) { //设置节点展开
+                            treeObj.expandNode(nodes[i], true, false, true);
+                        }
+                        //去掉选框
+                        if (nodes.length > 0) {
+                            for (var i = 0; i < nodes.length; i++) {
+                                if (nodes[i].isParent) {//找到父节点
+                                    nodes[i].nocheck = true;//nocheck为true表示没有选择框
                                 }
                             }
                         }
-                    };
-                    $scope.searchWithoutTree(withoutDragNodes);
-                    console.log(withoutNodesJSON);
-                    $http({
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-                        url: '/roleMenuTree/insertRoleMenuTree.do',
-                        data: JSON.stringify({
-                            menuIds: withoutNodesJSON,
-                            roleName: $scope.selectedRoleName
-                        })
-                    }).success(function (response) {
-                        if (response.code === 0) {
-                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
-                        } else if (response.code === 1) {
-                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-success", "md");
-                            $scope.treeStatusArea = response.code;
-                        } else if (response.code === -1) {
-                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
-                        } else if (response.code === -2) {
-                            ModalUtils.alert($scope.translate(response.msg + "!"), "modal-danger", "md");
-                        }
-                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                        ModalUtils.alert($scope.translate(errorThrown + "!"), "modal-danger", "sm");
-                    });
-                    return true;
-                }else{
-                    return false;
-                }
-                /*console.log(treeId);
-                 console.log(treeNodes);
-                 console.log(targetNode);
-                 console.log(moveType)*/
-                // return targetNode ? targetNode.drop !== true : false;
-                /*if (treeNodes.pId != null) {
-                 // return targetNode ? targetNode.drop !== false : true;
-                 } else {
-                 console.log(treeNodes);
-                 console.log(targetNode);
-                 return targetNode ? targetNode.drop !== true : false;
-                 }*/
+                        $(".ztree>li>span.chk").hide();//隐藏root节点选择框
+                    })
+                });
             };
-
-            function withTreeOnDblClick(event, treeId, treeNode) {
-                $scope.withoutMenuEdit();
-                // alert(treeNode ? treeNode.tId + ", " + treeNode.name : "isRoot");
-            };
-            /*function addDiyDom(treeId, treeNode) {
-             var aObj = $("#" + treeNode.tId + "_a");
-             if ($("#diyBtn_" + treeNode.id).length > 0) return;
-             var editStr = "<span class='addTree button add' id='addBtn_" + treeNode.id + "' title='增加' onfocus='this.blur();'></span>"
-             + "<span class='addTree button edit' id='editBtn_" + treeNode.id + "' title='修改' onfocus='this.blur();'></span>"
-             + "<span class='addTree button remove' id='delBtn_" + treeNode.id + "' title='删除' onfocus='this.blur();'></span>";
-             aObj.append(editStr);
-             var addbtn = $("#addBtn_" + treeNode.id);
-             var editbtn = $("#editBtn_" + treeNode.id);
-             var delbtn = $("#delBtn_" + treeNode.id);
-             if (addbtn) addbtn.bind("click", function () {
-             $scope.$apply(function () {
-             $scope.curBrand = treeNode.name;
-             //提交父ID参数
-             $scope.pId = treeNode.id;
-             });
-             $scope.addBrand.Code = "";
-             $scope.addBrand.Name = "";
-             $scope.addBrand.Desc = "";
-             $scope.newDs();
-             });
-             if (editbtn) editbtn.bind("click", function () {
-             $scope.$apply(function () {
-             //提交父ID参数
-             $scope.curBrandpId = treeNode.pId;
-             $scope.curBrandId = treeNode.id;
-             $scope.editBrand.Code = treeNode.code;
-             $scope.editBrand.Name = treeNode.name;
-             $scope.editBrand.Desc = treeNode.desc;
-             });
-             $scope.editDs();
-             });
-             if (delbtn) delbtn.bind("click", function () {
-             $scope.optFlag = 'none';
-             $scope.searchTree(treeNode);
-             $scope.delBrand();
-             });
-             };*/
-
-            $scope.$watch("selectedRoleName", function () {
-                $http({
-                    method: 'get',
-                    url: '/roleMenuTree/getMenusTree.do',
-                    params: {
-                        roleName: $scope.selectedRoleName
-                    }
-                }).success(function (response) {
-                    let zNodes = [];
-                    zNodes = _.map(response.menuWithoutRole, function (obj, iteratee, context) {
-                        let newArr = [];
-                        newArr.push({
-                            "id": obj.menuid,
-                            "pId": obj.pid,
-                            "name": obj.menuname
-                            /*"desc": obj.BrandDesc,
-                             "code": obj.BrandCode,*/
-                        });
-                        return newArr[0];
-                    });
-                    $.fn.zTree.init(element, setting, zNodes);
-                    var treeObj = $.fn.zTree.getZTreeObj("withoutMenuTree");
-                    var nodes = treeObj.getNodes();
-                    for (var i = 0; i < nodes.length; i++) { //设置节点展开
-                        treeObj.expandNode(nodes[i], true, false, true);
-                    }
-                    ;
-                    //去掉选框
-                    if (nodes.length > 0) {
-                        for (var i = 0; i < nodes.length; i++) {
-                            if (nodes[i].isParent) {//找到父节点
-                                nodes[i].nocheck = true;//nocheck为true表示没有选择框
-                            }
-                        }
-                    }
-                    ;
-                    $(".ztree>li>span.chk").hide();//隐藏root节点选择框
-                })
-            })
+            $scope.loadWithoutTree();
             //监听的数据是一个函数，该函数必须先在父作用域定义
-            /*$scope.$watch("roleStatus", function (newValue, oldValue, $scope) {
-             if (newValue && !oldValue) {
-             reloadWithMenuTree();
-             $scope.roleStatus = "";
-             }
-             }, true);*/
+            /*$scope.$watch("treeStatusArea", function (newValue, oldValue, $scope) {
+                if (newValue && !oldValue) {
+                    $scope.loadWithTree();
+                    // $scope.loadWithoutTree();
+                    $scope.treeStatusArea = "";
+                }
+            }, true);*/
         }
     }
 }]);

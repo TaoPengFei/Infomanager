@@ -27,4 +27,6 @@ public interface UserDao {
 	public int updateUserRole(User user);
 
 	public int changePassword(Password password);
+
+	public User getUserForeName(User user);
 }

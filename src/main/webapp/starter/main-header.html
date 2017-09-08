@@ -1,9 +1,9 @@
 <!-- Logo -->
-<a href="starter.jsp" class="logo">
+<a href="#" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>SY</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>SY</b>Board</span>
+    <span class="logo-lg"><b>Shi</b>Yun</span>
 </a>
 
 <!-- Header Navbar -->
@@ -23,7 +23,7 @@
                     <img src="{{avatar}}" class="user-image">
                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                     <!--<span class="hidden-xs">{{user.username}}</span>-->
-                    <span class="hidden-xs" id="user">{{username}}</span>
+                    <span class="hidden-xs" id="user" >{{sessionUser.name}}</span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
@@ -31,7 +31,8 @@
                         <img src="{{avatar}}" class="img-circle">
 
                         <p>
-                            {{user.username + ' - ' + user.company + ' ' + user.department}}
+                            <!--{{user.username + ' - ' + user.company + ' ' + user.department}}-->
+                            {{sessionUser.name}}
                             <small>{{user.userId}}</small>
                         </p>
                     </li>
@@ -52,13 +53,13 @@
                     <!--</li>-->
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <!--<div class="pull-left">-->
-                            <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
-                        <!--</div>-->
+                        <div class="pull-left">
+                            <a href="#" class="btn btn-default btn-flat" ng-click="changePwd(sessionUser,$event)">{{'HEADER.CHANGE_PASSWORD'|translate}}</a>
+                        </div>
                         <div class="pull-right">
                             <!--<a href="/j_spring_cas_security_logout" class="btn btn-default btn-flat">{{'HEADER.SIGN_OUT'|translate}}</a>-->
                             <!--<a href="/logout" class="btn btn-default btn-flat">注销</a>-->
-                            <a href="/logout" class="btn btn-default btn-flat">{{'HEADER.SIGN_OUT'|translate}}</a>
+                            <a href="./logout" class="btn btn-default btn-flat">{{'HEADER.SIGN_OUT'|translate}}</a>
                         </div>
                     </li>
                 </ul>

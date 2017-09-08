@@ -13,7 +13,7 @@ cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataS
     var getRoleNameList = function () {
         $http({
             method: 'get',
-            url: '/role/roleLoad.do'
+            url: './role/roleLoad.do'
         }).success(function (response) {
             $scope.roleNameList = response;
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {

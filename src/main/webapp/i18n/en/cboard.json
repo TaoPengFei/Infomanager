@@ -12,7 +12,11 @@
     "FAIL": "Fail!"
   },
   "HEADER": {
-    "SIGN_OUT": "SignOut"
+    "SIGN_OUT": "SignOut",
+    "CHANGE_PASSWORD": "Change Password",
+    "CURRENT_PASSWORD": "Current Password",
+    "NEW_PASSWORD": "New Password",
+    "CONFIRM_PASSWORD": "Confirm Password"
   },
   "SIDEBAR": {
     "MY_DASHBOARD": "My Dashboard",
@@ -24,7 +28,8 @@
       "MENU_ROLE_MENU": "Role Menu",
       "MENU_ROLE_MENU_TREE": "Role Menu Tree",
       "MENU_BRAND": "Brand",
-      "MENU_AREA": "Area"
+      "MENU_AREA": "Area",
+      "MENU_OUTLET": "Outlet"
     }
   },
   "CONFIG":{
@@ -85,6 +90,14 @@
       "EDIT_CODE": "Edit Area Code",
       "EDIT_NAME": "Edit Area Name",
       "EDIT_DESC": "Edit Area Describe"
+    },
+    "MENU_OUTLET":{
+      "OUTLET_NAME": "Outlet Name",
+      "MODIFY_PROPERTY": "Modify Property",
+      "AREA_NAME": "Area Name",
+      "PLACE_NAME": "Place Name",
+      "BRAND_NAME": "Brand Name"
+
     }
   }
 }

@@ -41,7 +41,7 @@ cBoard.controller('brandCtrl', function ($rootScope, $scope, $http, dataService,
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            url: '/brand/addBrand.do',
+            url: './brand/addBrand.do',
             data: JSON.stringify({
                 pBrandId: $scope.pId,
                 BrandCode: $scope.addBrand.Code,
@@ -72,7 +72,7 @@ cBoard.controller('brandCtrl', function ($rootScope, $scope, $http, dataService,
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            url: '/brand/updateBrand.do',
+            url: './brand/updateBrand.do',
             data: JSON.stringify({
                 pBrandId: $scope.curBrandpId,
                 BrandId: $scope.curBrandId,
@@ -103,7 +103,7 @@ cBoard.controller('brandCtrl', function ($rootScope, $scope, $http, dataService,
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            url: '/brand/deleteBrand.do',
+            url: './brand/deleteBrand.do',
             data: JSON.stringify({
                 BrandId: zNodesJSON
             })

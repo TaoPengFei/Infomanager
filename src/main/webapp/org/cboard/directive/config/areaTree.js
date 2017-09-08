@@ -74,7 +74,7 @@ cBoard.directive('area', ['$http', '$interval', '$filter', '$log', function ($ht
             var reloadAreaTree = function () {
                 $http({
                     method: 'get',
-                    url: '/area/getArea.do'
+                    url: './area/getArea.do'
                 }).success(function (response) {
                     let zNodes = [];
                     zNodes = _.map(response.data, function (obj, iteratee, context) {

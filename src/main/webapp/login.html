@@ -134,7 +134,7 @@
                 $("#btn-login").button('loading');
                 $.ajax({
                     type:"POST",
-                    url : '/user/login.do',
+                    url : './user/login.do',
 
                     dataType: "json",
                     async:false,
@@ -212,7 +212,7 @@
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder='验证码' name="captcha" id="captcha"/>
                         <!--<img id="verifyCodeImage" src="/kaptcha/getKaptchaImage.do" />-->
-                <img id="kaptchaImage" src="/kaptcha/getKaptchaImage.do" />
+                <img id="kaptchaImage" src="./kaptcha/getKaptchaImage.do" />
                 <a href="#" onclick="changeCode()"><!--换一张--></a>
             </div>
             <div class="row">

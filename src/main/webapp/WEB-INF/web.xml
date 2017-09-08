@@ -24,28 +24,27 @@
 	<session-config>
 		<session-timeout>0</session-timeout>
 	</session-config>
-	<!-- Spring和mybatis的配置文件
-		classpath:spring.xml,
-	-->
+	<!-- Spring和mybatis的配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring-mybatis.xml,classpath:spring-redis.xml,classpath*:application-shiro.xml,classpath:spring-mvc.xml</param-value>
+		<!-- ,classpath*:application-shiro.xml -->
+		<param-value>classpath:spring-mybatis.xml,classpath:spring-mvc.xml,classpath*:application-shiro.xml</param-value>
 	</context-param>
 	<!-- 编码过滤器 -->
 	<!-- Shiro Filter is defined in the spring application context: -->
-	<filter>
-		<filter-name>shiroFilter</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-		<init-param>
-			<param-name>targetFilterLifecycle</param-name>
-			<param-value>true</param-value>
-		</init-param>
-	</filter>
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
 
-	<filter-mapping>
-		<filter-name>shiroFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -59,6 +58,7 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>	
+	
 	<!-- 多语言过滤器 -->
 	<!-- <filter>  
         <filter-name>systemLanguageFilter</filter-name>  
@@ -76,13 +76,8 @@
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
-	<!-- Spring监听器
+	<!-- Spring监听器 -->
 	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	-->
-	<listener>
-		<description>spring listener</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<!-- 防止Spring内存溢出监听器 -->
@@ -96,7 +91,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring-mvc.xml</param-value>
+			<param-value>classpath*:spring-mvc.xml,classpath*:application-shiro.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<async-supported>true</async-supported>
@@ -106,7 +101,6 @@
 		<!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
 
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
@@ -153,4 +147,5 @@
 	<welcome-file-list>
 		<welcome-file>login.html</welcome-file>
 	</welcome-file-list>
+	
 </web-app>

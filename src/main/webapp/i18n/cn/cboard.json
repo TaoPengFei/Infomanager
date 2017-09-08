@@ -12,8 +12,12 @@
     "FAIL": "失败!"
   },
   "HEADER": {
-  "SIGN_OUT": "注销"
-},
+    "SIGN_OUT": "注销",
+    "CHANGE_PASSWORD": "更改密码",
+    "CURRENT_PASSWORD": "当前密码",
+    "NEW_PASSWORD": "新的密码",
+    "CONFIRM_PASSWORD": "确认密码"
+  },
   "SIDEBAR": {
     "MY_DASHBOARD": "我的仪表盘",
     "MY_REPORTER": "我的报表",
@@ -24,11 +28,12 @@
       "MENU_ROLE_MENU": "角色菜单维护",
       "MENU_ROLE_MENU_TREE": "角色菜单树",
       "MENU_BRAND": "品牌维护",
-      "MENU_AREA": "区域维护"
+      "MENU_AREA": "区域维护",
+      "MENU_OUTLET": "门店维护"
     }
   },
-  "CONFIG":{
-    "MENU_USER":{
+  "CONFIG": {
+    "MENU_USER": {
       "USER_NAME": "用户名",
       "USER_SEARCH": "---请输入---",
       "ADD_USER": "新增",
@@ -42,7 +47,7 @@
       "DESC": "描述",
       "SAVE": "保存"
     },
-    "MENU_ROLE":{
+    "MENU_ROLE": {
       "ROLE_NAME": "角色名称",
       "ROLE_SEARCH": "---请输入---",
       "ADD_ROLE": "新增",
@@ -54,7 +59,7 @@
       "DESC": "描述",
       "SAVE": "保存"
     },
-    "MENU_ROLE_MENU":{
+    "MENU_ROLE_MENU": {
       "USER_ROLE_NAME": "用户角色",
       "USER_ROLE_SEARCH": "--- 请输入 ---",
       "ROLE_WITHOUT_MENU": "角色未添加菜单",
@@ -62,7 +67,7 @@
       "ADD_USER_ROLE": "新增",
       "DELETE": "删除"
     },
-    "MENU_BRAND":{
+    "MENU_BRAND": {
       "BRAND_NAME": "品牌树",
       "BRAND_ADD": "添加子品牌",
       "BRAND_PARENT": "当前主品牌",
@@ -74,7 +79,7 @@
       "EDIT_NAME": "品牌名称",
       "EDIT_DESC": "品牌描述"
     },
-    "MENU_AREA":{
+    "MENU_AREA": {
       "AREA_NAME": "区域树",
       "AREA_ADD": "添加子区域",
       "AREA_PARENT": "当前主区域",
@@ -85,6 +90,13 @@
       "EDIT_CODE": "区域编码",
       "EDIT_NAME": "区域名称",
       "EDIT_DESC": "区域描述"
+    },
+    "MENU_OUTLET": {
+      "OUTLET_NAME": "门店名称",
+      "MODIFY_PROPERTY": "修改属性",
+      "AREA_NAME": "区域名称",
+      "PLACE_NAME": "商圈名称",
+      "BRAND_NAME": "品牌名称"
     }
   }
 }

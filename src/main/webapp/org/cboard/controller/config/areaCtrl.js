@@ -16,7 +16,7 @@ cBoard.controller('areaCtrl', function ($rootScope, $scope, $http, dataService, 
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            url: '/area/addArea.do',
+            url: './area/addArea.do',
             data: JSON.stringify({
                 pAreaId: $scope.pId,
                 AreaCode: $scope.addArea.Code,
@@ -46,7 +46,7 @@ cBoard.controller('areaCtrl', function ($rootScope, $scope, $http, dataService, 
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            url: '/area/updateArea.do',
+            url: './area/updateArea.do',
             data: JSON.stringify({
                 pAreaId: $scope.curAreapId,
                 AreaId: $scope.curAreaId,
@@ -77,7 +77,7 @@ cBoard.controller('areaCtrl', function ($rootScope, $scope, $http, dataService, 
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            url: '/area/deleteArea.do',
+            url: './area/deleteArea.do',
             data: JSON.stringify({
                 AreaId: zNodesJSON
             })
