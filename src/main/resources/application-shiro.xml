@@ -81,10 +81,10 @@
 	
 		<property name="filterChainDefinitions">
             <value>
-                /login.html = anon
+                <!--/login.html = anon
                 /role.html = roles[admin]
                 /user.html = roles[111]
-               /views/* = authc
+               /views/* = authc-->
             </value>
         </property>
 		<!-- Shiro权限过滤过滤器定义 -->

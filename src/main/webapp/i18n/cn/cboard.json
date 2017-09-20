@@ -29,7 +29,16 @@
       "MENU_ROLE_MENU_TREE": "角色菜单树",
       "MENU_BRAND": "品牌维护",
       "MENU_AREA": "区域维护",
-      "MENU_OUTLET": "门店维护"
+      "MENU_OUTLET": "门店维护",
+      "MENU_COMMUNICATION": "通讯报表",
+      "MENU_ITEMCATEGORY": "商品分类",
+      "MENU_ITEMDEPTMENT": "餐品部门",
+      "MENU_PLACE": "商圈",
+      "MENU_GUESTGRADETYPE": "顾客档次",
+      "MENU_GUESTNOTYPE": "人数档次",
+      "MENU_PROMOTION": "促销主题",
+      "MENU_PROMOTION_ITEM": "促销相关商品",
+      "MENU_DATE": "日历维护 "
     }
   },
   "CONFIG": {

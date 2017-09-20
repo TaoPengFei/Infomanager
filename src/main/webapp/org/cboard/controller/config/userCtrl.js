@@ -142,7 +142,6 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
 
     //增加用户
     $scope.addUser = function (current, $event) {
-        console.log("增加用户...");
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/addUser.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
@@ -157,37 +156,93 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
                 });
-                // console.log($uibModalInstance)
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    console.log("保存用户...");
+                    $http({
+                        method: 'POST',
+                        url: './user/addUser.do',
+                        data:{
+                            name: $scope.newUserName,
+                            role: $scope.newUserRole,
+                            password: $scope.newUserPwd,
+                            // oldRole:oldRole,
+                            desc: $scope.newUserDesc
+                        }
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -2) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getUserList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
+                    $uibModalInstance.close();
                 }
             }
         });
     };
 
     //删除用户
-    $scope.delUser = function (current, $event) {
-        console.log("删除用户...");
-    };
+   /* $scope.delUser = function (current, $event) {
+     console.log("删除用户...");
+     };*/
 
     //修改用户
     $scope.modifyUser = function (current, $event) {
         console.log("修改用户...");
+        console.log(current);
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/modifyUser.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
                 //getRoleList();
-                console.log($uibModalInstance)
+                console.log($uibModalInstance);
+                $http({
+                    method: 'get',
+                    url: './role/roleLoad.do'
+                }).success(function (response) {
+                    $scope.modifyUserRole = current.roleName;
+                    $scope.modifyUserName = current.userName;
+                    $scope.modifyUserDesc = current.description;
+                    $scope.roleList_2 = response;
+                }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                    ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                });
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    console.log("保存修改...");
+                    $http({
+                        method: 'POST',
+                        url: './user/updateUser.do',
+                        data:{
+                            name: $scope.modifyUserName,
+                            password: $scope.modifyUserPwd,
+                            role: $scope.modifyUserRole,
+                            oldRole: current.password,
+                            desc: $scope.modifyUserName/*,
+                            enabled:current.enabled*/
+                        }
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -2) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getUserList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
+                    $uibModalInstance.close();
                 }
             }
         });

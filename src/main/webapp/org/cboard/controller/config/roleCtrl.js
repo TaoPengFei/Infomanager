@@ -122,7 +122,7 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
             //console.log($scope.roleList.data.length);
             $scope.initPageSort(response);
         })
-    }
+    };
     getRolesList();
 
     //数据双向绑定+监听机制

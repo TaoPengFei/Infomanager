@@ -102,6 +102,7 @@ public class UserController {
     public Map<String, Object> addUser(User user) {
         Map<String, Object> result = new HashMap<String, Object>();
         try {
+
             int rowCount = userService.addUser(user);
             if (rowCount > 0) {
                 result.put("code", 1);
@@ -177,7 +178,7 @@ public class UserController {
             String password = user.getPassword();
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             // rememberme
-            token.setRememberMe(true);
+            //token.setRememberMe(true);
             try {
 
                 System.out.println("----> " + token.hashCode());

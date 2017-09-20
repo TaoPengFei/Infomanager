@@ -29,7 +29,16 @@
       "MENU_ROLE_MENU_TREE": "Role Menu Tree",
       "MENU_BRAND": "Brand",
       "MENU_AREA": "Area",
-      "MENU_OUTLET": "Outlet"
+      "MENU_OUTLET": "Outlet",
+      "MENU_COMMUNICATION": "Communication Report",
+      "MENU_ITEMCATEGORY": "Item Category",
+      "MENU_ITEMDEPTMENT": "Item Deptment",
+      "MENU_PLACE": "Place",
+      "MENU_GUESTGRADETYPE": "Guest Grade Type",
+      "MENU_GUESTNOTYPE": "Guest Number Type",
+      "MENU_PROMOTION": "Promotion",
+      "MENU_PROMOTION_ITEM": "Promotion Item",
+      "MENU_DATE": "Date "
     }
   },
   "CONFIG":{
