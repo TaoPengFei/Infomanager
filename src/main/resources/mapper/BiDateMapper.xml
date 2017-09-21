@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.BiDateDao"> 
+
+     <select id="getBiDate" resultType="Map">
+		select BIDateId,BIDate,YearNo,YearQuarter,Quarter,MonthNo,
+		MonthName,YearMonth,DayNo,DayOfWeek,DayOfWeekName,IsWeekEnd,
+		WeekInMonth,WeekInYear,WeekStartDate,WeekEndDate,HolidayId,
+		HolidayName,EventId,EventName,CreateTime,UpdateTime 
+		from bi.dim_bidate
+    </select>
+    
+    
+    
+    <update id="updateBiDate">
+	    update bi.dim_bidate
+	    <set>
+	    
+		    <if test="BIDate != null and BIDate !='' ">
+		        BIDate=#{BIDate},
+		    </if>
+	   
+		    <if test="YearNo != null and YearNo !='' ">
+		        YearNo=#{YearNo},
+		    </if>
+	    
+		    <if test="YearQuarter != null and YearQuarter !='' ">
+		        YearQuarter=#{YearQuarter},
+		    </if>
+		    
+		     <if test="Quarter != null and Quarter !='' ">
+		        Quarter=#{Quarter},
+		    </if>
+		   
+		     <if test="MonthNo != null and MonthNo !='' ">
+		        MonthNo=#{MonthNo},
+		    </if>
+		    
+		    <if test="MonthName != null and MonthName !='' ">
+		        MonthName=#{MonthName},
+		    </if>
+		    
+		    <if test="YearMonth != null and YearMonth !='' ">
+		        YearMonth=#{YearMonth},
+		    </if>
+		    
+		    <if test="DayNo != null and DayNo !='' ">
+		        DayNo=#{DayNo},
+		    </if>
+		    
+		    <if test="DayOfWeek != null and DayOfWeek !='' ">
+		        DayOfWeek=#{DayOfWeek},
+		    </if>
+		    
+		    <if test="DayOfWeekName != null and DayOfWeekName !='' ">
+		        DayOfWeekName=#{DayOfWeekName},
+		    </if>
+		    
+		    <if test="IsWeekEnd != null and IsWeekEnd !='' ">
+		        IsWeekEnd=#{IsWeekEnd},
+		    </if>
+		    
+		    <if test="WeekInMonth != null and WeekInMonth !='' ">
+		        WeekInMonth=#{WeekInMonth},
+		    </if>
+		    
+		    <if test="WeekInYear != null and WeekInYear !='' ">
+		        WeekInYear=#{WeekInYear},
+		    </if>
+		    
+		    <if test="WeekStartDate != null and WeekStartDate !='' ">
+		        WeekStartDate=#{WeekStartDate},
+		    </if>
+		    
+		    <if test="WeekEndDate != null and WeekEndDate !='' ">
+		        WeekEndDate=#{WeekEndDate},
+		    </if>
+		    
+		    <if test="HolidayId != null and HolidayId !='' ">
+		        HolidayId=#{HolidayId},
+		    </if>
+		    
+		    <if test="HolidayName != null and HolidayName !='' ">
+		        HolidayName=#{HolidayName},
+		    </if>
+		    
+		    <if test="EventId != null and EventId !='' ">
+		        EventId=#{EventId},
+		    </if>
+		    
+		    <if test="EventName != null and EventName !='' ">
+		        EventName=#{EventName},
+		    </if>
+		    
+		    
+		    UpdateTime=now()
+	    </set>
+	    where  BIDateId=#{BIDateId}
+	</update>
+    
+</mapper> 

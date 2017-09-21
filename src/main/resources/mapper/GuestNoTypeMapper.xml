@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.GuestNoTypeDao"> 
+
+     <select id="getGuestNoType" resultType="Map">
+		select GuestNoTypeId,GuestNoTypeName,GuestNoTypeDesc,
+		BottomGuestQty,TopGuestQty,Status,CreateTime,UpdateTime 
+		from bi.dim_guestnotype
+    </select>
+    
+    <select id="GuestNoTypeCount" resultType="Int">
+        select count(*) from bi.dim_guestnotype
+    </select>
+    
+     <insert id="addGuestNoType">
+		insert into bi.dim_guestnotype
+		(GuestNoTypeName,GuestNoTypeDesc,BottomGuestQty,
+		TopGuestQty,Status,CreateTime,updateTime) 
+		values
+		(#{GuestNoTypeName},#{GuestNoTypeDesc},#{BottomGuestQty},#{TopGuestQty},#{Status},now(),now())
+		</insert>
+     
+     <delete id="deleteGuestNoType">
+         delete from bi.dim_guestnotype  where GuestNoTypeId in
+          <foreach collection="GuestNoTypeId" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+    
+    <update id="updateGuestNoType">
+	    update bi.dim_guestnotype
+	    <set>
+	    
+		    <if test="GuestNoTypeName != null and GuestNoTypeName !='' ">
+		        GuestNoTypeName=#{GuestNoTypeName},
+		    </if>
+	   
+		    <if test="GuestNoTypeDesc != null and GuestNoTypeDesc !='' ">
+		        GuestNoTypeDesc=#{GuestNoTypeDesc},
+		    </if>
+	    
+		    <if test="BottomGuestQty != null and BottomGuestQty !='' ">
+		        BottomGuestQty=#{BottomGuestQty},
+		    </if>
+		    
+		     <if test="TopGuestQty != null and TopGuestQty !='' ">
+		        TopGuestQty=#{TopGuestQty},
+		    </if>
+		   
+		     <if test="Status != null and Status !='' ">
+		        Status=#{Status},
+		    </if>
+		    
+		    UpdateTime=now()
+	    </set>
+	    where  GuestNoTypeId=#{GuestNoTypeId}
+	</update>
+    
+</mapper> 

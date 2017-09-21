@@ -107,6 +107,19 @@
       "PLACE_NAME": "Place Name",
       "BRAND_NAME": "Brand Name"
 
-    }
+    },
+    "MENU_ITEMCATEGORY": {
+      "ITEMCATEGORY_SEARCH": "Search",
+      "ITEMCATEGORY_ADD": "Add",
+      "ITEMCATEGORY_EDIT": "Edit",
+      "ITEMCATEGORY_DEL": "Delete"
+    },
+    "MENU_ITEMDEPTMENT": {},
+    "MENU_PLACE": {},
+    "MENU_GUESTGRADETYPE": {},
+    "MENU_GUESTNOTYPE": {},
+    "MENU_PROMOTION": {},
+    "MENU_PROMOTION_ITEM": {},
+    "MENU_DATE": {}
   }
 }

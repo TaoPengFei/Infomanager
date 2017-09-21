@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.PlaceDao"> 
+
+     <select id="getPlace" resultType="Map">
+		select PlaceId,PlaceCode,PlaceName,PlaceDesc,
+		PlaceSeq,Status,CreateTime,UpdateTime 
+		from bi.dim_place
+    </select>
+    
+    <select id="placeCount" resultType="Int">
+        select count(*) from bi.dim_place
+    </select>
+    
+     <insert id="addPlace">
+		insert into bi.dim_place
+		(PlaceCode,PlaceName,PlaceDesc,
+		PlaceSeq,Status,CreateTime,updateTime) 
+		values
+		(#{PlaceCode},#{PlaceName},#{PlaceDesc},0,0,now(),now())
+		</insert>
+     
+     <delete id="deletePlace">
+         delete from bi.dim_place  where PlaceId in
+          <foreach collection="PlaceId" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+    
+    <update id="updatePlace">
+	    update bi.dim_place
+	    <set>
+	    
+		    <if test="PlaceCode != null and PlaceCode !='' ">
+		        PlaceCode=#{PlaceCode},
+		    </if>
+	   
+		    <if test="PlaceName != null and PlaceName !='' ">
+		        PlaceName=#{PlaceName},
+		    </if>
+	    
+		    <if test="PlaceDesc != null and PlaceDesc !='' ">
+		        PlaceDesc=#{PlaceDesc},
+		    </if>
+		    
+		     <if test="PlaceSeq != null and PlaceSeq !='' ">
+		        PlaceSeq=#{PlaceSeq},
+		    </if>
+		   
+		    
+		    UpdateTime=now()
+	    </set>
+	    where  PlaceId=#{PlaceId}
+	</update>
+    
+</mapper> 

@@ -106,6 +106,23 @@
       "AREA_NAME": "区域名称",
       "PLACE_NAME": "商圈名称",
       "BRAND_NAME": "品牌名称"
-    }
+    },
+    "MENU_ITEMCATEGORY": {
+
+    },
+    "MENU_ITEMDEPTMENT": {
+
+    },
+    "MENU_PLACE": {
+      "PLACE_SEARCH": "查询",
+      "PLACE_ADD": "新增",
+      "PLACE_EDIT": "修改",
+      "PLACE_DEL": "删除"
+    },
+    "MENU_GUESTGRADETYPE": {},
+    "MENU_GUESTNOTYPE": {},
+    "MENU_PROMOTION": {},
+    "MENU_PROMOTION_ITEM": {},
+    "MENU_DATE": {}
   }
 }

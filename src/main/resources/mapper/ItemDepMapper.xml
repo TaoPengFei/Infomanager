@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.ItemDepDao"> 
+
+ 	<resultMap type="ItemDeptment" id="itemDep"> 
+        <result property="ItemDeptCode" column="ITEMDEPCODE"/> 
+        <result property="ItemDeptName" column="ITEMDEPTNAME"/> 
+        <result property="ItemDeptShortName" column="ITEMDEPTSHORTNAME"/>
+        <result property="ItemDeptDesc" column="ITEMDEPTDESC"/> 
+        <result property="pItemDeptId" column="PITEMDEPID"/>
+        <result property="ItemDeptSeq" column="ITEMDEPSEQ"/>
+        <result property="Status" column="STATUS"/> 
+    </resultMap> 
+ 
+    
+     <select id="getItemDep" resultType="Map">
+        select ItemDeptId,ItemDeptCode,ItemDeptName,pItemDeptId,
+        ItemDeptSeq,Status,CreateTime,UpdateTime 
+        from bi.sy_itemdeptment
+    </select>
+    
+    <select id="itemDepCount" resultType="Int">
+        select count(*) from bi.sy_itemdeptment
+    </select>
+    
+     <insert id="addItemDep" parameterType="ItemDeptment">
+		insert into bi.sy_itemdeptment
+		(ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,ItemDeptSeq,`Status`,CreateTime,UpdateTime) 
+		values
+		(#{ItemDeptCode},#{ItemDeptName},0,0,0,#{ItemDeptSeq},0,now(),now())
+		</insert>
+     
+     <delete id="deleteItemDep">
+         delete from bi.sy_itemdeptment  where ItemDeptId in
+          <foreach collection="ItemDeptId" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+    
+    <update id="updateItemDep">
+	    update bi.sy_itemdeptment  
+	    <set>
+	    
+		    <if test="ItemDeptCode != null and ItemDeptCode !='' ">
+		        ItemDeptCode=#{ItemDeptCode},
+		    </if>
+	   
+		    <if test="ItemDeptName != null and ItemDeptName !='' ">
+		        ItemDeptName=#{ItemDeptName},
+		    </if>
+	    
+		    <if test="pItemDeptId != null and pItemDeptId !='' ">
+		        pItemDeptId=#{pItemDeptId},
+		    </if>
+		    UpdateTime=now()
+	    </set>
+	    where  ItemDeptId=#{ItemDeptId} and ItemDeptSeq=#{ItemDeptSeq}
+	</update>
+    
+</mapper> 

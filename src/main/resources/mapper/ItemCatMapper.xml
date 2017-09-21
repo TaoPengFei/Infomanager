@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.ItemCatDao"> 
+
+     <select id="getIemCat" resultType="Map">
+		select ItemCatId,ItemCatCode,ItemCatName,ItemCatShortName,
+		ItemCatDesc,pItemCatId,pItemCatId2,ItemCatSeq,Status,CreateTime,
+		updateTime
+		from bi.sy_itemcategory
+    </select>
+    
+    <select id="itemCatCount" resultType="Int">
+        select count(*) from bi.sy_itemcategory
+    </select>
+    
+     <insert id="addItemCat" parameterType="ItemDeptment">
+		insert into bi.sy_itemcategory
+		(ItemCatCode,ItemCatName,ItemCatShortName,
+		ItemCatDesc,pItemCatId,pItemCatId2,ItemCatSeq,Status,CreateTime,
+		updateTime) 
+		values
+		(#{ItemCatCode},#{ItemCatName},#{ItemCatShortName},0,0,0,#{ItemCatSeq},0,now(),now())
+		</insert>
+     
+     <delete id="deleteItemCat">
+         delete from bi.sy_itemcategory  where ItemCatId in
+          <foreach collection="ItemCatId" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+    
+    <update id="updateItemCat">
+	    update bi.sy_itemcategory
+	    <set>
+	    
+		    <if test="ItemCatCode != null and ItemCatCode !='' ">
+		        ItemCatCode=#{ItemCatCode},
+		    </if>
+	   
+		    <if test="ItemCatName != null and ItemCatName !='' ">
+		        ItemCatName=#{ItemCatName},
+		    </if>
+	    
+		    <if test="ItemCatShortName != null and ItemCatShortName !='' ">
+		        ItemCatShortName=#{ItemCatShortName},
+		    </if>
+		    
+		     <if test="ItemCatDesc != null and ItemCatDesc !='' ">
+		        ItemCatDesc=#{ItemCatDesc},
+		    </if>
+		    
+		     <if test="pItemCatId != null and pItemCatId !='' ">
+		        pItemCatId=#{pItemCatId},
+		    </if>
+		    
+		     <if test="pItemCatId2 != null and pItemCatId2 !='' ">
+		        pItemCatId2=#{pItemCatId2},
+		    </if>
+		    
+		    UpdateTime=now()
+	    </set>
+	    where  ItemCatId=#{ItemCatId} and ItemCatSeq=#{ItemCatSeq}
+	</update>
+    
+</mapper> 

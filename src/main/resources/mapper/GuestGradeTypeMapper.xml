@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="cn.shiyun.dao.GuestGradeTypeDao"> 
+
+     <select id="getGuestGradeType" resultType="Map">
+		select GuestGradeTypeId,GuestGradeTypeName,GuestGradeTypeDesc,
+		BottomAmt,TopAmt,Status,CreateTime,UpdateTime 
+		from bi.dim_guestgradetype
+    </select>
+    
+    <select id="GuestGradeTypeCount" resultType="Int">
+        select count(*) from bi.dim_guestgradetype
+    </select>
+    
+     <insert id="addGuestGradeType">
+		insert into bi.dim_guestgradetype
+		(GuestGradeTypeName,GuestGradeTypeDesc,BottomAmt,
+		TopAmt,Status,CreateTime,updateTime) 
+		values
+		(#{GuestGradeTypeName},#{GuestGradeTypeDesc},#{BottomAmt},#{TopAmt},#{Status},now(),now())
+		</insert>
+     
+     <delete id="deleteGuestGradeType">
+         delete from bi.dim_guestgradetype  where GuestGradeTypeId in
+          <foreach collection="GuestGradeTypeId" item="item" open="(" separator="," close=")">
+     	 	#{item}
+     	 </foreach>
+     </delete>
+    
+    <update id="updateGuestGradeType">
+	    update bi.dim_guestgradetype
+	    <set>
+	    
+		    <if test="GuestGradeTypeName != null and GuestGradeTypeName !='' ">
+		        GuestGradeTypeName=#{GuestGradeTypeName},
+		    </if>
+	   
+		    <if test="GuestGradeTypeDesc != null and GuestGradeTypeDesc !='' ">
+		        GuestGradeTypeDesc=#{GuestGradeTypeDesc},
+		    </if>
+	    
+		    <if test="BottomAmt != null and BottomAmt !='' ">
+		        BottomAmt=#{BottomAmt},
+		    </if>
+		    
+		     <if test="TopAmt != null and TopAmt !='' ">
+		        TopAmt=#{TopAmt},
+		    </if>
+		   
+		     <if test="Status != null and Status !='' ">
+		        Status=#{Status},
+		    </if>
+		    
+		    UpdateTime=now()
+	    </set>
+	    where  GuestGradeTypeId=#{GuestGradeTypeId}
+	</update>
+    
+</mapper> 
