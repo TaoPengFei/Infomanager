@@ -21,7 +21,7 @@ public class AreaController {
 	
 	@Resource
 	private AreaService areaService;
-	
+
 	@RequestMapping("area.do")
 	private String Area() {
 		return "area";
