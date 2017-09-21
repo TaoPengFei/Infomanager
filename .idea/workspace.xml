@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f60b685-810f-46f5-9b79-8ed9eca95c0b" name="Default" comment="test IDEA commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/rebel.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/test.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addPlace.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html" />
+    <list default="true" id="3f60b685-810f-46f5-9b79-8ed9eca95c0b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestNoType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addItemDeptment.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editDate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestNoType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editItemDeptment.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3" afterPath="$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BiDateController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BiDateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestGradeTypeController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestGradeTypeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestNoTypeController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestNoTypeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemCatController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemCatController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemDepController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemDepController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/PlaceController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/PlaceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/BrandDao.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/BrandDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/PlaceDao.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/PlaceDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/dateCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/dateCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestnotypeCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestnotypeCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/itemdeptmentCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/itemdeptmentCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/placeCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/placeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/date.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/date.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestnotype.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestnotype.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemdeptment.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemdeptment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addPlace.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addPlace.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/place.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/place.html" />
     </list>
     <ignored path="Infomanager.iws" />
@@ -66,57 +61,42 @@
     <favorites_list name="Infomanager" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="place.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/place.html">
+    <leaf>
+      <file leaf-file-name="editGuestGradeType.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="date.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/date.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="46" column="93" selection-start-line="46" selection-start-column="93" selection-end-line="46" selection-end-column="93" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#3518#3525#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="guestgradetype.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="36" column="88" selection-start-line="36" selection-start-column="88" selection-end-line="36" selection-end-column="88" />
+            <state relative-caret-position="200">
+              <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guestnotype.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestnotype.html">
+      <file leaf-file-name="editGuestNoType.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestNoType.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-125">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="200">
+              <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="itemdeptment.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemdeptment.html">
+      <file leaf-file-name="editItemDeptment.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editItemDeptment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-530">
-              <caret line="38" column="92" selection-start-line="38" selection-start-column="92" selection-end-line="38" selection-end-column="92" />
+            <state relative-caret-position="200">
+              <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editPlace.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -130,8 +110,8 @@
         <option value="Class" />
         <option value="Jsp File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="mybatis-generator-config" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -146,14 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editOutlet.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addUser.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/modifyUser.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/user.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/roleCtrl.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-shiro.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ShiroRealm.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemcategory.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/communicationCtrl.js" />
@@ -174,29 +146,37 @@
         <option value="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/PlaceControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/GuestNoTypeControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/AreaController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addPlace.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html" />
         <option value="$PROJECT_DIR$/src/main/resources/test.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/userCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/BrandDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/dao/PlaceDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestnotypeCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemDepController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/PlaceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemCatController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BiDateController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/dateCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/date.html" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestGradeTypeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestNoTypeController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/placeCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addItemDeptment.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/itemdeptmentCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemdeptment.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/place.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestnotype.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemdeptment.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/dateCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addPlace.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/placeCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestNoType.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestnotypeCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editDate.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestNoType.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editItemDeptment.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html" />
       </list>
     </option>
   </component>
@@ -282,9 +262,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -599,30 +576,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Infomanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Infomanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,22 +598,22 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\_Project_Images_" />
-      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\webapp\org\cboard\view\config\modal" />
-      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\webapp\org\cboard\controller\config" />
-      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\util" />
-      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.shiyun.cache" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\controller" />
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\service" />
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\resources\mapper" />
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\dao" />
       <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\test\java\cn\shiyun\controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.shiyun.cache" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\webapp\org\cboard\view\config\modal" />
+      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\_Project_Images_" />
+      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\webapp\org\cboard\controller\config" />
+      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\java\cn\shiyun\util" />
+      <recent name="D:\IntelliJ IDEA 2016.2.5\MyWorkSpace\Infomanager\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Infomanager">
@@ -1511,7 +1469,10 @@
       <workItem from="1505970720607" duration="874000" />
       <workItem from="1505971670786" duration="608000" />
       <workItem from="1505972350846" duration="816000" />
-      <workItem from="1505973961589" duration="13056000" />
+      <workItem from="1505973961589" duration="13205000" />
+      <workItem from="1505987929082" duration="521000" />
+      <workItem from="1505998109970" duration="623000" />
+      <workItem from="1506000206690" duration="4553000" />
     </task>
     <task id="LOCAL-00001" summary="add JUnitTest">
       <created>1500531112693</created>
@@ -1548,7 +1509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1505960645949</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="餐品部门、顾客档次、顾客人数、商圈和日期维护的查询功能完成...">
+      <created>1505987697746</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1505987697746</updated>
+    </task>
+    <task id="LOCAL-00007" summary="餐品部门、顾客档次、顾客人数、商圈和日期维护的查询功能完成...">
+      <created>1505988289959</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1505988289959</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1584,7 +1559,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="606866000" />
+    <option name="totallyTimeSpent" value="612712000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1600,11 +1575,11 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8206019" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6747685" sideWeight="0.44206008" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34530708" sideWeight="0.4956943" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5724218" sideWeight="0.28379828" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7141204" sideWeight="0.28969958" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49719417" sideWeight="0.69375" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7627315" sideWeight="0.73712444" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1617,12 +1592,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.49785408" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8206019" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4976852" sideWeight="0.7526824" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5127315" sideWeight="0.90396994" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6747685" sideWeight="0.5579399" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5127315" sideWeight="0.9002146" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25925925" sideWeight="0.73444206" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53997684" sideWeight="0.48497853" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35997853" sideWeight="0.7523148" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37070817" sideWeight="0.7523148" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42019027" sideWeight="0.24768518" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2805794" sideWeight="0.5185185" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2805794" sideWeight="0.5185185" order="5" side_tool="true" content_ui="tabs" />
@@ -1668,11 +1643,12 @@
     <MESSAGE value="Optimization of login page UI..." />
     <MESSAGE value="添加业务逻辑的单元测试代码..." />
     <MESSAGE value="test IDEA commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="test IDEA commit" />
+    <MESSAGE value="餐品部门、顾客档次、顾客人数、商圈和日期维护的查询功能完成..." />
+    <option name="LAST_COMMIT_MESSAGE" value="餐品部门、顾客档次、顾客人数、商圈和日期维护的查询功能完成..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="43" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1681,164 +1657,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/GuestGradeTypeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/GuestGradeTypeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BiDateControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/PlaceControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/GuestGradeTypeControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="61" column="27" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/GuestNoTypeControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/AreaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-525">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/AreaDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AreaMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <marker date="1503647395608" expanded="true" signature="252:333" ph="select AreaI... sy_area" />
-            <marker date="1503647395608" expanded="true" signature="405:436" ph="select count... sy_area" />
-            <marker date="1503647395608" expanded="true" signature="505:676" ph="insert into bi.sy_area... " />
-            <marker date="1503647395608" expanded="true" signature="1152:1580" ph="update bi.sy... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/PlaceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addPlace.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/brandCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1250">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/BrandDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/delRole.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1846,7 +1668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="54" column="75" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1854,7 +1675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1862,12 +1682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <marker date="1505876671371" expanded="true" signature="245:351" ph="select Place... dim_place" />
-            <marker date="1505876671371" expanded="true" signature="425:458" ph="select count... dim_place" />
-            <marker date="1505876671371" expanded="true" signature="508:676" ph="insert into bi.dim_place... " />
-            <marker date="1505876671371" expanded="true" signature="953:1491" ph="update bi.di... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1875,16 +1689,166 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/RoleMenuDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMenuMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EmpOutletMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/EmpOutletDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/PlaceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BiDateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemCatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestNoTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemDepController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestGradeTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/roleMenuTree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BiDateMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="215">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <marker date="1505901229848" expanded="true" signature="247:506" ph="select BIDat... dim_bidate" />
+            <marker date="1505901229848" expanded="true" signature="572:2757" ph="update bi.di... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/mybatis/mybatis/3.4.1/mybatis-3.4.1.jar!/org/apache/ibatis/cache/Cache.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/cache/RedisCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/cache/RedisCacheTransfer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/util/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/BrandDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <marker date="1503625936994" expanded="true" signature="768:856" ph="select Brand... sy_brand" />
+            <marker date="1503625936994" expanded="true" signature="936:968" ph="select count... sy_brand" />
+            <marker date="1503625936994" expanded="true" signature="1040:1221" ph="insert into bi.sy_brand... " />
+            <marker date="1503625936994" expanded="true" signature="1496:1941" ph="update bi.sy... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1893,87 +1857,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/RoleMenuDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMenuMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding>
-            <marker date="1501227115415" expanded="true" signature="432:662" ph="select am.au... authoritie_menus" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestnotypeCtrl.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        <state relative-caret-position="299">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EmpOutletMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/EmpOutletDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/PlaceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/userCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="24" />
-          <folding>
-            <element signature="e#2333#2379#0" expanded="false" />
-            <element signature="e#2426#2556#0" expanded="false" />
-            <element signature="e#3422#3755#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1981,140 +1875,214 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="36" column="43" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/userCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
           <folding>
-            <element signature="n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#button#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#button#1;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#button#2;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#935#2272#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/BiDateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemCatController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestNoTypeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemdeptment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/ItemDepController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/GuestGradeTypeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/placeCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/dateCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="99" column="42" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="42" />
-          <folding>
-            <element signature="e#250#1055#0" expanded="false" />
-            <element signature="e#1388#2695#0" expanded="false" />
-            <element signature="e#2756#2802#0" expanded="false" />
-            <element signature="e#2849#2903#0" expanded="false" />
-            <element signature="e#2946#3000#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/itemdeptmentCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-          <folding>
-            <element signature="e#266#719#0" expanded="false" />
-            <element signature="e#2420#2466#0" expanded="false" />
-            <element signature="e#2513#2567#0" expanded="false" />
-            <element signature="e#2610#2664#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/place.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/date.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="46" column="93" selection-start-line="46" selection-start-column="93" selection-end-line="46" selection-end-column="93" />
+        <state relative-caret-position="552">
+          <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#3518#3525#0" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addPlace.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="895">
+          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/place.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="40" column="66" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="66" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="36" column="88" selection-start-line="36" selection-start-column="88" selection-end-line="36" selection-end-column="88" />
+        <state relative-caret-position="75">
+          <caret line="11" column="102" selection-start-line="11" selection-start-column="85" selection-end-line="11" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addItemDeptment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="72" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestNoType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestnotype.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="-25">
+          <caret line="11" column="99" selection-start-line="11" selection-start-column="85" selection-end-line="11" selection-end-column="99" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemdeptment.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/dateCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-530">
-          <caret line="38" column="92" selection-start-line="38" selection-start-column="92" selection-end-line="38" selection-end-column="92" />
+        <state relative-caret-position="617">
+          <caret line="108" column="63" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="63" />
+          <folding>
+            <element signature="e#3872#4291#0" expanded="false" />
+            <element signature="e#4467#5592#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+          <folding>
+            <element signature="e#1515#1934#0" expanded="false" />
+            <element signature="e#2110#3235#0" expanded="false" />
+            <element signature="e#3676#4095#0" expanded="false" />
+            <element signature="e#4271#5396#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestnotypeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+          <folding>
+            <element signature="e#1488#1907#0" expanded="false" />
+            <element signature="e#2083#3208#0" expanded="false" />
+            <element signature="e#3643#4062#0" expanded="false" />
+            <element signature="e#4238#5363#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/itemdeptmentCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="161" column="46" selection-start-line="161" selection-start-column="46" selection-end-line="161" selection-end-column="46" />
+          <folding>
+            <element signature="e#1052#2359#0" expanded="false" />
+            <element signature="e#3562#3993#0" expanded="false" />
+            <element signature="e#4169#5377#0" expanded="false" />
+            <element signature="e#5829#6248#0" expanded="false" />
+            <element signature="e#6424#7549#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editOutlet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/placeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+          <folding>
+            <element signature="e#1410#1829#0" expanded="false" />
+            <element signature="e#2005#3130#0" expanded="false" />
+            <element signature="e#3280#5386#0" expanded="false" />
+            <element signature="e#3569#3988#0" expanded="false" />
+            <element signature="e#4164#5289#0" expanded="false" />
+            <element signature="e#5437#5445#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editDate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestNoType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editItemDeptment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editPlace.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
           <folding />
         </state>
       </provider>
