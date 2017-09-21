@@ -40,12 +40,12 @@ public class BiDateController {
 		
 		if(list != null & list.size()>0) {
 			 
-			restmap.put("date", list);
+			restmap.put("data", list);
 			restmap.put("code", 1);
 		}else {
 			 
 			restmap.put("code", 0);
-			restmap.put("date", "没有餐品部门");
+			restmap.put("data", "无数据!");
 		}
 		
 		

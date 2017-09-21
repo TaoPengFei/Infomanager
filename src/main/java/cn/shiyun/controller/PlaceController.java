@@ -39,12 +39,12 @@ public class PlaceController {
 		list = placeService.getPlace();
 		if(list != null & list.size()>0) {
 			restmap.put("count", count);
-			restmap.put("date", list);
+			restmap.put("data", list);
 			restmap.put("code", 1);
 		}else {
 			restmap.put("count", 0);
 			restmap.put("code", 0);
-			restmap.put("date", "没有餐品部门");
+			restmap.put("data", "无数据！");
 		}
 		
 		

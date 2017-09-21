@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="pull-right" style="margin-top: 10xp;">
-                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addUser()">{{'CONFIG.MENU_PLACE.PLACE_ADD'|translate}}</button>
+                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addItemDeptment()">{{'CONFIG.MENU_PLACE.PLACE_ADD'|translate}}</button>
                 <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">{{'CONFIG.MENU_USER.PRINT'|translate}}</button>-->
             </div>
         </div>
@@ -17,53 +17,36 @@
 
     <div class="row" style="margin-top: 10px; margin-bottom: 0px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-            <table id="listEmp" class="table table-bordered">
+            <table id="listPlace" class="table table-bordered">
                 <thead>
-                <tr>
-                    <!--<th>商圈编码</th>
-                    <th>商圈名称</th>
-                    <th>商圈描述</th>
-                    <th>商圈序列</th>
-                    <th>商圈状态</th>
-                    <th>创建时间</th>
-                    <th>更新时间</th>
-                    <th>操作</th>-->
-                    <!-- ng-click=" toggleSort($index)" -->
-                    <th ng-repeat="headerInfo in headerInfos track by $index " >{{ headerInfo.name }}</th>
-                </tr>
-                </tr>
+                    <tr>
+                        <th ng-repeat="headerInfo in itemDeptmentHeaderInfos track by $index " >{{ headerInfo.name }}</th>
+                    </tr>
                 </thead>
                 <tbody id="userTable">
-                <!--
-                <tr ng-repeat="row in userList.data" ng-init="outerIndex = $index"> | filter:userName -->
-                <tr ng-repeat="row in items " ng-init="outerIndex = $index">
-                    <!-- $index 用于获取循环的当前索引
-                    <td>{{ $index + 1 }}</td>
-                    ng-class="{true:‘zhende‘,false:‘jiade‘}[x.enabled]"
-                    -->
-                    <td ng-bind="outerIndex+1"></td>
-                    <td>{{ row.userName }}</td>
-                    <td>{{ row.roleName }}</td>
-                    <td>{{ row.description }}</td>
-                    <td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>
-                    <td>
-                        <button type="button" class="btn btn-info btn-xs" ng-click="modifyUser(row, $event)">
-                            <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_PLACE.PLACE_EDIT'|translate}}
-                        </button>
-                        <!--<button type="button" class="btn btn-success btn-xs"
-                                ng-class="{true:'trueClass',false:'falseClass'}[row.enabled]"
-                                ng-disabled="{{ row.enabled ? 'true' : 'false' }}"
-                                ng-click="enableUser(row, $event)">
-                            <span class="glyphicon glyphicon-ok-circle"></span>{{'CONFIG.MENU_ITEMCATEGORY.ENABLE_OK'|translate}}
-                        </button>-->
-                        <button type="button" class="btn btn-danger btn-xs"
-                                ng-class="{true:'falseClass',false:'trueClass'}[row.enabled]"
-                                ng-disabled="{{ row.enabled ? 'false' : 'true' }}"
-                                ng-click="enableUser(row, $event)">
-                            <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_PLACE.PLACE_DEL'|translate}}
-                        </button>
-                    </td>
-                </tr>
+                    <tr ng-repeat="row in items " ng-init="placeIndex = $index">
+                        <td>{{ row.ItemDeptCode }}</td>
+                        <td>{{ row.ItemDeptName }}</td>
+                        <td>{{ row.ItemDeptShortName }}</td>
+                        <td>{{ row.ItemDeptDesc }}</td>
+                        <td>{{ row.pItemDeptId }}</td>
+                        <td>{{ row.ItemDeptSeq }}</td>
+                        <td>{{ row.Status }}</td>
+                        <td>{{ row.CreateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
+                        <td>{{ row.UpdateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
+                        <!--<td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>-->
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" ng-click="editItemDeptment(row, $event)">
+                                <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_PLACE.PLACE_EDIT'|translate}}
+                            </button>
+                            <button type="button" class="btn btn-danger btn-xs"
+                                    ng-class="{true:'falseClass',false:'trueClass'}[row.enabled]"
+                                    ng-disabled="{{ row.enabled ? 'false' : 'true' }}"
+                                    ng-click="delItemDeptment(row, $event)">
+                                <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_PLACE.PLACE_DEL'|translate}}
+                            </button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -77,7 +60,6 @@
                     <ul class="pagination">
                         <li>
                             <a ng-click="Previous()" role="button">
-                                <!--<span role="button" >上一页</span>-->
                                 <span role="button">&laquo;</span>
                             </a>
                         </li>
@@ -86,7 +68,6 @@
                         </li>
                         <li>
                             <a ng-click="Next()" role="button">
-                                <!--<span role="button" >下一页</span>-->
                                 <span role="button" >&raquo;</span>
                             </a>
                         </li>
