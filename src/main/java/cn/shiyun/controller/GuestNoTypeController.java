@@ -99,7 +99,7 @@ public class GuestNoTypeController {
 	@ResponseBody
 	public Map<String, Object> deleteGuestNoType(@RequestBody Map<String, Object> param) {
 		Map<String, Object> result = new HashMap<String, Object>();
-		ArrayList array = (ArrayList) param.get("GuestNoTypeId");
+		/*ArrayList array = (ArrayList) param.get("GuestNoTypeId");
 
 		int ItemDeptId;
 
@@ -111,7 +111,7 @@ public class GuestNoTypeController {
 				return result;
 			}
 
-		}
+		}*/
 
 		int rowCount = guestNoTypeService.deleteGuestNoType(param);
 		if (rowCount > 0) {

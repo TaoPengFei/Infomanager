@@ -54,10 +54,10 @@ public class ItemDepController {
 	// 新增餐品部门
 	@RequestMapping("addItemDep.do")
 	@ResponseBody
-	public Map<String, Object> addItemDep(ItemDeptment itemDep) {
+	public Map<String, Object> addItemDep(@RequestBody Map<String, Object> param) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		try {
-			int rowCount = itemDepService.addItemDep(itemDep);
+			int rowCount = itemDepService.addItemDep(param);
 			if (rowCount > 0) {
 				result.put("code", 1);
 				result.put("msg", "操作成功");

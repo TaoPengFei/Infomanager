@@ -39,96 +39,108 @@ cBoard.controller('guestnotypeCtrl', function ($rootScope, $scope, $http, dataSe
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                 method: 'get',
-                 url: './role/roleLoad.do'
-                 }).success(function (response) {
-                 $scope.roleList_1 = response;
-                 console,log($scope.roleList_1);
-                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                 ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                 });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './guestnotype/addGuestNoType.do',
+                        data: JSON.stringify({
+                            GuestNoTypeName: $scope.newGuestNoTypeName,
+                            Status: $scope.newStatus,
+                            TopGuestQty: $scope.newTopGuestQty,
+                            BottomGuestQty: $scope.newBottomGuestQty,
+                            GuestNoTypeDesc: $scope.newGuestNoTypeDesc
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getGuestNoTypeList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }
         });
     }
 
-    $scope.editGuestNoType = function () {
+    $scope.editGuestNoType = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/editGuestNoType.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                 method: 'get',
-                 url: './role/roleLoad.do'
-                 }).success(function (response) {
-                 $scope.roleList_1 = response;
-                 console,log($scope.roleList_1);
-                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                 ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                 });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
+                $scope.editGuestNoTypeName = current.GuestNoTypeName;
+                $scope.editStatus = current.Status;
+                $scope.editTopGuestQty = current.TopGuestQty;
+                $scope.editBottomGuestQty = current.BottomGuestQty;
+                $scope.editGuestNoTypeDesc = current.GuestNoTypeDesc;
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './guestnotype/updateGuestNoType.do',
+                        data: JSON.stringify({
+                            GuestNoTypeId: current.GuestNoTypeId,
+                            GuestNoTypeName: $scope.editGuestNoTypeName,
+                            Status: $scope.editStatus,
+                            TopGuestQty: $scope.editTopGuestQty,
+                            BottomGuestQty: $scope.editBottomGuestQty,
+                            GuestNoTypeDesc: $scope.editGuestNoTypeDesc
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getGuestNoTypeList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }
         });
     }
 
-    $scope.delGuestNoType = function () {
-
+    $scope.delGuestNoType = function (current, $event) {
+        $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            url: './guestnotype/deleteGuestNoType.do',
+            data: JSON.stringify({
+                GuestNoTypeId: (function () {
+                    var delArr = [];
+                    delArr.push(current.GuestNoTypeId);
+                    return delArr;
+                })()
+            })
+        }).success(function (response) {
+            if (response.code === 0) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === 1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+            } else if (response.code === -1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+            getGuestNoTypeList();
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        });
     }
 
 });

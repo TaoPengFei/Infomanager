@@ -14,7 +14,7 @@ public interface ItemDepService {
 	int itemDepCount();
 
 	// 新增餐品部门
-	int addItemDep(ItemDeptment itemDep);
+	int addItemDep(Map<String, Object> param);
 
 	// 更新餐品部门
 	int updateItemDep(Map<String, Object> param);

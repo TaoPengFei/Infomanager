@@ -57,16 +57,14 @@ public class ItemDepControllerTest {
 		       
         JSONArray json = new JSONArray();
         JSONObject jo1 = new JSONObject();
-        ItemDeptment itemDep = new ItemDeptment();
-        itemDep.setItemDeptCode("1");
-        itemDep.setItemDeptName("中華");
-        
-       json.put(itemDep);
-        
-       
+
+		jo1.put("ItemDeptCode", "1");
+		jo1.put("ItemDeptName", "中華");
+
+
        
 //   这个就是前段需要传的json的array     [{"outletid":2,"username":"admin"},{"outletid":3,"username":"admin"}]
-        String requestjson = json.toString();
+        String requestjson = jo1.toString();
         System.out.println(requestjson);
         
 		
@@ -106,9 +104,9 @@ public class ItemDepControllerTest {
 		
 		
         JSONObject jo = new JSONObject();
-        jo.put("ItemDeptId", 31);
+        jo.put("ItemDeptId", 37);
         jo.put("ItemDeptSeq", 0);
-        jo.put("ItemDeptCode", "1");
+        jo.put("ItemDeptCode", "37");
         jo.put("ItemDeptName", "中華");
        
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}

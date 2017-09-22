@@ -114,12 +114,39 @@
       "ITEMCATEGORY_EDIT": "Edit",
       "ITEMCATEGORY_DEL": "Delete"
     },
-    "MENU_ITEMDEPTMENT": {},
-    "MENU_PLACE": {},
+    "MENU_ITEMDEPTMENT": {
+      "CODE": "Code",
+      "NAME": "Name",
+      "SHORT_NAME": "Short Name",
+      "DESC": "Describe",
+      "PID": "P_ID",
+      "SEQ": "Sequence",
+      "STATUS": "Status"
+    },
+    "MENU_PLACE": {
+      "PLACE_SEARCH": "Search",
+      "PLACE_ADD": "Add",
+      "PLACE_EDIT": "Edit",
+      "PLACE_DEL": "Delete",
+      "CODE": "Code",
+      "NAME": "Name",
+      "DESC": "Describe",
+      "SEQ": "Sequence",
+      "STATUS": "Status"
+    },
     "MENU_GUESTGRADETYPE": {},
-    "MENU_GUESTNOTYPE": {},
+    "MENU_GUESTNOTYPE": {
+      "NEW_GUEST_NO_TYPE_NAME": "Name",
+      "STATUS": "Status",
+      "NEW_TOP": "Top",
+      "NEW_BOTTOM": "Bottom",
+      "DESC": "Describe"
+    },
     "MENU_PROMOTION": {},
     "MENU_PROMOTION_ITEM": {},
-    "MENU_DATE": {}
+    "MENU_DATE": {
+      "NEW_HOLIDAY": "Holiday",
+      "NEW_EVENT": "Event"
+    }
   }
 }

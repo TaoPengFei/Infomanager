@@ -10,7 +10,7 @@ cBoard.controller('placeCtrl', function ($rootScope, $scope, $http, dataService,
         {'name': '编码', 'col': 'PlaceCode'},
         {'name': '名称', 'col': 'PlaceName'},
         {'name': '描述', 'col': 'PlaceDesc'},
-        {'name': '序列', 'col': 'PlaceSeq'},
+        {'name': '序号', 'col': 'PlaceSeq'},
         {'name': '状态', 'col': 'Status'},
         {'name': '创建时间', 'col': 'CreateTime'},
         {'name': '更新时间', 'col': 'UpdateTime'},
@@ -33,102 +33,109 @@ cBoard.controller('placeCtrl', function ($rootScope, $scope, $http, dataService,
     };
     getPlaceList();
     
-    $scope.addPlace = function () {
+    $scope.addPlace = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/addPlace.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                 method: 'get',
-                 url: './role/roleLoad.do'
-                 }).success(function (response) {
-                 $scope.roleList_1 = response;
-                 console,log($scope.roleList_1);
-                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                 ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                 });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './place/addPlace.do',
+                        data: JSON.stringify({
+                            PlaceCode: $scope.newPlaceCode,
+                            PlaceName: $scope.newPlaceName,
+                            PlaceDesc: $scope.newPlaceDesc,
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getPlaceList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }
         });
     };
 
-    $scope.editPlace = function (cuttent, $event) {
+    $scope.editPlace = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/editPlace.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                 method: 'get',
-                 url: './role/roleLoad.do'
-                 }).success(function (response) {
-                 $scope.roleList_1 = response;
-                 console,log($scope.roleList_1);
-                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                 ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                 });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
+                $scope.editPlaceCode = current.PlaceCode;
+                $scope.editPlaceName = current.PlaceName;
+                $scope.editPlaceDesc = current.PlaceDesc;
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './place/updatePlace.do',
+                        data: JSON.stringify({
+                            PlaceId: current.PlaceId,
+                            PlaceCode: $scope.editPlaceCode,
+                            PlaceName: $scope.editPlaceName,
+                            // PlaceSeq: $scope.editTopGuestQty,
+                            PlaceDesc: $scope.editPlaceDesc
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getPlaceList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }
         });
     }
 
-    $scope.delPlace = function (cuttent, $event) {
-
+    $scope.delPlace = function (current, $event) {
+        $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            url: './place/deletePlace.do',
+            data: JSON.stringify({
+                PlaceId: (function () {
+                    var delArr = [];
+                    delArr.push(current.PlaceId);
+                    return delArr;
+                })()
+            })
+        }).success(function (response) {
+            if (response.code === 0) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === 1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+            } else if (response.code === -1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+            getPlaceList();
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        });
     }
 
 });

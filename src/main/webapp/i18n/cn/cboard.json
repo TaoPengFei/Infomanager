@@ -111,18 +111,38 @@
 
     },
     "MENU_ITEMDEPTMENT": {
-
+      "CODE": "编码",
+      "NAME": "名称",
+      "SHORT_NAME": "简称",
+      "DESC": "描述",
+      "PID": "父部门ID",
+      "SEQ": "序列",
+      "STATUS": "状态"
     },
     "MENU_PLACE": {
       "PLACE_SEARCH": "查询",
       "PLACE_ADD": "新增",
       "PLACE_EDIT": "修改",
-      "PLACE_DEL": "删除"
+      "PLACE_DEL": "删除",
+      "CODE": "编码",
+      "NAME": "名称",
+      "DESC": "描述",
+      "SEQ": "序号",
+      "STATUS": "状态"
     },
     "MENU_GUESTGRADETYPE": {},
-    "MENU_GUESTNOTYPE": {},
+    "MENU_GUESTNOTYPE": {
+      "NEW_GUEST_NO_TYPE_NAME": "名称",
+      "STATUS": "状态",
+      "NEW_TOP": "上限",
+      "NEW_BOTTOM": "下限",
+      "DESC": "描述"
+    },
     "MENU_PROMOTION": {},
     "MENU_PROMOTION_ITEM": {},
-    "MENU_DATE": {}
+    "MENU_DATE": {
+      "NEW_HOLIDAY": "假期",
+      "NEW_EVENT": "事件"
+    }
   }
 }

@@ -102,41 +102,35 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                    method: 'get',
-                    url: './role/roleLoad.do'
-                }).success(function (response) {
-                    $scope.roleList_1 = response;
-                    console,log($scope.roleList_1);
-                }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                    ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    /*$http({
+                    $http({
                         method: 'POST',
-                        url: './user/addUser.do',
-                        data:{
-                            name: $scope.newUserName,
-                            role: $scope.newUserRole,
-                            password: $scope.newUserPwd,
-                            // oldRole:oldRole,
-                            desc: $scope.newUserDesc
-                        }
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './itemdeptment/addItemDep.do',
+                        data: JSON.stringify({
+                            ItemDeptCode: $scope.newItemDeptmentCode,
+                            ItemDeptName: $scope.newItemDeptmentName,
+                            ItemDeptShortName: $scope.newItemDeptmentShortName,
+                            pItemDeptId: $scope.newPID,
+                            ItemDeptSeq: $scope.newItemDeptmentSeq,
+                            Status: $scope.newItemDeptmentStatus,
+                            ItemDeptDesc: $scope.newItemDeptDesc,
+                        })
                     }).success(function (response) {
                         if (response.code === 0) {
                             ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
                         } else if (response.code === 1) {
                             ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                        } else if (response.code === -2) {
+                        } else if (response.code === -1) {
                             ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
                         }
-                        getUserList();
+                        getItemDeptmentList();
                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
                         ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                    });*/
+                    });
                     $uibModalInstance.close();
                 }
             }
@@ -149,41 +143,43 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                 method: 'get',
-                 url: './role/roleLoad.do'
-                 }).success(function (response) {
-                 $scope.roleList_1 = response;
-                 console,log($scope.roleList_1);
-                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                 ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                 });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
+                $scope.editItemDeptmentCode = current.ItemDeptCode;
+                $scope.editItemDeptmentName = current.ItemDeptName;
+                $scope.editItemDeptmentShortName = current.ItemDeptShortName;
+                $scope.editPID = current.pItemDeptId;
+                $scope.editItemDeptmentSeq = current.ItemDeptSeq;
+                $scope.editItemDeptmentStatus = current.Status;
+                $scope.editItemDeptDesc = current.ItemDeptDesc;
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './itemdeptment/updateItemDep.do',
+                        data: JSON.stringify({
+                            ItemDeptId: current.ItemDeptId,
+                            ItemDeptSeq: $scope.editItemDeptmentSeq,
+                            ItemDeptCode: $scope.editItemDeptmentCode,
+                            ItemDeptName: $scope.editItemDeptmentName,
+                            ItemDeptShortName: $scope.editItemDeptmentShortName,
+                            pItemDeptId: $scope.editPID,
+                            Status: $scope.editItemDeptmentStatus,
+                            ItemDeptDesc: $scope.editItemDeptDesc
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getItemDeptmentList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }
@@ -191,7 +187,29 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
     }
 
     $scope.delItemDeptment = function (current, $event) {
-
+        $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            url: './itemdeptment/deleteItemDep.do',
+            data: JSON.stringify({
+                ItemDeptId: (function () {
+                    var delArr = [];
+                    delArr.push(current.ItemDeptId);
+                    return delArr;
+                })()
+            })
+        }).success(function (response) {
+            if (response.code === 0) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === 1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+            } else if (response.code === -1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+            getItemDeptmentList();
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        });
     }
 
 });

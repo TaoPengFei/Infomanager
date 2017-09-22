@@ -32,8 +32,8 @@ public class ItemDepServiceImpl implements ItemDepService {
 
 	// 新增餐品部门
 	@Override
-	public int addItemDep(ItemDeptment itemDep) {
-		int i = itemDepDao.addItemDep(itemDep);
+	public int addItemDep(Map<String, Object> param) {
+		int i = itemDepDao.addItemDep(param);
 		return i;
 	}
 

@@ -33,102 +33,114 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
     };
     getGuestGradeTypeList();
     
-    $scope.addGuestGradeType = function () {
+    $scope.addGuestGradeType = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/addGuestGradeType.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                 method: 'get',
-                 url: './role/roleLoad.do'
-                 }).success(function (response) {
-                 $scope.roleList_1 = response;
-                 console,log($scope.roleList_1);
-                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                 ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                 });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './guestgradetype/addGuestGradeType.do',
+                        data: JSON.stringify({
+                            GuestGradeTypeName: $scope.newGuestGradeTypeName,
+                            Status: $scope.newStatus,
+                            TopAmt: $scope.newTopAmt,
+                            BottomAmt: $scope.newBottomAmt,
+                            GuestGradeTypeDesc: $scope.newGuestGradeTypeDesc
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getGuestGradeTypeList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }
         });
     }
 
-    $scope.editGuestGradeType = function () {
+    $scope.editGuestGradeType = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/editGuestGradeType.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
-                /*$http({
-                 method: 'get',
-                 url: './role/roleLoad.do'
-                 }).success(function (response) {
-                 $scope.roleList_1 = response;
-                 console,log($scope.roleList_1);
-                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                 ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                 });*/
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
+                $scope.editGuestGradeTypeName = current.GuestGradeTypeName;
+                $scope.editStatus = current.Status;
+                $scope.editTopAmt = current.TopAmt;
+                $scope.editBottomAmt = current.BottomAmt;
+                $scope.editGuestGradeTypeDesc = current.GuestGradeTypeDesc;
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './guestgradetype/updateGuestGradeType.do',
+                        data: JSON.stringify({
+                            GuestGradeTypeId: current.GuestGradeTypeId,
+                            GuestGradeTypeName: $scope.editGuestGradeTypeName,
+                            Status: $scope.editStatus,
+                            TopAmt: $scope.editTopAmt,
+                            BottomAmt: $scope.editBottomAmt,
+                            GuestGradeTypeDesc: $scope.editGuestGradeTypeDesc
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getGuestGradeTypeList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }
         });
     }
 
-    $scope.delGuestGradeType = function () {
-
+    $scope.delGuestGradeType = function (current, $event) {
+        $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            url: './guestgradetype/deleteGuestGradeType.do',
+            data: JSON.stringify({
+                GuestGradeTypeId: (function () {
+                    var delArr = [];
+                    delArr.push(current.GuestGradeTypeId);
+                    return delArr;
+                })()
+            })
+        }).success(function (response) {
+            if (response.code === 0) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === 1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+            } else if (response.code === -1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+            getGuestGradeTypeList();
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        });
     }
 
 });

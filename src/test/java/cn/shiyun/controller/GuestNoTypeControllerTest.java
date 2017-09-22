@@ -81,7 +81,7 @@ public class GuestNoTypeControllerTest {
 //		delete 需要传的参数和insert不一样，是 BrandSeq:1 pBrandId:[2,3] 这种json格式
 		
 		JSONArray json1 = new JSONArray();
-		json1.put(6);
+		json1.put(12);
         JSONObject jo = new JSONObject();
         jo.put("GuestNoTypeId", json1);
         

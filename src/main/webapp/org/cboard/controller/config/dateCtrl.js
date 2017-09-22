@@ -103,7 +103,7 @@ cBoard.controller('dateCtrl', function ($rootScope, $scope, $http, dataService, 
         });
     };
     getDateList();
-    
+
     $scope.editDate = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/editDate.html',
@@ -122,29 +122,30 @@ cBoard.controller('dateCtrl', function ($rootScope, $scope, $http, dataService, 
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
+                $scope.newHolidayName = current.HolidayName;
+                $scope.newEventName = current.EventName;
                 $scope.save = function () {
-                    /*$http({
-                     method: 'POST',
-                     url: './user/addUser.do',
-                     data:{
-                     name: $scope.newUserName,
-                     role: $scope.newUserRole,
-                     password: $scope.newUserPwd,
-                     // oldRole:oldRole,
-                     desc: $scope.newUserDesc
-                     }
-                     }).success(function (response) {
-                     if (response.code === 0) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     } else if (response.code === 1) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
-                     } else if (response.code === -2) {
-                     ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
-                     }
-                     getUserList();
-                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
-                     });*/
+                    $http({
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        url: './bidate/updateBiDate.do',
+                        data: JSON.stringify({
+                            BIDateId: current.BIDateId,
+                            HolidayName: $scope.newHolidayName,
+                            EventName: $scope.newEventName
+                        })
+                    }).success(function (response) {
+                        if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getDateList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    });
                     $uibModalInstance.close();
                 }
             }

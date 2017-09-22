@@ -14,18 +14,14 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
             <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_USER.USER_NAME'|translate}}</span>
-                <input type="text" class="form-control" id="newUserName" ng-model="newUserName">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.CODE'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentCode" ng-model="editItemDeptmentCode">
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
             <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_USER.USER_ROLE'|translate}}</span>
-                <select class="form-control" id="newRole" ng-model="newUserRole">
-                    <option value="">{{'CONFIG.MENU_USER.USER_SEARCH'|translate}}</option>  <!-- 直接用模型值第一个会为空，所以这里填充第一个 -->
-                    <option ng-repeat="x in roleList_1.data" value="{{x}}">{{x}}</option>
-                </select>
-
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.NAME'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentName" ng-model="editItemDeptmentName">
             </div>
         </div>
     </div>
@@ -39,14 +35,35 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
             <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_USER.NEW_PWD'|translate}}</span>
-                <input type="password" class="form-control" id="password" ng-model="newUserPwd">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SHORT_NAME'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentShortName" ng-model="editItemDeptmentShortName">
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
             <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_USER.CONFIRM_PWD'|translate}}</span>
-                <input type="password" class="form-control" id="confirmpwd" ng-model="confirmUserPwd">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.PID'|translate}}</span>
+                <input type="text" class="form-control" id="editPID" ng-model="editPID">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SEQ'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentSeq" ng-model="editItemDeptmentSeq">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.STATUS'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentStatus" ng-model="editItemDeptmentStatus">
             </div>
         </div>
     </div>
@@ -60,8 +77,8 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
             <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_USER.DESC'|translate}}</span>
-                <textarea class="form-control" rows="3" col="12" id="newDesc" placeholder="" ng-model="newUserDesc"></textarea>
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.DESC'|translate}}</span>
+                <textarea class="form-control" rows="3" col="12" id="editItemDeptDesc" placeholder="" ng-model="editItemDeptDesc"></textarea>
             </div>
         </div>
     </div>
