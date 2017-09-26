@@ -12,7 +12,7 @@
             <div class="col-lg-9 col-md-9 col-sm-6 col-xs-12 column">
                 <div class="pull-right" style="margin-top: 10xp;">
                     <button type="button" class="btn btn-primary" id='addRole' ng-click="addRole()">{{'CONFIG.MENU_ROLE.ADD_ROLE'|translate}}</button>
-                    <button type="button" class="btn btn-primary" id='delRole' ng-click="printRole()">{{'CONFIG.MENU_ROLE.PRINT'|translate}}</button>
+                    <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printRole()">{{'CONFIG.MENU_ROLE.PRINT'|translate}}</button>-->
                     <!--
                     <button type="button" class="btn btn-primary" id='delRole' ng-click="multipleDelRole()">删除</button>
                     <!--
@@ -29,9 +29,9 @@
             <table id="roleList" class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>
-                        <input type="checkbox" ng-model="selectAll"  ng-change="changeAll()" /><!--全选-->
-                    </th>
+                    <!--<th>
+                        <input type="checkbox" ng-model="selectAll"  ng-change="changeAll()" />&lt;!&ndash;全选&ndash;&gt;
+                    </th>-->
                     <th>序号</th>
                     <th>角色名称</th>
                     <th>角色描述</th>
@@ -42,7 +42,7 @@
                 <!--
                 <tr ng-repeat="row in roleList.data" ng-init="outerIndex = $index" ng-click="changeCurrents(row, $event)">  -->
                 <tr ng-repeat="row in items" ng-init="outerIndex = $index" ng-click="changeCurrents(row, $event)">
-                    <td><input type="checkbox" ng-model="row.checked" ng-click="changeCurrent(row, $event)" /></td>
+                    <!--<td><input type="checkbox" ng-model="row.checked" ng-click="changeCurrent(row, $event)" /></td>-->
                     <!-- $index 用于获取循环的当前索引
                     <td>{{ $index + 1 }}</td>-->
                     <td ng-bind="outerIndex+1"></td>
@@ -52,9 +52,9 @@
                         <button type="button" class="btn btn-info btn-xs" ng-click="editRole(row, $event)">
                             <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_ROLE.MODIFY'|translate}}
                         </button>
-                        <button type="button" class="btn btn-danger btn-xs" ng-click="singleDelRole(row, $event)">
+                        <!--<button type="button" class="btn btn-danger btn-xs" ng-click="singleDelRole(row, $event)">
                             <span class="glyphicon glyphicon-trash"></span>{{'CONFIG.MENU_ROLE.DELETE'|translate}}
-                        </button>
+                        </button>-->
                     </td>
                 </tr>
                 </tbody>
