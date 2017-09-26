@@ -104,10 +104,16 @@ public class ItemDepControllerTest {
 		
 		
         JSONObject jo = new JSONObject();
-        jo.put("ItemDeptId", 37);
-        jo.put("ItemDeptSeq", 0);
-        jo.put("ItemDeptCode", "37");
-        jo.put("ItemDeptName", "中華");
+		jo.put("ItemDeptId", 30);
+        jo.put("ItemDeptCode", 3);
+        jo.put("ItemDeptName", 3);
+        jo.put("ItemDeptShortName", "37");
+        jo.put("ItemDeptDesc", "中華");
+		jo.put("pItemDeptId", 3);
+		jo.put("ItemDeptSeq", 3);
+		jo.put("Status", 3);
+
+
        
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}
         String requestjson = jo.toString();
