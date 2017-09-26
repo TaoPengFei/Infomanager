@@ -22,8 +22,8 @@ cBoard.controller('dateCtrl', function ($rootScope, $scope, $http, dataService, 
         {'name': '当周结束日期', 'col': 'WeekEndDate'},
         {'name': '假期描述', 'col': 'HolidayName'},
         {'name': '事件描述', 'col': 'EventName'},
-        {'name': '创建时间', 'col': 'CreateTime'},
-        {'name': '更新时间', 'col': 'UpdateTime'},
+        /*{'name': '创建时间', 'col': 'CreateTime'},
+        {'name': '更新时间', 'col': 'UpdateTime'},*/
         {'name': '操作'}
     ];
 

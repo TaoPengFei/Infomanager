@@ -54,7 +54,10 @@
       "NEW_PWD": "New Password",
       "CONFIRM_PWD": "Confirm Password",
       "DESC": "Describe",
-      "SAVE": "Save"
+      "SAVE": "Save",
+      "NEW_PLACEHOLDER": "Please Enter Your Password",
+      "CONFIRM_PLACEHOLDER": "Please Enter Your Password Again",
+      "CONFIRM_USER_MSG": "* The Two Password Input Is Inconsistent!"
     },
     "MENU_ROLE":{
       "ROLE_NAME": "Role",
@@ -124,7 +127,7 @@
       "STATUS": "Status"
     },
     "MENU_PLACE": {
-      "PLACE_SEARCH": "Search",
+      "PLACE_SEARCH": "Search Name",
       "PLACE_ADD": "Add",
       "PLACE_EDIT": "Edit",
       "PLACE_DEL": "Delete",

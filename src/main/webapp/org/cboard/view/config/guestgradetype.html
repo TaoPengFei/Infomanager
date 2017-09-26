@@ -29,7 +29,8 @@
                     <td>{{ row.GuestGradeTypeDesc }}</td>
                     <td>{{ row.TopAmt }}</td>
                     <td>{{ row.BottomAmt }}</td>
-                    <td>{{ row.Status }}</td>
+                    <!--<td>{{ row.Status }}</td>-->
+                    <td>{{ (row.Status == "0") ? "启用" : "淘汰" }}</td>
                     <td>{{ row.CreateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
                     <td>{{ row.UpdateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
                     <!--<td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>-->
