@@ -15,4 +15,9 @@ public interface RoleService {
 
 	public int delRole(String roleName);
 
+	public List<Map<String, Object>> batchExportList(String userName);
+
+	//修改角色描述
+	public int updateRole(Role role);
+
 }

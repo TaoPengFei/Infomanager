@@ -16,7 +16,7 @@
 	</resultMap>
 
 
-	<select id="getUser" parameterType="User" resultType="User"	resultMap="user"> 
+	<!--<select id="getUser" parameterType="User" resultType="User"	resultMap="user">
             SELECT UserName,Password,Description from Users 
             <where>
                 <if test="enabled != null">
@@ -29,6 +29,18 @@
                     and Password=#{password}
                 </if>
                 </where>
+	</select>-->
+
+
+	<select id="getUser" parameterType="User" resultType="User"	resultMap="user">
+		SELECT UserName,Password,Description from Users
+		<where>
+
+			<if test="name != null and name != ''">
+				and UserName=#{name}
+			</if>
+
+		</where>
 	</select>
 
 	<select id="getUserByUserName" parameterType="String" resultType="User"	resultMap="user">
@@ -81,7 +93,7 @@
 		    <if test="desc != null and desc!='' ">
 		        description=#{desc},
 		    </if>
-		    <if test="enabled != null">
+		    <if test="enabled != null and enabled !='' ">
 		        enabled=#{enabled}
 		    </if>
 	    </set>
@@ -89,9 +101,14 @@
 	    
 	</update>
 	
-	<update id="updateUserRole" parameterType="User">
+	<!--<update id="updateUserRole" parameterType="User">
 	    update granted_authorities set authority=#{role} 
 	    where  username=#{name} and authority=#{oldRole}
+	</update>-->
+
+	<update id="updateUserRole" parameterType="User">
+		update granted_authorities set authority=#{role}
+		where  username=#{name}
 	</update>
 	
 	<update id="changePassword" parameterType="Password">

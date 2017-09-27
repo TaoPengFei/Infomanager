@@ -112,14 +112,11 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
     var getRolesList = function () {
         $http({
             method: 'get',
-            url: '/role/getRoles.do',
+            url: './role/getRoles.do',
             params: {
                 roleName: $scope.roleName
             }
         }).success(function (response) {
-            //$scope.roleList = response;
-            //console.log("roleList:");
-            //console.log($scope.roleList.data.length);
             $scope.initPageSort(response);
         })
     };
@@ -148,22 +145,6 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
         });
     })
 
-    //查询
-    /*
-     $scope.queryRole = function () {
-     $http({
-     method:'post',
-     url:'/role/getRoles.do',
-     params :{
-     roleName:$scope.roleName
-     }
-     }).success(function (response) {
-     $scope.roleList = response;
-     //console.log($scope.roleList.data);
-     })
-     }
-     */
-
     //新增
     $scope.addRole = function () {
         $uibModal.open({
@@ -174,7 +155,6 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
                 $scope.close = function () {
                     $uibModalInstance.close();
                 };
-                $uibModalInstance
                 $scope.save = function () {
                     $http({
                         method: 'post',
@@ -203,13 +183,45 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
 
     //编辑
     $scope.editRole = function (current, $event) {
-        console.log("editRole...");
-        //TODO
+        $uibModal.open({
+            templateUrl: 'org/cboard/view/config/modal/editRole.html',
+            //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
+            backdrop: false,
+            controller: function ($scope, $uibModalInstance) {
+                $scope.close = function () {
+                    $uibModalInstance.close();
+                };
+                $scope.editRoleName = current.roleName;
+                $scope.editRoleDesc = current.roleDesc;
+                $scope.save = function () {
+                    $http({
+                        method: 'post',
+                        url: './role/updateRole.do',
+                        data: {
+                            roleName: current.roleName,
+                            roleDesc: $scope.editRoleDesc
+                        }
+                    }).success(function (response) {
+                        if (response.code === 1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                        } else if (response.code === 0) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        } else if (response.code === -1) {
+                            ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+                        }
+                        getRolesList();
+                    }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                        ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+                    })
+                    $uibModalInstance.close();
+                }
+            }
+        });
         $event.stopPropagation();//阻止冒泡
     }
 
     //单个删除
-    $scope.singleDelRole = function (current, $event) {
+    /*$scope.singleDelRole = function (current, $event) {
         $http({
             method: 'post',
             url: '/role/delRole.do',
@@ -229,17 +241,17 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
             ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
         })
         $event.stopPropagation();//阻止冒泡
-    }
+    }*/
 
     //多选删除
-    $scope.multipleDelRole = function () {
+    /*$scope.multipleDelRole = function () {
         console.log("multipleDelRole...");
         //TODO.....
-    }
+    }*/
 
 
     //选择单个（取消选择单个)
-    $scope.changeCurrent = function (current, $event) {
+    /*$scope.changeCurrent = function (current, $event) {
         //计算已选数量 true加， false减
         $scope.count += current.checked ? 1 : -1;
         //判断是否全选，选数量等于数据长度为true
@@ -252,20 +264,20 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
             }
         });
         $event.stopPropagation();//阻止冒泡
-    };
+    };*/
 
     //单击行选中
-    $scope.changeCurrents = function (current, $event) {
+    /*$scope.changeCurrents = function (current, $event) {
         if (current.checked == undefined) {
             current.checked = true;
         } else {
             current.checked = !current.checked;
         }
         $scope.changeCurrent(current, $event);
-    };
+    };*/
 
     //全选（取消全选）
-    $scope.changeAll = function () {
+    /*$scope.changeAll = function () {
         //console.log(scope.selectAll);
         angular.forEach($scope.roleList.data, function (item) {
             item.checked = $scope.selectAll;
@@ -276,7 +288,7 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
         } else {
             $scope.selectData = [];
         }
-    };
+    };*/
 
 
 });

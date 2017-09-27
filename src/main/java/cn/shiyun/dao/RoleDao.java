@@ -19,4 +19,11 @@ public interface RoleDao {
 
 	public int delRole(String roleName);
 
+	public List<Map<String, Object>> batchExportList(String userName);
+
+	public Role getRole(Role role);
+
+	//修改角色描述
+	public int updateRole(Role role);
+
 }

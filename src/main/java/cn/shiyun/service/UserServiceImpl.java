@@ -47,17 +47,15 @@ public class UserServiceImpl implements UserService{
 	@Override
 	@Transactional
 	public int updateUser(User user) {
-		/*if(user.getOldRole()!=null && user.getOldRole() !=""
+		if(user.getOldRole()!=null && user.getOldRole() !=""
 				&& user.getRole() != null && user.getRole() !=""
 				&& !user.getRole().equals(user.getOldRole())){
 			List<Map<String, Object>>  userRoles = userDao.getUserRole(user);
-			if(userRoles != null && userRoles.size() > 0){
-				return -2;
-			}else{*/
-				userDao.updateUserRole(user);
-			/*}
-			
-		}*/
+
+				int a = userDao.updateUserRole(user);
+		System.out.println("==========================================="+a);
+
+		}
 		return userDao.updateUsers(user);
 	}
 

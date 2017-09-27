@@ -27,7 +27,7 @@
         
     </select>
     	
-    <select id="getRole" parameterType="Role" resultType="Map">
+    <select id="getRole" parameterType="Role" resultType="Role">
     	select authority,description from authorities where authority =#{roleName}
     </select>
     
@@ -52,7 +52,7 @@
     </select>
     
     
-     <update id="updatePlace" parameterType="Role">
+     <update id="updateRole" parameterType="Role">
 	    update authorities
 	   set description=#{roleDesc}
 	    where  authority=#{roleName}
