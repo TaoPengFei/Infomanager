@@ -2,12 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 
-<mapper namespace="cn.shiyun.dao.RoleDao">
-
-    <!--  启用Redis二级缓存机制 -->
-    <!--
-    <cache type="cn.shiyun.cache.RedisCache" />
-    -->
+<mapper namespace="cn.shiyun.dao.RoleDao"> 
+<!-- <cache type="cn.shiyun.utils.RedisCache"/> -->
+ 
     <resultMap type="Role" id="role"> 
         <result property="roleName" column="AUTHORITY"/> 
         <result property="roleDesc" column="DESCRIPTION"/> 
@@ -29,6 +26,10 @@
         	</where>
         
     </select>
+    	
+    <select id="getRole" parameterType="Role" resultType="Map">
+    	select authority,description from authorities where authority =#{roleName}
+    </select>
     
      <insert id="addRole" parameterType="Role">
          insert into authorities(authority,description) values(#{roleName},#{roleDesc})
@@ -39,5 +40,23 @@
              delete from authorities where authority=#{_parameter}
          </if>
      </delete>
+     
+      <select id="batchExportList" parameterType="String" resultType="Map">
+        	select authority roleName,description roleDesc from authorities
+        	<where>
+        	    <if test="_parameter != null and _parameter !=''">
+        	        authority like '%${_parameter}%'
+        	    </if>
+        	</where>
+        
+    </select>
+    
+    
+     <update id="updatePlace" parameterType="Role">
+	    update authorities
+	   set description=#{roleDesc}
+	    where  authority=#{roleName}
+	</update>
+    
     
 </mapper> 
