@@ -79,7 +79,7 @@ public class PlaceControllerTest {
 //		delete 需要传的参数和insert不一样，是 BrandSeq:1 pBrandId:[2,3] 这种json格式
 		
 		JSONArray json1 = new JSONArray();
-		json1.put(5);
+		json1.put(6);
         JSONObject jo = new JSONObject();
         jo.put("PlaceId", json1);
         
@@ -102,10 +102,11 @@ public class PlaceControllerTest {
 		
 		
         JSONObject jo = new JSONObject();
-        jo.put("PlaceId", 5);
+        jo.put("PlaceId", 4);
         jo.put("PlaceCode", "中華");
         jo.put("PlaceName", "中華");
         jo.put("PlaceDesc", "中華");
+		jo.put("Status", true);
        
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}
         String requestjson = jo.toString();

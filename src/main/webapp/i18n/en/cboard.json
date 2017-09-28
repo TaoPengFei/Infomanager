@@ -135,7 +135,10 @@
       "NAME": "Name",
       "DESC": "Describe",
       "SEQ": "Sequence",
-      "STATUS": "Status"
+      "STATUS": "Status",
+      "LENGTH_CHECK_10": "* Length not exceeding 10!",
+      "LENGTH_CHECK_18": "* Length not exceeding 18!",
+      "CHARSET_CHECK": "* Cannot be Chinese characters!"
     },
     "MENU_GUESTGRADETYPE": {},
     "MENU_GUESTNOTYPE": {

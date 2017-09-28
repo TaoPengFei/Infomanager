@@ -93,6 +93,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
                 userName: $scope.userName
             }
         }).success(function (response) {
+            console.log(response);
             //$scope.userList = response;
             $scope.initPageSort(response);
             /*

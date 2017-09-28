@@ -18,108 +18,131 @@ import cn.shiyun.service.PlaceService;
 @Controller
 @RequestMapping("/place/")
 public class PlaceController {
-	
-	@Resource
-	private PlaceService placeService;
-	
-	@RequestMapping("place.do")
-	public String itemdeptment() {
-		
-		return "place";
-	}
 
-	//查询商圈
-	@RequestMapping("getPlace.do")
-	@ResponseBody
-	public Map<String, Object> getPlace(){
-		Map<String,Object> restmap = new HashMap<String,Object>();
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-		
-		int count = placeService.placeCount();
-		list = placeService.getPlace();
-		if(list != null & list.size()>0) {
-			restmap.put("count", count);
-			restmap.put("data", list);
-			restmap.put("code", 1);
-		}else {
-			restmap.put("count", 0);
-			restmap.put("code", 0);
-			restmap.put("data", "无数据！");
-		}
-		
-		
-		return restmap;
-	}
-	
-	// 新增商圈
-	@RequestMapping("addPlace.do")
-	@ResponseBody
-	public Map<String, Object> addPlace(@RequestBody Map<String, Object> param) {
-		Map<String, Object> result = new HashMap<String, Object>();
-		try {
-			int rowCount = placeService.addPlace(param);
-			if (rowCount > 0) {
-				result.put("code", 1);
-				result.put("msg", "操作成功");
-			} else {
-				result.put("code", 0);
-				result.put("msg", "操作失败");
-			}
-		} catch (Exception e) {
-			result.put("code", -1);
-			result.put("msg", e.getMessage());
-		}
-		return result;
-	}
-	
-	// 更新商圈
-	@RequestMapping("updatePlace.do")
-	@ResponseBody
-	public Map<String, Object> updatePlace(@RequestBody Map<String, Object> param) {
-		Map<String, Object> result = new HashMap<String, Object>();
-		try {
-			int rowCount = placeService.updatePlace(param);
-			if (rowCount > 0) {
-				result.put("code", 1);
-				result.put("msg", "操作成功");
-			} else {
-				result.put("code", 0);
-				result.put("msg", "操作失败");
-			}
-		} catch (Exception e) {
-			result.put("code", -1);
-			result.put("msg", e.getMessage());
-		}
-		return result;
-	}
-	
-	// 删除商圈
-	@RequestMapping("deletePlace.do")
-	@ResponseBody
-	public Map<String, Object> deletePlace(@RequestBody Map<String, Object> param) {
-		Map<String, Object> result = new HashMap<String, Object>();
-		ArrayList array = (ArrayList) param.get("PlaceId");
+    @Resource
+    private PlaceService placeService;
 
-		int ItemDeptId;
+    @RequestMapping("place.do")
+    public String itemdeptment() {
 
-		for (int i = 0; i < array.size(); i++) {
-			ItemDeptId = (int) array.get(i);
-			if (ItemDeptId == 0) {
-				result.put("code", 0);
-				result.put("msg", "删除失败");
-				return result;
-			}
+        return "place";
+    }
 
-		}
+    //查询商圈
+    @RequestMapping("getPlace.do")
+    @ResponseBody
+    public Map<String, Object> getPlace() {
+        Map<String, Object> restmap = new HashMap<String, Object>();
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-		int rowCount = placeService.deletePlace(param);
-		if (rowCount > 0) {
-			result.put("code", 1);
-			result.put("msg", "删除成功");
-		} else {
-			result.put("code", 0);
-			result.put("msg", "删除失败");
-		}
-		return result;
-	}
+        int count = placeService.placeCount();
+        list = placeService.getPlace();
+        if (list != null & list.size() > 0) {
+            restmap.put("count", count);
+            restmap.put("data", list);
+            restmap.put("code", 1);
+        } else {
+            restmap.put("count", 0);
+            restmap.put("code", 0);
+            restmap.put("data", "无数据！");
+        }
+
+
+        return restmap;
+    }
+
+    // 新增商圈
+    @RequestMapping("addPlace.do")
+    @ResponseBody
+    public Map<String, Object> addPlace(@RequestBody Map<String, Object> param) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        try {
+            int rowCount = placeService.addPlace(param);
+            if (rowCount > 0) {
+                result.put("code", 1);
+                result.put("msg", "操作成功");
+            } else {
+                result.put("code", 0);
+                result.put("msg", "操作失败");
+            }
+        } catch (Exception e) {
+            result.put("code", -1);
+            result.put("msg", e.getMessage());
+        }
+        return result;
+    }
+
+    // 更新商圈
+    @RequestMapping("updatePlace.do")
+    @ResponseBody
+    public Map<String, Object> updatePlace(@RequestBody Map<String, Object> param) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        System.out.println("已经调用到update方法" );
+        String Statu = null;
+        int s = 0;
+        try {
+            if (param.get("Status") != null) {
+                Statu = param.get("Status").toString();
+                if (Statu == "true") {
+                    s = 0;
+                    param.put("Status", s);
+                } else if (Statu == "false") {
+                    s = 100;
+                    param.put("Status", s);
+                }
+                int rowCount = placeService.updatePlace(param);
+                if (rowCount > 0) {
+                    result.put("code", 1);
+                    result.put("msg", "操作成功");
+                } else {
+                    result.put("code", 0);
+                    result.put("msg", "操作失败");
+                }
+            } else {
+                int rowCount = placeService.updatePlace(param);
+                if (rowCount > 0) {
+                    result.put("code", 1);
+                    result.put("msg", "操作成功");
+                } else {
+                    result.put("code", 0);
+                    result.put("msg", "操作失败");
+                }
+            }
+        } catch (Exception e) {
+            result.put("code", -1);
+            result.put("msg", e.getMessage());
+        }
+
+        return result;
+    }
+
+    // 删除商圈
+    @RequestMapping("deletePlace.do")
+    @ResponseBody
+    public Map<String, Object> deletePlace(@RequestBody Map<String, Object> param) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        ArrayList array = (ArrayList) param.get("PlaceId");
+
+        int ItemDeptId;
+
+        for (int i = 0; i < array.size(); i++) {
+            ItemDeptId = (int) array.get(i);
+            if (ItemDeptId == 0) {
+                result.put("code", 0);
+                result.put("msg", "删除失败");
+                return result;
+            }
+
+        }
+
+        int rowCount = placeService.deletePlace(param);
+        if (rowCount > 0) {
+            result.put("code", 1);
+            result.put("msg", "删除成功");
+        } else {
+            result.put("code", 0);
+            result.put("msg", "删除失败");
+        }
+        return result;
+    }
 }

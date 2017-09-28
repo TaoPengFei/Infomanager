@@ -32,6 +32,21 @@ cBoard.controller('placeCtrl', function ($rootScope, $scope, $http, dataService,
         });
     };
     getPlaceList();
+
+    $scope.$watch("placeName", function () {
+        $http({
+            method: 'post',
+            url: './place/getPlace.do',
+            data: {
+                PlaceName: $scope.placeName
+            }
+        }).success(function (response) {
+            $scope.placeList = response;
+            // $scope.initPageSort($scope.userList);
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        })
+    })
     
     $scope.addPlace = function (current, $event) {
         $uibModal.open({
@@ -136,6 +151,47 @@ cBoard.controller('placeCtrl', function ($rootScope, $scope, $http, dataService,
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
             ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
         });
+    }
+
+    $scope.enablePlace = function (current, $event) {
+        console.log(current.Status);
+        // console.log(
+            /*function () {
+                if(current.PlaceId = "false"){
+                    return true;
+                }else if(current.PlaceId = "true"{
+                    return false;
+                }
+            }*/
+        // );
+        $http({
+            method: 'post',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            url: './place/updatePlace.do',
+            /*data: {
+                PlaceId: current.PlaceId,
+                Status: !current.Status
+            }*/
+            data: JSON.stringify({
+                PlaceId: current.PlaceId,
+                Status: !eval(current.Status)
+                // Status: true
+            })
+        }).success(function (response) {
+            if (response.code === 1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+            } else if (response.code === 0) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === -1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === -2) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+            getPlaceList();
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        });
+        $event.stopPropagation();//阻止冒泡
     }
 
 });

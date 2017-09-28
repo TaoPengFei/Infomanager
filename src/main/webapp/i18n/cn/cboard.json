@@ -67,7 +67,7 @@
       "MODIFY": "修改",
       "DELETE": "删除",
       "ROLE_PLACEHOLDER": "请确定输入的角色名称是否已经存在!",
-      "IF_ROLE": "提示：角色已存在！",
+      "IF_ROLE": "* 角色已存在！",
       "DESC": "描述",
       "SAVE": "保存"
     },
@@ -131,7 +131,10 @@
       "NAME": "名称",
       "DESC": "描述",
       "SEQ": "序号",
-      "STATUS": "状态"
+      "STATUS": "状态",
+      "LENGTH_CHECK_10": "* 长度不超过10",
+      "LENGTH_CHECK_18": "* 长度不超过18",
+      "CHARSET_CHECK": "* 不能为汉字"
     },
     "MENU_GUESTGRADETYPE": {},
     "MENU_GUESTNOTYPE": {

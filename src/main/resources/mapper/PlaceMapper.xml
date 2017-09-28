@@ -6,9 +6,21 @@
 
      <select id="getPlace" resultType="Map">
 		select PlaceId,PlaceCode,PlaceName,PlaceDesc,
-		PlaceSeq,Status,CreateTime,UpdateTime 
+		PlaceSeq,
+         case when Status = 0 then 'true'
+              when Status = 100 then 'false' end as Status,
+         CreateTime,UpdateTime
 		from bi.dim_place
-    </select>
+         <where>
+             <if test="PlaceName != null and PlaceName !=''">
+				 PlaceName = #{PlaceName}
+             </if>
+             <if test="Status != null and Status !=''">
+                 Status = #{Status}
+             </if>
+         </where>
+
+     </select>
     
     <select id="placeCount" resultType="Int">
         select count(*) from bi.dim_place
@@ -16,10 +28,9 @@
     
      <insert id="addPlace">
 		insert into bi.dim_place
-		(PlaceCode,PlaceName,PlaceDesc,
+		(PlaceId,PlaceCode,PlaceName,PlaceDesc,
 		PlaceSeq,Status,CreateTime,updateTime) 
-		values
-		(#{PlaceCode},#{PlaceName},#{PlaceDesc},0,0,now(),now())
+		(select MAX(PlaceId)+1,#{PlaceCode},#{PlaceName},#{PlaceDesc},0,0,now(),now() from bi.dim_place)
 		</insert>
      
      <delete id="deletePlace">
@@ -48,6 +59,10 @@
 		     <if test="PlaceSeq != null and PlaceSeq !='' ">
 		        PlaceSeq=#{PlaceSeq},
 		    </if>
+
+            <if test="Status != null  ">
+                Status=#{Status},
+            </if>
 		   
 		    
 		    UpdateTime=now()
