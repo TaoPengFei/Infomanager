@@ -4,12 +4,12 @@
         <div class="row" style="margin-right: 0px;">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
                 <div class="input-group">
-                    <span class="input-group-addon">{{'CONFIG.MENU_PLACE.PLACE_SEARCH'|translate}}</span>
-                    <input type="text" placeholder = "{{'CONFIG.MENU_USER.USER_SEARCH'|translate}}" class="form-control glyphicon-remove" id="userName" ng-model="userName">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.SEARCH'|translate}}</span>
+                    <input type="text" placeholder = "{{'COMMON.PLACEHOLDER'|translate}}" class="form-control glyphicon-remove" id="userName" ng-model="userName">
                 </div>
             </div>
             <div class="pull-right" style="margin-top: 10xp;">
-                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addGuestGradeType()">{{'CONFIG.MENU_PLACE.PLACE_ADD'|translate}}</button>
+                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addGuestGradeType()">{{'COMMON.ADD'|translate}}</button>
                 <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">{{'CONFIG.MENU_USER.PRINT'|translate}}</button>-->
             </div>
         </div>
@@ -36,7 +36,19 @@
                     <!--<td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>-->
                     <td>
                         <button type="button" class="btn btn-info btn-xs" ng-click="editGuestGradeType(row, $event)">
-                            <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_PLACE.PLACE_EDIT'|translate}}
+                            <span class="glyphicon glyphicon-pencil"></span>{{'COMMON.EDIT'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs"
+                                ng-class="{true:'trueClass',false:'falseClass'}[row.enabled]"
+                                ng-disabled="{{ (row.Status === '0') ? 'true' : 'false' }}"
+                                ng-click="enableGuestGradeType(row, $event)">
+                            <span class="glyphicon glyphicon-ok-circle"></span>{{'CONFIG.MENU_USER.ENABLE_OK'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs"
+                                ng-class="{true:'falseClass',false:'trueClass'}[row.enabled]"
+                                ng-disabled="{{ (row.Status === '0') ? 'false' : 'true' }}"
+                                ng-click="enableGuestGradeType(row, $event)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_USER.ENABLE_NO'|translate}}
                         </button>
                         <!--<button type="button" class="btn btn-danger btn-xs"
                                 ng-click="delGuestGradeType(row, $event)">

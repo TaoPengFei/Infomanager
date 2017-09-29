@@ -9,7 +9,10 @@
     "CONFIRM_DELETE": "真的想好了要删除吗!!!",
     "TIP": "提示",
     "SUCCESS": "成功!",
-    "FAIL": "失败!"
+    "FAIL": "失败!",
+    "PLACEHOLDER": "--- 请输入 ---",
+    "ADD": "新增",
+    "EDIT": "修改"
   },
   "HEADER": {
     "SIGN_OUT": "注销",
@@ -136,7 +139,20 @@
       "LENGTH_CHECK_18": "* 长度不超过18",
       "CHARSET_CHECK": "* 不能为汉字"
     },
-    "MENU_GUESTGRADETYPE": {},
+    "MENU_GUESTGRADETYPE": {
+      "SEARCH": "顾客档次名称查询",
+      "ADD_TITLE": "新增顾客档次",
+      "EDIT_TITLE": "修改顾客档次",
+      "MODAL_NAME": "顾客档次名称",
+      "MODAL_STATUS": "顾客档次状态",
+      "MODAL_TOP": "顾客档次上限",
+      "MODAL_BOTTOM": "顾客档次下限",
+      "MODAL_DESC": "顾客档次描述",
+      "LENGTH_CHECK_18": "* 长度不超过18",
+      "NUMBER_CHECK": "* 不合法的数值类型",
+      "MUST_INPUT": "* 必填",
+      "PEAK_CHECK": "* 下限值设定不得大于上限值"
+    },
     "MENU_GUESTNOTYPE": {
       "NEW_GUEST_NO_TYPE_NAME": "名称",
       "STATUS": "状态",

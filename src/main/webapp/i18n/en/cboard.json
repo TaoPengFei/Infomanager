@@ -9,7 +9,10 @@
     "CONFIRM_DELETE": "Confirm to Delete!!!",
     "TIP": "Tip",
     "SUCCESS": "Success!",
-    "FAIL": "Fail!"
+    "FAIL": "Fail!",
+    "PLACEHOLDER": "--- Please Input ---",
+    "ADD": "Add",
+    "EDIT": "Edit"
   },
   "HEADER": {
     "SIGN_OUT": "SignOut",

@@ -16,10 +16,11 @@
     
      <insert id="addGuestGradeType">
 		insert into bi.dim_guestgradetype
-		(GuestGradeTypeName,GuestGradeTypeDesc,BottomAmt,
+		(GuestGradeTypeId,GuestGradeTypeName,GuestGradeTypeDesc,BottomAmt,
 		TopAmt,Status,CreateTime,updateTime) 
-		values
-		(#{GuestGradeTypeName},#{GuestGradeTypeDesc},#{BottomAmt},#{TopAmt},#{Status},now(),now())
+		
+		(select max(GuestGradeTypeId)+1,#{GuestGradeTypeName},#{GuestGradeTypeDesc},
+		#{BottomAmt},#{TopAmt},#{Status},now(),now() from bi.dim_guestgradetype)
 		</insert>
      
      <delete id="deleteGuestGradeType">
