@@ -17,18 +17,18 @@
 
     <div class="row" style="margin-top: 10px; margin-bottom: 0px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-            <table id="listPlace" class="table table-bordered">
+            <table id="listGuestGradeType" class="table table-bordered"  ng-model="listGuestGradeType">
                 <thead>
                     <tr>
                         <th ng-repeat="headerInfo in guestgradetypeHeaderInfos track by $index " >{{ headerInfo.name }}</th>
                     </tr>
                 </thead>
-                <tbody id="userTable">
+                <tbody id="userTable" ng-model="userTable" interval-check>
                 <tr ng-repeat="row in guestGradeTypeList.data " ng-init="placeIndex = $index">
                     <td>{{ row.GuestGradeTypeName }}</td>
                     <td>{{ row.GuestGradeTypeDesc }}</td>
-                    <td>{{ row.TopAmt }}</td>
                     <td>{{ row.BottomAmt }}</td>
+                    <td>{{ row.TopAmt }}</td>
                     <!--<td>{{ row.Status }}</td>-->
                     <td>{{ (row.Status == "0") ? "启用" : "淘汰" }}</td>
                     <td>{{ row.CreateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
@@ -86,6 +86,38 @@
         </div>
     </div>
     <!-- pagination END-->
+
+    <!--<div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            &lt;!&ndash;<div id="myAlert" class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>成功！</strong>结果是成功的。
+            </div>&ndash;&gt;
+            <div id="myAlert2" class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong >警告！</strong>档次的上下限设置不合理。
+            </div>
+        </div>
+    </div>-->
+
+    <div class="row" >
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            <!--<div id="myAlert" class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>成功！</strong>结果是成功的。
+            </div>-->
+            <div id="myAlert1" class="alert alert-warning" ng-show="intervalCheck == '1'">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong >警告！</strong>档次的上下限设置不合理。
+            </div>
+            <!--<div id="myAlert2" class="alert alert-warning" ng-show="intervalCheck == '1'">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong >警告！</strong>档次的上下限设置不合理。
+            </div>-->
+        </div>
+    </div>
+
+
 
 </div>
 

@@ -50,28 +50,7 @@
         </div>
 
         <div class="row">
-            <!-- 顾客档次上限 -->
-            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-                <div class="input-group has-feedback"
-                     ng-class="{'has-success' : editGuestGradeTypeForm.editTopAmt.$valid,
-                              'has-error' : editGuestGradeTypeForm.editTopAmt.$invalid }">
-                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_TOP'|translate}}</span>
-                    <input type="text" class="form-control" name="editTopAmt" id="editTopAmt"
-                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
-                           ng-model="editTopAmt">
-                    <div ng-show="!editGuestGradeTypeForm.editTopAmt.$invalid">
-                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
-                    </div>
-                    <div ng-show="editGuestGradeTypeForm.editTopAmt.$invalid">
-                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                    </div>
-                </div>
-                <div style="color: red" ng-show="editGuestGradeTypeForm.editTopAmt.$invalid">
-                    <span ng-show="editGuestGradeTypeForm.editTopAmt.$error.pattern">
-                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
-                    </span>
-                </div>
-            </div>
+
             <!-- 顾客档次下限 -->
             <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
                 <div class="input-group has-feedback"
@@ -97,6 +76,29 @@
                 <div style="color: red" ng-show="editGuestGradeTypeForm.editBottomAmt.$invalid">
                     <span ng-show="editGuestGradeTypeForm.editBottomAmt.$error.peakCheck">
                         {{'CONFIG.MENU_GUESTGRADETYPE.PEAK_CHECK'|translate}}
+                    </span>
+                </div>
+            </div>
+
+            <!-- 顾客档次上限 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : editGuestGradeTypeForm.editTopAmt.$valid,
+                              'has-error' : editGuestGradeTypeForm.editTopAmt.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_TOP'|translate}}</span>
+                    <input type="text" class="form-control" name="editTopAmt" id="editTopAmt"
+                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
+                           ng-model="editTopAmt">
+                    <div ng-show="!editGuestGradeTypeForm.editTopAmt.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editGuestGradeTypeForm.editTopAmt.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editGuestGradeTypeForm.editTopAmt.$invalid">
+                    <span ng-show="editGuestGradeTypeForm.editTopAmt.$error.pattern">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
                     </span>
                 </div>
             </div>

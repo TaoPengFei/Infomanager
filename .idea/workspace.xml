@@ -2,27 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f60b685-810f-46f5-9b79-8ed9eca95c0b" name="Default" comment="预防提交...">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/peakCheck.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/intervalCheck.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3" afterPath="$PROJECT_DIR$/src/main/webapp/plugins/zTree_v3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/OutletController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/shiyun/controller/OutletController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/AreaMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AreaMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/GuestGradeTypeMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GuestGradeTypeMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/GuestNoTypeMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GuestNoTypeMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ItemCatMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ItemCatMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ItemDepMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ItemDepMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/OutletMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OutletMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18n/cn/cboard.json" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/cn/cboard.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18n/en/cboard.json" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/en/cboard.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/outletCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/outletCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/ensureRoleUnique.js" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/ensureRoleUnique.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editOutlet.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editOutlet.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/outlet.html" afterPath="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/outlet.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/starter.html" afterPath="$PROJECT_DIR$/src/main/webapp/starter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/starter/main-sidebar.html" afterPath="$PROJECT_DIR$/src/main/webapp/starter/main-sidebar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/AreaControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/AreaControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/GuestNoTypeControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/cn/shiyun/controller/GuestNoTypeControllerTest.java" />
@@ -67,7 +64,72 @@
     <favorites_list name="Infomanager" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="guestgradetype.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#4970#5513#0" expanded="false" />
+                <element signature="e#5620#5811#0" expanded="false" />
+                <element signature="e#5966#5973#0" expanded="true" />
+                <marker date="1507602605819" expanded="false" signature="5086:5270" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addGuestGradeType.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guestgradetypeCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+              <folding>
+                <element signature="e#1467#1637#0" expanded="false" />
+                <element signature="e#1708#1870#0" expanded="false" />
+                <element signature="e#1897#2399#0" expanded="false" />
+                <element signature="e#3283#5245#0" expanded="false" />
+                <element signature="e#5375#7732#0" expanded="false" />
+                <element signature="e#7861#8963#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editGuestGradeType.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="103" column="18" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="peakCheck.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/peakCheck.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,13 +153,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/itemcategory.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/itemcategoryCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/itemcategoryTree.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/user.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/role.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addRole.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/ensureRoleUnique.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/ensureUserUnique.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/pwCheck.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/modifyUser.html" />
@@ -133,15 +193,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/outletCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editOutlet.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/starter/main-sidebar.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/starter.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addUser.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/peakCheck.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18n/en/cboard.json" />
-        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18n/cn/cboard.json" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/ensureRoleUnique.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/intervalCheck.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/starter.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html" />
       </list>
     </option>
   </component>
@@ -227,9 +289,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -670,6 +731,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1571,7 +1633,10 @@
       <workItem from="1506389967156" duration="22806000" />
       <workItem from="1506492466212" duration="16904000" />
       <workItem from="1506561600368" duration="17130000" />
-      <workItem from="1506648150393" duration="21302000" />
+      <workItem from="1506648150393" duration="23595000" />
+      <workItem from="1507364965230" duration="39000" />
+      <workItem from="1507512861258" duration="12570000" />
+      <workItem from="1507599441995" duration="5171000" />
     </task>
     <task id="LOCAL-00001" summary="add JUnitTest">
       <created>1500531112693</created>
@@ -1678,7 +1743,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506593661982</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="顾客档次前端校验（行间校验除外）...">
+      <created>1506677256961</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1506677256961</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1714,7 +1786,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="731167000" />
+    <option name="totallyTimeSpent" value="751240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1730,12 +1802,12 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5538818" sideWeight="0.7188841" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8541667" sideWeight="0.17060086" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36384705" sideWeight="0.48712447" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5532407" sideWeight="0.7156652" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8506944" sideWeight="0.18025751" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5434531" sideWeight="0.4828326" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7141204" sideWeight="0.28969958" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6435185" sideWeight="0.73712444" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6805556" sideWeight="0.72746783" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1743,17 +1815,17 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47569445" sideWeight="0.73712444" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.49785408" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49356222" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38470453" sideWeight="0.68991417" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.49356222" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.4892704" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19560185" sideWeight="0.62982833" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8541667" sideWeight="0.82939917" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8506944" sideWeight="0.8197425" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4548611" sideWeight="0.8406652" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52838933" sideWeight="0.7151288" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53997684" sideWeight="0.4828326" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26824033" sideWeight="0.5837651" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5393519" sideWeight="0.4806867" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17060086" sideWeight="0.5837651" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23122318" sideWeight="0.41623488" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23122318" sideWeight="0.41623488" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23122318" sideWeight="0.41623488" order="6" side_tool="true" content_ui="tabs" />
@@ -1808,7 +1880,9 @@
     <MESSAGE value="预防提交..." />
     <MESSAGE value="人员和角色初步完工..." />
     <MESSAGE value="提交商圈..." />
-    <option name="LAST_COMMIT_MESSAGE" value="提交商圈..." />
+    <MESSAGE value="顾客档次前端校验（行间校验除外）..." />
+    <option name="LAST_COMMIT_MESSAGE" value="顾客档次前端校验（行间校验除外）..." />
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1821,77 +1895,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/AreaControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/GuestNoTypeControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-201">
-          <caret line="49" column="27" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/GuestGradeTypeControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/shiyun/controller/BrandControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/RoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/dao/RoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/service/RoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/shiyun/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="57" column="35" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="35" />
-          <folding>
-            <marker date="1506498661077" expanded="true" signature="506:565" ph="select autho... authorities" />
-            <marker date="1506498661077" expanded="true" signature="1020:1094" ph="select autho... authorities" />
-            <marker date="1506498661077" expanded="true" signature="1171:1249" ph="insert into authorities... " />
-            <marker date="1506498661077" expanded="true" signature="1394:1447" ph="delete from " />
-            <marker date="1506498661077" expanded="true" signature="1890:1974" ph="update autho... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1899,7 +1906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
           <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1907,7 +1913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1915,13 +1920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-226">
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1936,14 +1934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-          <folding>
-            <marker date="1506496935987" expanded="true" signature="2468:2564" ph="insert into users... " />
-            <marker date="1506496935987" expanded="true" signature="2630:2705" ph="insert into granted_authorities... " />
-            <marker date="1506496935987" expanded="true" signature="2772:3115" ph="update users... " />
-            <marker date="1506496935987" expanded="true" signature="3195:3298" ph="update grant... " />
-            <marker date="1506496935987" expanded="true" signature="3367:3441" ph="update grant... " />
-            <marker date="1506496935987" expanded="true" signature="3515:3718" ph="update users... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2000,7 +1990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2008,7 +1997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="26" column="96" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="96" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2023,13 +2011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <marker date="1506592994549" expanded="true" signature="245:455" ph="select Place... dim_place" />
-            <marker date="1506592994549" expanded="true" signature="788:821" ph="select count... dim_place" />
-            <marker date="1506592994549" expanded="true" signature="871:1078" ph="insert into bi.dim_place... " />
-            <marker date="1506592994549" expanded="true" signature="983:1077" ph="select MAX(P... dim_place" />
-            <marker date="1506592994549" expanded="true" signature="1355:1987" ph="update bi.di... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2044,7 +2025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2059,9 +2039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2069,11 +2046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="33" column="55" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="55" />
-          <folding>
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#1096#1112#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2081,7 +2053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2089,22 +2060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-          <folding>
-            <marker date="1506654545172" expanded="true" signature="525:1010" ph="select disti... dim_outlet" />
-            <marker date="1506654545172" expanded="true" signature="972:1005" ph="select Outle... sy_outlet" />
-            <marker date="1506654545172" expanded="true" signature="2504:2572" ph="select a.Are... dim_Area" />
-            <marker date="1506654545172" expanded="true" signature="2638:2702" ph="select a.Pla... dim_Place" />
-            <marker date="1506654545172" expanded="true" signature="2772:2850" ph="select a.Bra... dim_Brand" />
-            <marker date="1506654545172" expanded="true" signature="2924:3418" ph="update bi.sy... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/outlet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="52" column="44" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2112,14 +2067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="604">
           <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
-          <folding>
-            <element signature="e#1268#2628#0" expanded="false" />
-            <element signature="e#2784#2873#0" expanded="false" />
-            <element signature="e#2917#3002#0" expanded="false" />
-            <element signature="e#3042#3330#0" expanded="false" />
-            <element signature="e#3418#4055#0" expanded="false" />
-            <element signature="e#4121#6989#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2127,7 +2074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2135,7 +2081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="40" column="73" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2143,10 +2088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="39" column="75" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="75" />
-          <folding>
-            <element signature="e#4184#4304#0" expanded="false" />
-            <element signature="e#4314#5042#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2154,7 +2095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2162,12 +2102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="e#3976#5248#0" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#1;n#form#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2175,11 +2109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="46" column="58" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
-          <folding>
-            <element signature="n#div#1;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#1;n#form#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2187,52 +2116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-          <folding>
-            <element signature="e#3614#3734#0" expanded="false" />
-            <element signature="e#3744#4476#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/starter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="358" column="47" selection-start-line="358" selection-start-column="47" selection-end-line="358" selection-end-column="47" />
-          <folding>
-            <element signature="n#script#47;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#48;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#49;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#51;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1506668718417" expanded="true" signature="1989:2155" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/pwCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#4;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#form#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2240,39 +2123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!block;n#HEADER#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#SIDEBAR#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_USER#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ROLE#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ROLE_MENU#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_BRAND#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_AREA#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_OUTLET#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ITEMCATEGORY#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ITEMDEPTMENT#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_PLACE#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_GUESTNOTYPE#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_DATE#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="136" column="33" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/peakCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="e#505#841#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2280,49 +2130,160 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/pwCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/ensureRoleUnique.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/withMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/ng-app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/ng-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3675">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/Settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/underscore-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="4" column="13254" selection-start-line="4" selection-start-column="13254" selection-end-line="4" selection-end-column="13254" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/intervalCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
           <folding>
-            <element signature="n#!!block;n#HEADER#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#SIDEBAR#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#CONFIG#0;n#!!block;n#SIDEBAR#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_USER#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ROLE#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ROLE_MENU#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_BRAND#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_AREA#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_OUTLET#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ITEMCATEGORY#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_ITEMDEPTMENT#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_GUESTNOTYPE#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#MENU_DATE#0;n#!!block;n#CONFIG#0;n#!!top" expanded="false" />
+            <element signature="e#308#416#0" expanded="false" />
+            <element signature="e#429#552#0" expanded="false" />
+            <element signature="e#565#738#0" expanded="false" />
+            <element signature="e#787#954#0" expanded="false" />
+            <element signature="e#1052#1441#0" expanded="false" />
+            <element signature="e#1454#1477#0" expanded="false" />
+            <element signature="e#1524#2292#0" expanded="false" />
+            <element signature="e#2306#2334#0" expanded="false" />
+            <element signature="e#2390#3095#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/starter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="56" column="25" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+        <state relative-caret-position="282">
+          <caret line="364" column="25" selection-start-line="364" selection-start-column="25" selection-end-line="364" selection-end-column="25" />
+          <folding>
+            <marker date="1507601549684" expanded="true" signature="1989:2155" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/outlet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <caret line="52" column="44" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/addGuestGradeType.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="275">
+          <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/directive/config/peakCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/brand.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/guestgradetype.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#2;n#div#1;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#4970#5513#0" expanded="false" />
+            <element signature="e#5620#5811#0" expanded="false" />
+            <element signature="e#5966#5973#0" expanded="true" />
+            <marker date="1507602605819" expanded="false" signature="5086:5270" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/controller/config/guestgradetypeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+          <folding>
+            <element signature="e#1467#1637#0" expanded="false" />
+            <element signature="e#1708#1870#0" expanded="false" />
+            <element signature="e#1897#2399#0" expanded="false" />
+            <element signature="e#3283#5245#0" expanded="false" />
+            <element signature="e#5375#7732#0" expanded="false" />
+            <element signature="e#7861#8963#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/org/cboard/view/config/modal/editGuestGradeType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="103" column="18" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
