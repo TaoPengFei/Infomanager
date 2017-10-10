@@ -70,7 +70,7 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
             console.log(over);
             for (var k = 1; k < begin.length; k++) {
                 if (begin[k] < over[k - 1]) {
-                    alert("档次的上下限存在重叠！");
+                    // alert("档次的上下限存在重叠！");
                     $scope.intervalCheck = "1";
                     return false;
                 }
