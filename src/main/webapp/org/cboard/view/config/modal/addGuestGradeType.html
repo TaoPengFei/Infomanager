@@ -57,34 +57,7 @@
         </div>
 
         <div class="row">
-            <!-- 顾客档次上限 -->
-            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-                <div class="input-group has-feedback"
-                     ng-class="{'has-success' : !addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$valid,
-                              'has-error' : !addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$invalid }">
-                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_TOP'|translate}}</span>
-                    <input type="text" class="form-control" id="newTopAmt" name="newTopAmt"
-                           placeholder="{{'COMMON.PLACEHOLDER'|translate}}"
-                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
-                           ng-model="newTopAmt" required>
-                    <div ng-show="!addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$valid">
-                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
-                    </div>
-                    <div ng-show="!addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$invalid">
-                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                    </div>
-                </div>
-                <div style="color: red" ng-show="addGuestGradeTypeForm.newTopAmt.$invalid">
-                    <span ng-show="addGuestGradeTypeForm.newTopAmt.$error.pattern">
-                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
-                    </span>
-                </div>
-                <div style="color: red" ng-show="addGuestGradeTypeForm.newTopAmt.$invalid">
-                    <span ng-show="addGuestGradeTypeForm.newTopAmt.$error.required">
-                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
-                    </span>
-                </div>
-            </div>
+
             <!-- 顾客档次下限 -->
             <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
                 <div class="input-group has-feedback"
@@ -119,6 +92,35 @@
                     </span>
                 </div>
             </div>
+            <!-- 顾客档次上限 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : !addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$valid,
+                              'has-error' : !addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_TOP'|translate}}</span>
+                    <input type="text" class="form-control" id="newTopAmt" name="newTopAmt"
+                           placeholder="{{'COMMON.PLACEHOLDER'|translate}}"
+                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
+                           ng-model="newTopAmt" required>
+                    <div ng-show="!addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$valid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="!addGuestGradeTypeForm.newTopAmt.$pristine && addGuestGradeTypeForm.newTopAmt.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="addGuestGradeTypeForm.newTopAmt.$invalid">
+                    <span ng-show="addGuestGradeTypeForm.newTopAmt.$error.pattern">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
+                    </span>
+                </div>
+                <div style="color: red" ng-show="addGuestGradeTypeForm.newTopAmt.$invalid">
+                    <span ng-show="addGuestGradeTypeForm.newTopAmt.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
+            </div>
+
         </div>
 
         <div class="row">
