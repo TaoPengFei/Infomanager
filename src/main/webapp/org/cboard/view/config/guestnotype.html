@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="pull-right" style="margin-top: 10xp;">
-                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addGuestNoType()">{{'CONFIG.MENU_PLACE.PLACE_ADD'|translate}}</button>
+                <button type="button" class="btn btn-primary " id='addGuestNoType' ng-click="addGuestNoType()">{{'CONFIG.MENU_PLACE.PLACE_ADD'|translate}}</button>
                 <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">{{'CONFIG.MENU_USER.PRINT'|translate}}</button>-->
             </div>
         </div>
@@ -27,10 +27,10 @@
                 <tr ng-repeat="row in guestNoTypeList.data " ng-init="placeIndex = $index">
                     <td>{{ row.GuestNoTypeName }}</td>
                     <td>{{ row.GuestNoTypeDesc }}</td>
-                    <td>{{ row.TopGuestQty }}</td>
                     <td>{{ row.BottomGuestQty }}</td>
+                    <td>{{ row.TopGuestQty }}</td>
                     <!--<td>{{ row.Status }}</td>-->
-                    <td>{{ (row.Status == '0') ? "启用" : "淘汰" }}</td>
+                    <td>{{ (row.Status == 0) ? "启用" : "淘汰" }}</td>
                     <td>{{ row.CreateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
                     <td>{{ row.UpdateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
                     <!--<td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>-->
@@ -38,10 +38,10 @@
                         <button type="button" class="btn btn-info btn-xs" ng-click="editGuestNoType(row, $event)">
                             <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_PLACE.PLACE_EDIT'|translate}}
                         </button>
-                        <!--<button type="button" class="btn btn-danger btn-xs"
+                        <button type="button" class="btn btn-danger btn-xs"
                                 ng-click="delGuestNoType(row, $event)">
                             <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_PLACE.PLACE_DEL'|translate}}
-                        </button>-->
+                        </button>
                     </td>
                 </tr>
                 </tbody>

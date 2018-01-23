@@ -33,6 +33,7 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
 
+
     <!-- ngGrid -->
     <link rel="stylesheet" href="plugins/ng-grid-2.0.12/ng-grid.css">
 
@@ -52,6 +53,9 @@
     <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
     <!--<script src="js/jquery-2.1.3.js"></script>-->
     <script src="plugins/jQueryUI/jquery-ui.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="plugins/iCheck/icheck.min.js"></script>
 
     <!-- date -->
     <script src="plugins/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
@@ -242,6 +246,12 @@
             background-color: #EDEDED;
         }
 
+        /* ================ angular js封装iCheck组件后的样式 ================ */
+        .has-feedback .form-control {
+            padding-right: 0px;
+        }
+
+
     </style>
     <link rel="stylesheet" href="plugins/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css">
 </head>
@@ -358,6 +368,7 @@ desired effect
 <script src="org/cboard/directive/config/pwCheck.js"></script>
 <script src="org/cboard/directive/config/peakCheck.js"></script>
 <!--<script src="org/cboard/directive/config/intervalCheck.js"></script>-->
+<script src="org/cboard/directive/config/ngIcheck.js"></script>
 
 
 <script type="text/ng-template" id="echartContent">
@@ -417,15 +428,5 @@ desired effect
 
 <!-- iCheck -->
 <script src="plugins/iCheck/icheck.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
-        });
-    });
-</script>
-
 </body>
 </html>
