@@ -50,8 +50,8 @@
 		        TopAmt=#{TopAmt},
 		    </if>
 		   
-		     <if test="Status != null and Status !='' ">
-		        Status=#{Status},
+		     <if test="Status != null ">
+		        Status=#{Status,jdbcType=INTEGER},
 		    </if>
 		    
 		    UpdateTime=now()

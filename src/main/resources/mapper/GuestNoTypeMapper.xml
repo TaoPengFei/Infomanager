@@ -16,10 +16,11 @@
     
      <insert id="addGuestNoType">
 		insert into bi.dim_guestnotype
-		(GuestNoTypeName,GuestNoTypeDesc,BottomGuestQty,
+		(GuestNoTypeId,GuestNoTypeName,GuestNoTypeDesc,BottomGuestQty,
 		TopGuestQty,Status,CreateTime,updateTime) 
-		values
-		(#{GuestNoTypeName},#{GuestNoTypeDesc},#{BottomGuestQty},#{TopGuestQty},#{Status},now(),now())
+		(select max(GuestNoTypeId)+1,#{GuestNoTypeName},#{GuestNoTypeDesc},
+		#{BottomGuestQty},#{TopGuestQty},#{Status},now(),now()
+		from bi.dim_guestnotype)
 		</insert>
      
      <delete id="deleteGuestNoType">
@@ -49,8 +50,8 @@
 		        TopGuestQty=#{TopGuestQty},
 		    </if>
 		   
-		     <if test="Status != null and Status !='' ">
-		        Status=#{Status},
+		     <if test="Status != null ">
+		        Status=#{Status,jdbcType=INTEGER},
 		    </if>
 		    
 		    UpdateTime=now()
