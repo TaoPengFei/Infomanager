@@ -33,7 +33,7 @@ cBoard.controller('cBoardCtrl', function ($rootScope, $scope, $location, $http, 
     });
 
     $scope.changePwd = function (current, $event) {
-        console.log(current);
+        // console.log(current);
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/changePwd.html',
             windowTemplateUrl: 'org/cboard/view/util/modal/window.html',
@@ -44,7 +44,6 @@ cBoard.controller('cBoardCtrl', function ($rootScope, $scope, $location, $http, 
                     $uibModalInstance.close();
                 };
                 $scope.ok = function () {
-
                     $http({
                         method: 'POST',
                         url: './user/updatePassword.do',

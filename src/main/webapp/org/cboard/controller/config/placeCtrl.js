@@ -154,7 +154,7 @@ cBoard.controller('placeCtrl', function ($rootScope, $scope, $http, dataService,
     }
 
     $scope.enablePlace = function (current, $event) {
-        console.log(current.Status);
+        // console.log(current.Status);
         // console.log(
             /*function () {
                 if(current.PlaceId = "false"){

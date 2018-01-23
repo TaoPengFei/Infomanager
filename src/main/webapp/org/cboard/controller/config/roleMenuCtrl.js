@@ -111,7 +111,7 @@ cBoard.controller('roleMenuCtrl', function ($rootScope, $scope, $http, dataServi
 
     //移除菜单
     $scope.removeMenu = function () {
-        console.log("removeMenu...");
+        // console.log("removeMenu...");
         $.ajax({
             url:'./roleMenu/deleteRoleMenu.do',
             dataType:"json",

@@ -138,8 +138,8 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log','$uibModal'
                         // alert(treeNode ? treeNode.tId + ", " + treeNode.name : "isRoot");
                     },
                     onDrop: function(event, treeId, treeNodes, targetNode, moveType, isCopy){
-                        console.log("拖拽完毕");
-                        console.log(targetNode);
+                        /*console.log("拖拽完毕");
+                        console.log(targetNode);*/
                         /**
                          * 检索树算法：非递归法
                          */
@@ -193,7 +193,7 @@ cBoard.directive('without', ['$http', '$interval', '$filter', '$log','$uibModal'
                         }else {
                             $scope.searchWithoutTree(treeNodes[0]);
                             withoutNodesJSON.push(withoutDragPNodes.id);
-                            console.log(withoutNodesJSON);
+                            // console.log(withoutNodesJSON);
                             $http({
                                 method: 'POST',
                                 headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},

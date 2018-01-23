@@ -26,7 +26,7 @@ cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataS
      * 修改已添加的菜单
      */
     $scope.withMenuEdit = function () {
-        console.log("withMenuEdit...");
+        // console.log("withMenuEdit...");
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/modifyMenu.html',
             backdrop: false,
@@ -45,7 +45,7 @@ cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataS
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    console.log("OK...");
+                    // console.log("OK...");
                     $uibModalInstance.close();
                 }
             }
@@ -75,7 +75,7 @@ cBoard.controller('roleMenuTreeCtrl', function ($rootScope, $scope, $http, dataS
                     $uibModalInstance.close();
                 };
                 $scope.save = function () {
-                    console.log("OK...");
+                    // console.log("OK...");
                     $uibModalInstance.close();
                 }
             }

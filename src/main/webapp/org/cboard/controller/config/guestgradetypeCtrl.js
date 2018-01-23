@@ -30,7 +30,7 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
         }).success(function (response) {
             $scope.guestGradeTypeList = response;
             $scope.intervalCheck = "";
-            console.log(response.data);
+            // console.log(response.data);
             /**
              * 算法功能：判断不同的档次的上下限的值的设定是否合法（区间的交叉或重叠、区间的相离）;
              * 算法思路：把下限，上限分别存进两个数组，并用sort排序，循环遍历数组，从下限的第二个元素去比较上限值
@@ -66,8 +66,8 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
              var over = endArr.sort();*/
             var begin = startArr.sort();
             var over = endArr.sort();
-            console.log(begin);
-            console.log(over);
+            /*console.log(begin);
+            console.log(over);*/
             for (var k = 1; k < begin.length; k++) {
                 if (begin[k] < over[k - 1]) {
                     // alert("档次的上下限存在重叠！");
@@ -96,8 +96,10 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
                 $scope.close = function () {
+                    $scope.newStatus = null;
                     $uibModalInstance.close();
                 };
+                // console.log($scope);
                 $scope.save = function () {
                     $http({
                         method: 'POST',
@@ -106,6 +108,13 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
                         data: JSON.stringify({
                             GuestGradeTypeName: $scope.newGuestGradeTypeName,
                             Status: $scope.newStatus,
+                            /*Status: function () {
+                                if(){
+
+                                }else{
+
+                                }
+                            },*/
                             TopAmt: $scope.newTopAmt,
                             BottomAmt: $scope.newBottomAmt,
                             GuestGradeTypeDesc: $scope.newGuestGradeTypeDesc
@@ -118,6 +127,7 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
                         } else if (response.code === -1) {
                             ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
                         }
+                        $scope.newStatus = null;
                         getGuestGradeTypeList();
                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
                         ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
@@ -140,6 +150,7 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
             backdrop: false,
             controller: function ($scope, $uibModalInstance, $http) {
                 $scope.close = function () {
+                    $scope.editStatus = null;
                     $uibModalInstance.close();
                 };
                 $scope.editGuestGradeTypeName = current.GuestGradeTypeName;
@@ -168,6 +179,7 @@ cBoard.controller('guestgradetypeCtrl', function ($rootScope, $scope, $http, dat
                         } else if (response.code === -1) {
                             ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
                         }
+                        $scope.editStatus = null;
                         getGuestGradeTypeList();
                     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
                         ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");

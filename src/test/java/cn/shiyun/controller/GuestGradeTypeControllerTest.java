@@ -104,9 +104,9 @@ public class GuestGradeTypeControllerTest {
 		
 		
         JSONObject jo = new JSONObject();
-        jo.put("GuestGradeTypeId", 5);
-        jo.put("GuestGradeTypeName", "中華");
-        jo.put("GuestGradeTypeDesc", "中華");
+        jo.put("GuestGradeTypeId", 4);
+        jo.put("GuestGradeTypeName", "12中華");
+        jo.put("Status", 0);
        
        
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}

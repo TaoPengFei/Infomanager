@@ -104,7 +104,6 @@ cBoard.directive('tmPagination', function ($compile, $templateCache, dataService
                 // 对选项进行sort
                 conf.perPageOptions.sort(function(a, b) {return a - b});
 
-
                 // 页码相关
                 scope.pageList = [];
                 if(conf.numberOfPages <= conf.pagesLength){
@@ -142,12 +141,10 @@ cBoard.directive('tmPagination', function ($compile, $templateCache, dataService
                         for(i = 1; i <= offset / 2; i++){
                             scope.pageList.push(conf.currentPage + i);
                         }
-
                         scope.pageList.push('...');
                         scope.pageList.push(conf.numberOfPages);
                     }
                 }
-
                 scope.$parent.conf = conf;
             }
 
@@ -175,7 +172,6 @@ cBoard.directive('tmPagination', function ($compile, $templateCache, dataService
 
             // 变更当前页
             scope.changeCurrentPage = function(item) {
-
                 if(item == '...'){
                     return;
                 }else{
@@ -190,10 +186,8 @@ cBoard.directive('tmPagination', function ($compile, $templateCache, dataService
 
             // 修改每页展示的条数
             scope.changeItemsPerPage = function() {
-
                 // 一发展示条数变更，当前页将重置为1
                 conf.currentPage = 1;
-
                 getPagination();
                 // conf.onChange()函数
                 if(conf.onChange) {
@@ -206,12 +200,10 @@ cBoard.directive('tmPagination', function ($compile, $templateCache, dataService
                 num = scope.jumpPageNum;
                 if(num.match(/\d+/)) {
                     num = parseInt(num, 10);
-
                     if(num && num != conf.currentPage) {
                         if(num > conf.numberOfPages) {
                             num = conf.numberOfPages;
                         }
-
                         // 跳转
                         conf.currentPage = num;
                         getPagination();
@@ -227,14 +219,12 @@ cBoard.directive('tmPagination', function ($compile, $templateCache, dataService
 
             scope.jumpPageKeyUp = function(e) {
                 var keycode = window.event ? e.keyCode :e.which;
-
                 if(keycode == 13) {
                     scope.jumpToPage();
                 }
             }
 
             scope.$watch('conf.totalItems', function(value, oldValue) {
-
                 // 在无值或值相等的时候，去执行onChange事件
                 if(!value || value == oldValue) {
 

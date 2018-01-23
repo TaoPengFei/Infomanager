@@ -22,7 +22,6 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
                         next: false,
                         inner: true
                         // inner: canInner
-
                     }
                 },
                 /*check: {
@@ -206,7 +205,7 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
                     }).success(function (response) {
                         let zNodes = [];
                         // let arr = [];
-                        console.log(response.menuWithRole);
+                        // console.log(response.menuWithRole);
                         zNodes = _.map(response.menuWithRole, function (obj, iteratee, context) {
                             let newArr = [];
                             newArr.push({
@@ -216,7 +215,7 @@ cBoard.directive('with', ['$http', '$interval', '$filter', '$log','$uibModal','M
                                 /*"desc": obj.BrandDesc,
                                  "code": obj.BrandCode,*/
                             });
-                            console.log(newArr);
+                            // console.log(newArr);
                             return newArr[0];
                         });
                         $.fn.zTree.init(element, setting, zNodes);

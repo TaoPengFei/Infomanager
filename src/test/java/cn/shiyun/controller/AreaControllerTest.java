@@ -53,11 +53,13 @@ public class AreaControllerTest {
 
 	@Test
 	public void testAddArea() throws Exception {
-		       
+		
         JSONArray json = new JSONArray();
         JSONObject jo1 = new JSONObject();
-        jo1.put("pAreaId", "1");
-       
+        jo1.put("pAreaId", 100000);
+        jo1.put("AreaCode", "10");
+        jo1.put("AreaName", "中华");
+        jo1.put("AreaDesc", "中华");
 //   这个就是前段需要传的json的array     [{"outletid":2,"username":"admin"},{"outletid":3,"username":"admin"}]
         String requestjson = jo1.toString();
         System.out.println(requestjson);

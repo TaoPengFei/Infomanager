@@ -26,45 +26,39 @@ public class OutletController {
 	public String Outlet(HttpServletRequest request,HttpServletResponse response) {
 		return "outlet";
 	}
-	
-	
-	@RequestMapping("doOutlet.do")//value="/{outletName}"
+
+
+//	@RequestMapping(value="/{outletName}")//alue="/{outletName}"
+	@RequestMapping("doOutlet.do")
 	@ResponseBody
-	public Map<String, Object> doOutlet( String outletName) {
+	public Map<String, Object> doOutlet(/*@PathVariable*/ String outletName) {
 		Map<String, Object> result = new HashMap<String, Object>();
 
 		List<Map<String, Object>> outlet = outletService.queryOutlet();
-		
-		if(outlet.size()>0){
-		
-		int rowCount = outletService.insertOutlets(outlet);
-		if(rowCount > 0){
-			List<Map<String, Object>> alloutlets = outletService.queryAllOutlet(outletName);
-			if (alloutlets != null && alloutlets.size() > 0) {
-				result.put("code", 1);
-				result.put("data", alloutlets);
-			} else {
+		if(outlet != null && outlet.size() > 0){
+			int rowCount = outletService.insertOutlets(outlet);
+			if(rowCount > 0){
+				List<Map<String, Object>> alloutlets = outletService.queryAllOutlet(outletName);
+				if (alloutlets != null && alloutlets.size() > 0) {
+					result.put("code", 1);
+					result.put("data", alloutlets);
+				} else {
+					result.put("code", 0);
+					result.put("msg", "操作失败1");
+				}
+			}else{
 				result.put("code", 0);
-				result.put("msg", "操作失败");
+				result.put("msg", "新增失败2");
 			}
-		}
-		
 		}else{
-			List<Map<String, Object>> alloutlets = outletService.queryAllOutlet(outletName);
-			if (alloutlets != null && alloutlets.size() > 0) {
-				result.put("code", 1);
-				result.put("data", alloutlets);
-			} else {
-				result.put("code", 0);
-				result.put("msg", "操作失败");
-			}
+			List<Map<String, Object>> alloutlets1 = outletService.queryAllOutlet(outletName);
+			result.put("code", 1);
+			result.put("data", alloutlets1);
 		}
-		
-		
-		
 
 		return result;
 	}
+
 	
 	@RequestMapping("queryArea.do")
 	@ResponseBody

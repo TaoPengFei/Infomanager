@@ -72,15 +72,15 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
 
     //上一页
     $scope.Previous = function () {
-        console.log("Previous...")
-        console.log($scope.selPage - 1);
+        /*console.log("Previous...")
+        console.log($scope.selPage - 1);*/
         $scope.selectPage($scope.selPage - 1);
     };
 
     //下一页
     $scope.Next = function () {
-        console.log("Next...")
-        console.log($scope.selPage + 1);
+        /*console.log("Next...")
+        console.log($scope.selPage + 1);*/
         $scope.selectPage($scope.selPage + 1);
     };
 
@@ -93,7 +93,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
                 userName: $scope.userName
             }
         }).success(function (response) {
-            console.log(response);
+            // console.log(response);
             //$scope.userList = response;
             $scope.initPageSort(response);
             /*
@@ -196,8 +196,8 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
 
     //修改用户
     $scope.modifyUser = function (current, $event) {
-        console.log("修改用户...");
-        console.log(current);
+        /*console.log("修改用户...");
+        console.log(current);*/
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/modifyUser.html',
             //windowTemplateUrl: 'org/cboard/view/util/modal/window.html',

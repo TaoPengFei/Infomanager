@@ -75,9 +75,11 @@ public class BrandControllerTest {
 //		delete 需要传的参数和insert不一样，是 BrandSeq:1 pBrandId:[2,3] 这种json格式
 		
 		JSONArray json1 = new JSONArray();
-
 		json1.put(0);
-
+		json1.put(18);
+		json1.put(19);
+		json1.put(20);
+		json1.put(21);
         JSONObject jo = new JSONObject();
         jo.put("BrandId", json1);
         

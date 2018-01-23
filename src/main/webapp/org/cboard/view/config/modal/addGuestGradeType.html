@@ -44,8 +44,33 @@
             <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
                 <div class="input-group has-feedback">
                     <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_STATUS'|translate}}</span>
-                    <input type="text" class="form-control" id="newStatus"
-                           ng-model="newStatus" required>
+                    <!--<input type="text" class="form-control" id="newStatus"
+                           ng-model="newStatus" required>-->
+                    <div class="panel-heading form-control" style="
+                                    padding: 5px 15px;
+                                    /*border-top: 0px solid transparent;
+                                    border-right: 0px solid transparent;
+                                    border-bottom: 1px solid transparent;*/
+                                    border-top-left-radius: 0px;
+                                    border-top-right-radius: 0px;
+                                ">
+                        <!--<input tabindex="1" type="radio" id="Enable" value="cn" name="newStatus"
+                               ng-value=0
+                               ng-model="newStatus"
+                               ng-checked="true"  checkbox中使用
+                               checked ng-icheck>-->
+                        <input tabindex="0" type="radio" id="newEnable" value="0" name="newStatus"
+                               ng-value=0
+                               ng-model="newStatus"
+                               ng-checked="checked"
+                               ng-icheck>
+                        <label for="newEnable" style="font-weight: normal;">启用</label>
+                        <input tabindex="100" type="radio" id="newEliminate" value="100" name="newStatus"
+                               ng-value=100
+                               ng-model="newStatus"
+                               ng-icheck>
+                        <label for="newEliminate" style="font-weight: normal;">淘汰</label>
+                    </div>
                 </div>
             </div>
         </div>

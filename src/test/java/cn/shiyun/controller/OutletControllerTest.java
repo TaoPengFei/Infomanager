@@ -36,7 +36,7 @@ public class OutletControllerTest {
 	@Test
 	public void testDoOutlet1() throws Exception {
 		
-		ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.post("/outlet/咖啡"));
+		ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.post("/outlet/1"));
         MvcResult mvcResult = resultActions.andReturn();
         String result = mvcResult.getResponse().getContentAsString();
         System.out.println("=====客户端获得反馈数据:" + result);

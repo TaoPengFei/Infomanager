@@ -20,9 +20,15 @@
 			<div class="input-group">
 				<span class="input-group-addon">
 					<!-- {{'CONFIG.MENU_OUTLET.AREA_NAME'|translate}} -->区域
-				</span> <select class="form-control" id="areaId" ng-model="SelectArea"
-					ng-options="x.AreaId as x.AreaId for x in areaList_1.data">
+				</span>
+				<select class="form-control" id="areaId" ng-model="SelectArea"
+						ng-change="changeOpt(x);"
+					ng-options="x.AreaName_level1 as x.AreaName_level1 for x in areaList_1.data">
 				</select>
+				<!--<select class="form-control" id="areaId" ng-model="SelectArea">
+					 <option value="">{{'COMMON.SEARCH'|translate}}</option>
+					 <option ng-repeat="x in areaList_1.data" value="{{x.AreaId}}">{{x.AreaName_level1}}</option>
+				</select>-->
 			</div>
 
 		</div>

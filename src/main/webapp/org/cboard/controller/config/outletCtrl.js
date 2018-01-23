@@ -87,7 +87,7 @@ cBoard.controller('outletCtrl', function ($rootScope, $scope, $http, dataService
 
     // 下一页
     $scope.Next = function () {
-        console.log("Next...")
+        // console.log("Next...")
         $scope.selectPage($scope.selPage + 1);
     };
 
@@ -138,7 +138,10 @@ cBoard.controller('outletCtrl', function ($rootScope, $scope, $http, dataService
                     method: 'get',
                     url: './outlet/queryArea.do'
                 }).success(function (response) {
-                    $scope.SelectArea = current.AreaId; // 下拉框获取当前行的值
+                    // $scope.SelectArea = current.AreaId; // 下拉框获取当前行的值
+                    /*console.log(current.AreaName);
+                    console.log($scope.areaList_1);*/
+                    $scope.SelectArea = current.AreaName;
                     $scope.areaList_1 = response;
                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
@@ -147,7 +150,8 @@ cBoard.controller('outletCtrl', function ($rootScope, $scope, $http, dataService
                     method: 'get',
                     url: './outlet/queryPlace.do'
                 }).success(function (response) {
-                    $scope.SelectPlace = current.PlaceId;
+                    // $scope.SelectPlace = current.PlaceId;
+                    $scope.SelectPlace = current.PlaceName;
                     $scope.placeList_1 = response;
                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
@@ -182,4 +186,9 @@ cBoard.controller('outletCtrl', function ($rootScope, $scope, $http, dataService
             }
         });
     };
+
+    $scope.changeOpt = function (x) {
+        /*console.log(x);
+        console.log($scope.SelectArea);*/
+    }
 });

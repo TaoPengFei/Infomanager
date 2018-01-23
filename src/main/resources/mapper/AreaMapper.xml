@@ -14,24 +14,18 @@
     </select>
     
      <insert id="addArea" parameterType="Map">
-		insert into bi.sy_area(AreaCode,AreaName,AreaDesc,AreaSeq,pAreaId,`Status`,CreateTime,UpdateTime) values
-		(#{AreaCode},#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now())
+		insert into bi.sy_area(AreaId,AreaCode,AreaName,AreaDesc,AreaSeq,pAreaId,`Status`,CreateTime,UpdateTime) 
+		select MAX(AreaId)+1, MAX(AreaCode)+1,#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now()
+		from bi.sy_area where AreaCode like '${AreaCode}__'
 		</insert>
      
-     <!--<delete id="deleteArea">
+     <delete id="deleteArea">
          delete from bi.sy_area where pAreaId=#{pAreaId} and AreaId in
           <foreach collection="AreaId" item="item" open="(" separator="," close=")">
      	 	#{item}
      	 </foreach>
-     </delete>-->
-
-	<delete id="deleteArea">
-		delete from bi.sy_area where AreaId in
-		<foreach collection="AreaId" item="item" open="(" separator="," close=")">
-			#{item}
-		</foreach>
-	</delete>
-
+     </delete>
+    
     <update id="updateArea">
 	    update bi.sy_area  
 	    <set>

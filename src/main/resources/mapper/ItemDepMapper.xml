@@ -16,7 +16,7 @@
  
     
      <select id="getItemDep" resultType="Map">
-        select ItemDeptId,ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,
+        select ItemDeptId,ItemDeptCode,ItemDeptName,pItemDeptId,
         ItemDeptSeq,Status,CreateTime,UpdateTime 
         from bi.sy_itemdeptment
     </select>
@@ -25,11 +25,12 @@
         select count(*) from bi.sy_itemdeptment
     </select>
     
-     <insert id="addItemDep" parameterType="Map">
+     <insert id="addItemDep" parameterType="ItemDeptment">
 		insert into bi.sy_itemdeptment
-		(ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,ItemDeptSeq,`Status`,CreateTime,UpdateTime) 
-		values
-		(#{ItemDeptCode},#{ItemDeptName},#{ItemDeptShortName},#{ItemDeptDesc},#{pItemDeptId},#{ItemDeptSeq},#{Status},now(),now())
+		(ItemDeptId,ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,ItemDeptSeq,`Status`,CreateTime,UpdateTime) 
+		
+		(select max(ItemDeptId)+1,#{ItemDeptCode},#{ItemDeptName},0,0,0,
+		#{ItemDeptSeq},0,now(),now() from bi.sy_itemdeptment)
 		</insert>
      
      <delete id="deleteItemDep">
@@ -51,28 +52,12 @@
 		        ItemDeptName=#{ItemDeptName},
 		    </if>
 	    
-		    <if test="ItemDeptShortName != null and ItemDeptShortName !='' ">
-				ItemDeptShortName=#{ItemDeptShortName},
+		    <if test="pItemDeptId != null and pItemDeptId !='' ">
+		        pItemDeptId=#{pItemDeptId},
 		    </if>
-
-			<if test="ItemDeptDesc != null and ItemDeptDesc !='' ">
-				ItemDeptDesc=#{ItemDeptDesc},
-			</if>
-
-			<if test="pItemDeptId != null and pItemDeptId !='' ">
-				pItemDeptId=#{pItemDeptId},
-			</if>
-
-			<if test="ItemDeptSeq != null and ItemDeptSeq !='' ">
-				ItemDeptSeq=#{ItemDeptSeq},
-			</if>
-
-			<if test="Status != null and Status !='' ">
-				Status=#{Status},
-			</if>
 		    UpdateTime=now()
 	    </set>
-	    where  ItemDeptId=#{ItemDeptId}
+	    where  ItemDeptId=#{ItemDeptId} and ItemDeptSeq=#{ItemDeptSeq}
 	</update>
     
 </mapper> 

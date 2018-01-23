@@ -21,7 +21,22 @@
         <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
             <div class="input-group">
                 <span class="input-group-addon">{{'CONFIG.MENU_GUESTNOTYPE.STATUS'|translate}}</span>
-                <input type="text" class="form-control" id="editStatus" ng-model="editStatus">
+                <!--<input type="text" class="form-control" id="editStatus" ng-model="editStatus">-->
+                <div class="panel-heading form-control" style="
+                                    padding: 5px 15px;
+                                    border-top-left-radius: 0px;
+                                    border-top-right-radius: 0px;">
+                    <input tabindex="0" type="radio" id="editEnable" value="0" name="editStatus"
+                           ng-value=0
+                           ng-model="editStatus"
+                           ng-icheck>
+                    <label for="editEnable" style="font-weight: normal;">启用</label>
+                    <input tabindex="100" type="radio" id="editEliminate" value="100" name="editStatus"
+                           ng-value=100
+                           ng-model="editStatus"
+                           ng-icheck>
+                    <label for="editEliminate" style="font-weight: normal;">淘汰</label>
+                </div>
             </div>
         </div>
     </div>

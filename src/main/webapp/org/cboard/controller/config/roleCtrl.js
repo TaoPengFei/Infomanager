@@ -98,13 +98,13 @@ cBoard.controller('roleCtrl', function ($rootScope, $scope, $http, dataService, 
 
     //上一页
     $scope.Previous = function () {
-        console.log("Previous...")
+        // console.log("Previous...")
         $scope.selectPage($scope.selPage - 1);
     };
 
     //下一页
     $scope.Next = function () {
-        console.log("Next...")
+        // console.log("Next...")
         $scope.selectPage($scope.selPage + 1);
     };
 

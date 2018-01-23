@@ -17,11 +17,11 @@
     
      <insert id="addItemCat" parameterType="ItemDeptment">
 		insert into bi.sy_itemcategory
-		(ItemCatCode,ItemCatName,ItemCatShortName,
+		(ItemCatId,ItemCatCode,ItemCatName,ItemCatShortName,
 		ItemCatDesc,pItemCatId,pItemCatId2,ItemCatSeq,Status,CreateTime,
 		updateTime) 
-		values
-		(#{ItemCatCode},#{ItemCatName},#{ItemCatShortName},0,0,0,#{ItemCatSeq},0,now(),now())
+		(select max(ItemCatId)+1,#{ItemCatCode},#{ItemCatName},#{ItemCatShortName},
+		0,0,0,#{ItemCatSeq},0,now(),now() from bi.sy_itemcategory)
 		</insert>
      
      <delete id="deleteItemCat">

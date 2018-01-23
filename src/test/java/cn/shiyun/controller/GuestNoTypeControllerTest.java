@@ -81,7 +81,7 @@ public class GuestNoTypeControllerTest {
 //		delete 需要传的参数和insert不一样，是 BrandSeq:1 pBrandId:[2,3] 这种json格式
 		
 		JSONArray json1 = new JSONArray();
-		json1.put(12);
+		json1.put(7);
         JSONObject jo = new JSONObject();
         jo.put("GuestNoTypeId", json1);
         
@@ -104,12 +104,12 @@ public class GuestNoTypeControllerTest {
 		
 		
         JSONObject jo = new JSONObject();
-        jo.put("GuestNoTypeId", 6);
+        jo.put("GuestNoTypeId", 7);
         jo.put("GuestNoTypeName", "中華");
         jo.put("GuestNoTypeDesc", "中華");
-        jo.put("BottomGuestQty", -1);
-        jo.put("TopGuestQty", -1);
-        jo.put("Status", 1);
+        jo.put("BottomGuestQty", 10);
+        jo.put("TopGuestQty", 10);
+        jo.put("Status", "0");
        
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}
         String requestjson = jo.toString();

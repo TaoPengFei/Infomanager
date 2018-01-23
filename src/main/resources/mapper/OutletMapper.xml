@@ -34,7 +34,7 @@
 			now() as CreateTime,
 			now() as UpdateTime
 		from bi.dim_outlet a 
-			
+
 		where
 		 a.OutletId not in 
 		(
@@ -53,17 +53,28 @@
 	</insert>
 	
 	<select id="getAllOutlets" parameterType="String" resultType="Map">
-		select * from bi.sy_outlet a
-		 <if test="_parameter != null and _parameter != ''">
-			 where  a.OutletName like '%${_parameter}%'
-		</if> 
-	</select>
+        select a.OutletId,a.OutletCode,a.OutletName,a.OutletShortName,
+        a.AreaId,sya.AreaName_level1,
+        a.PlaceId,dimp.PlaceName,
+        a.BrandId,syb.BrandName_level1,
+        a.Country,a.Region,a.Province,a.City,a.Addr1,a.Addr2,a.Contract,
+        a.TableQty,a.SeatQty,a.EmpQty,a.Area,a.CreateTime,a.UpdateTime
+        from bi.sy_outlet a
+        LEFT JOIN bi.dim_Area sya on a.AreaId = sya.AreaId
+        LEFT JOIN bi.dim_Brand syb on a.BrandId = syb.BrandId
+        LEFT JOIN bi.dim_place dimp on a.PlaceId = dimp.PlaceId
+
+        <if test="_parameter != null and _parameter != ''">
+            where  a.OutletName like '%${_parameter}%'
+        </if>
+
+    </select>
 	
 	<select id="getAreas" resultType="Map"	> 
         select 
         	a.AreaId,
 			a.AreaName_level1
-		from bi.dim_Area a    
+		from bi.dim_Area a
 	</select>
 	
 	<select id="getPlaces" resultType="Map"	> 
@@ -75,9 +86,9 @@
 	
 	<select id="getBrands" resultType="Map"	> 
         select 
-        	a.BrandId,
+        	a.BrandId_level1,
 			a.BrandName_level1
-		from bi.dim_Brand a    
+		from bi.dim_Brand a
 	</select>
 	
 	<update id="updateApbs" parameterType="Outlet">

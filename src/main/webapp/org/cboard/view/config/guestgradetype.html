@@ -38,7 +38,8 @@
                         <button type="button" class="btn btn-info btn-xs" ng-click="editGuestGradeType(row, $event)">
                             <span class="glyphicon glyphicon-pencil"></span>{{'COMMON.EDIT'|translate}}
                         </button>
-                        <button type="button" class="btn btn-success btn-xs"
+
+                        <!--<button type="button" class="btn btn-success btn-xs"
                                 ng-class="{true:'trueClass',false:'falseClass'}[row.enabled]"
                                 ng-disabled="{{ (row.Status === '0') ? 'true' : 'false' }}"
                                 ng-click="enableGuestGradeType(row, $event)">
@@ -49,11 +50,12 @@
                                 ng-disabled="{{ (row.Status === '0') ? 'false' : 'true' }}"
                                 ng-click="enableGuestGradeType(row, $event)">
                             <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_USER.ENABLE_NO'|translate}}
-                        </button>
-                        <!--<button type="button" class="btn btn-danger btn-xs"
+                        </button>-->
+
+                        <button type="button" class="btn btn-danger btn-xs"
                                 ng-click="delGuestGradeType(row, $event)">
                             <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_PLACE.PLACE_DEL'|translate}}
-                        </button>-->
+                        </button>
                     </td>
                 </tr>
                 </tbody>

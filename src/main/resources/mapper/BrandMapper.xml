@@ -24,8 +24,8 @@
     </select>
     
      <insert id="addBrand" parameterType="Brand">
-		insert into bi.sy_brand(BrandCode,BrandName,BrandDesc,BrandSeq,pBrandId,`Status`,CreateTime,UpdateTime) values
-		(#{BrandCode},#{BrandName},#{BrandDesc},0,#{pBrandId},0,now(),now())
+		insert into bi.sy_brand(BrandId,BrandCode,BrandName,BrandDesc,BrandSeq,pBrandId,`Status`,CreateTime,UpdateTime) 
+		(select max(BrandId)+1,#{BrandCode},#{BrandName},#{BrandDesc},0,#{pBrandId},0,now(),now() from bi.sy_brand)
 		</insert>
      
      <delete id="deleteBrand">

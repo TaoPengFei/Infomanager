@@ -80,7 +80,7 @@ public class ItemCatControllerTest {
 		
 		JSONArray json1 = new JSONArray();
 		json1.put(119);
-		//json1.put(120);
+		json1.put(120);
         JSONObject jo = new JSONObject();
         jo.put("ItemCatId", json1);
         
