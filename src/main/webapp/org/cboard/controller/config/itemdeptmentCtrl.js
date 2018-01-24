@@ -80,6 +80,9 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
     };
 
     //初始化
+    /**
+     * 查询餐品部门
+     */
     var getItemDeptmentList = function () {
         $http({
             method: 'get',
@@ -89,6 +92,7 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
              }*/
         }).success(function (response) {
             // $scope.itemDeptmentList = response;
+            console.log(response);
             $scope.initPageSort(response);
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
             ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
@@ -96,6 +100,9 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
     };
     getItemDeptmentList();
 
+    /**
+     * 增加餐品部门
+     */
     $scope.addItemDeptment = function () {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/addItemDeptment.html',
@@ -114,10 +121,10 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
                             ItemDeptCode: $scope.newItemDeptmentCode,
                             ItemDeptName: $scope.newItemDeptmentName,
                             ItemDeptShortName: $scope.newItemDeptmentShortName,
-                            pItemDeptId: $scope.newPID,
-                            ItemDeptSeq: $scope.newItemDeptmentSeq,
-                            Status: $scope.newItemDeptmentStatus,
-                            ItemDeptDesc: $scope.newItemDeptDesc,
+                            pItemDeptId: parseInt($scope.newPID),   //需要做类型的匹配，Mybatis的mapper与数据库的表字段类型匹配
+                            ItemDeptSeq: parseInt($scope.newItemDeptmentSeq),
+                            Status: parseInt($scope.newItemDeptmentStatus),
+                            ItemDeptDesc: $scope.newItemDeptDesc
                         })
                     }).success(function (response) {
                         if (response.code === 0) {
@@ -137,6 +144,9 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
         });
     }
 
+    /**
+     * 修改餐品部门
+     */
     $scope.editItemDeptment = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/editItemDeptment.html',
@@ -186,6 +196,9 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
         });
     }
 
+    /**
+     * 删除餐品部门
+     */
     $scope.delItemDeptment = function (current, $event) {
         $http({
             method: 'POST',

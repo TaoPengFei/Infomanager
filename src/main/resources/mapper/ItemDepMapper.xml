@@ -16,7 +16,7 @@
  
     
      <select id="getItemDep" resultType="Map">
-        select ItemDeptId,ItemDeptCode,ItemDeptName,pItemDeptId,
+        select ItemDeptId,ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,
         ItemDeptSeq,Status,CreateTime,UpdateTime 
         from bi.sy_itemdeptment
     </select>
@@ -27,8 +27,8 @@
     
      <insert id="addItemDep" parameterType="ItemDeptment">
 		insert into bi.sy_itemdeptment
-		(ItemDeptId,ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,ItemDeptSeq,`Status`,CreateTime,UpdateTime) 
-		
+		(ItemDeptId,ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,ItemDeptSeq,`Status`,CreateTime,UpdateTime)
+
 		(select max(ItemDeptId)+1,#{ItemDeptCode},#{ItemDeptName},0,0,0,
 		#{ItemDeptSeq},0,now(),now() from bi.sy_itemdeptment)
 		</insert>
@@ -52,9 +52,21 @@
 		        ItemDeptName=#{ItemDeptName},
 		    </if>
 	    
-		    <if test="pItemDeptId != null and pItemDeptId !='' ">
+		    <if test="pItemDeptId != null">
 		        pItemDeptId=#{pItemDeptId},
 		    </if>
+
+			<if test="Status != null ">
+				Status=#{Status},
+			</if>
+
+			<if test="ItemDeptShortName != null and ItemDeptShortName !='' ">
+				ItemDeptShortName=#{ItemDeptShortName},
+			</if>
+
+			<if test="ItemDeptDesc != null and ItemDeptDesc !='' ">
+				ItemDeptDesc=#{ItemDeptDesc},
+			</if>
 		    UpdateTime=now()
 	    </set>
 	    where  ItemDeptId=#{ItemDeptId} and ItemDeptSeq=#{ItemDeptSeq}
