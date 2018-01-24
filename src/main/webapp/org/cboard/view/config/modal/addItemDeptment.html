@@ -63,7 +63,22 @@
         <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
             <div class="input-group">
                 <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.STATUS'|translate}}</span>
-                <input type="text" class="form-control" id="newItemDeptmentStatus" ng-model="newItemDeptmentStatus">
+                <!--<input type="text" class="form-control" id="newItemDeptmentStatus" ng-model="newItemDeptmentStatus">-->
+                <div class="panel-heading form-control" style="
+                                    padding: 5px 15px;
+                                    border-top-left-radius: 0px;
+                                    border-top-right-radius: 0px;">
+                    <input tabindex="0" type="radio" id="newEnable" value="0" name="newItemDeptmentStatus"
+                           ng-value=0
+                           ng-model="newItemDeptmentStatus"
+                           ng-icheck>
+                    <label for="newEnable" style="font-weight: normal;">启用</label>
+                    <input tabindex="100" type="radio" id="newEliminate" value="100" name="newItemDeptmentStatus"
+                           ng-value=100
+                           ng-model="newItemDeptmentStatus"
+                           ng-icheck>
+                    <label for="newEliminate" style="font-weight: normal;">淘汰</label>
+                </div>
             </div>
         </div>
     </div>
