@@ -53,4 +53,11 @@ public class BrandServiceImpl implements BrandService {
 		return brandDao.updateBrand(param);
 	}
 
+	//拖拽品牌
+	@Override
+	public int dropBrand(Map<String, Object> param) {
+
+		return brandDao.dropBrand(param);
+	}
+
 }

@@ -24,4 +24,7 @@ public interface BrandService {
 	//跟新品牌
 	int updateBrand(Map<String, Object> param);
 
+	//拖拽品牌
+	int dropBrand(Map<String, Object> param);
+
 }

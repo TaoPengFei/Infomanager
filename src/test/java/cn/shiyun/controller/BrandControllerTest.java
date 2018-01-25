@@ -43,7 +43,6 @@ public class BrandControllerTest {
 	@Test
 	public void testSelectBrand() throws Exception {
 		ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.post("/brand/selectBrand.do"));
-		
         MvcResult mvcResult = resultActions.andReturn();
         String result = mvcResult.getResponse().getContentAsString();
         System.out.println("=====客户端获得反馈数据:" + result);
@@ -57,23 +56,18 @@ public class BrandControllerTest {
         JSONArray json = new JSONArray();
         JSONObject jo1 = new JSONObject();
         jo1.put("pBrandId", "1");
-       
 //   这个就是前段需要传的json的array     [{"outletid":2,"username":"admin"},{"outletid":3,"username":"admin"}]
         String requestjson = jo1.toString();
         System.out.println(requestjson);
-        
-		
 //json格式的传输不能使用get方法中的paran这样的方法来处理了，必须是下面的方式
 		String responseString = mockMvc.perform(MockMvcRequestBuilders.post("/brand/addBrand.do").contentType(MediaType.APPLICATION_JSON).content(requestjson))
                 .andReturn().getResponse().getContentAsString();
-
 		System.out.println(responseString);
 	}
 	
 	@Test
 	public void testDeleteBrand() throws  Exception  {
 //		delete 需要传的参数和insert不一样，是 BrandSeq:1 pBrandId:[2,3] 这种json格式
-		
 		JSONArray json1 = new JSONArray();
 		json1.put(0);
 		json1.put(18);
@@ -82,41 +76,41 @@ public class BrandControllerTest {
 		json1.put(21);
         JSONObject jo = new JSONObject();
         jo.put("BrandId", json1);
-        
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}
         String requestjson = jo.toString();
         System.out.println(requestjson);
-        
-		
 //json格式的传输不能使用get方法中的paran这样的方法来处理了，必须是下面的方式
 		String responseString = mockMvc.perform(MockMvcRequestBuilders.post("/brand/deleteBrand.do").contentType(MediaType.APPLICATION_JSON).content(requestjson))
                 .andReturn().getResponse().getContentAsString();
-		
-
 		System.out.println(responseString);
 	}
 	
 	@Test
 	public void testUpdateBrand() throws  Exception  {
 //		delete 需要传的参数和insert不一样，是 BrandSeq:1 pBrandId:[2,3] 这种json格式
-		
-		
         JSONObject jo = new JSONObject();
-        jo.put("BrandId", 17);
+        jo.put("BrandId", 14);
         jo.put("pBrandId", 0);
         jo.put("BrandCode", "1");
         jo.put("BrandName", "1");
-       
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}
         String requestjson = jo.toString();
         System.out.println(requestjson);
-        
-		
 //json格式的传输不能使用get方法中的paran这样的方法来处理了，必须是下面的方式
 		String responseString = mockMvc.perform(MockMvcRequestBuilders.post("/brand/updateBrand.do").contentType(MediaType.APPLICATION_JSON).content(requestjson))
                 .andReturn().getResponse().getContentAsString();
-		
+		System.out.println(responseString);
+	}
 
+	@Test
+	public void testDropBrand() throws  Exception {
+		JSONObject jo = new JSONObject();
+		jo.put("BrandId", 12);
+		jo.put("pBrandId", 14);
+		String requestjson = jo.toString();
+		System.out.println(requestjson);
+		String responseString = mockMvc.perform(MockMvcRequestBuilders.post("/brand/dropBrand.do").contentType(MediaType.APPLICATION_JSON).content(requestjson))
+				.andReturn().getResponse().getContentAsString();
 		System.out.println(responseString);
 	}
 

@@ -129,7 +129,7 @@ public class BrandController {
         try {
             if (Integer.valueOf(param.get("BrandId").toString()) == 0) {
                 result.put("code", -2);
-                result.put("msg", "禁止修改root!");
+                result.put("msg", "禁止修改root根节点!");
             } else {
                 int rowCount = brandService.updateBrand(param);
                 if (rowCount > 0) {
@@ -147,4 +147,29 @@ public class BrandController {
         return result;
     }
 
+    //拖拽品牌
+    @RequestMapping("dropBrand.do")
+    @ResponseBody
+    public Map<String, Object> dropBrand(@RequestBody Map<String, Object> param){
+        Map<String, Object> result = new HashMap<String, Object>();
+        try {
+            if (Integer.valueOf(param.get("BrandId").toString()) == 0) {
+                result.put("code", -2);
+                result.put("msg", "禁止拖拽root!");
+            } else {
+                int rowCount = brandService.dropBrand(param);
+                if (rowCount > 0) {
+                    result.put("code", 1);
+                    result.put("msg", "操作成功");
+                } else {
+                    result.put("code", 0);
+                    result.put("msg", "操作失败");
+                }
+            }
+        } catch (Exception e) {
+            result.put("code", -1);
+            result.put("msg", e.getMessage());
+        }
+        return result;
+    }
 }

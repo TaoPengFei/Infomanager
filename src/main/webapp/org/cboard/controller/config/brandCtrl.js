@@ -124,6 +124,37 @@ cBoard.controller('brandCtrl', function ($rootScope, $scope, $http, dataService,
     }
 
     /**
+     * 拖拽控制
+     */
+    $scope.brandTreeDrop = function () {
+        console.log("brandTreeDrop");
+        console.log($scope.dropBrandId);
+        console.log($scope.dropBrandPId);
+        $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            url: './brand/dropBrand.do',
+            data: JSON.stringify({
+                BrandId: $scope.dropBrandId,
+                pBrandId: $scope.dropBrandPId
+            })
+        }).success(function (response) {
+            if (response.code === 0) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === 1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                $scope.treeStatus = response.code;
+            } else if (response.code === -1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === -2) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        });
+    }
+
+    /**
      * 取消
      */
     $scope.canel = function () {

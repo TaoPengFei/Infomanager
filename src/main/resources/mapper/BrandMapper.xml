@@ -54,5 +54,18 @@
 	    </set>
 	    where  BrandId=#{BrandId} and pBrandId=#{pBrandId}
 	</update>
+
+    <update id="dropBrand">
+        update bi.sy_brand
+        <set>
+
+            <if test="pBrandId != null">
+                pBrandId=#{pBrandId},
+            </if>
+
+            UpdateTime=now()
+        </set>
+        where  BrandId=#{BrandId}
+    </update>
     
 </mapper> 

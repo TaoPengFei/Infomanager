@@ -11,6 +11,17 @@ cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($h
         link: function ($scope, element, attrs, ngModel) {
             //var opts = angular.extend({}, $scope.$eval(attrs.nlUploadify));
             var setting = {
+                edit: {
+                    drag: {
+                        isMove: true,
+                        prev: false,
+                        inner: true,
+                        next: false
+                    },
+                    enable: true,
+                    showRemoveBtn: false,
+                    showRenameBtn: false
+                },
                 view: {
                     dblClickExpand: dblClickExpand,
                     addDiyDom: addDiyDom,
@@ -29,13 +40,34 @@ cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($h
                         $scope.$apply(function () {
                             ngModel.$setViewValue(treeNode);
                         });
-                    }
+                    },
+                    onDrop: brandTreeDrop
                 }
             };
+
+            /**
+             * 拖拽时的事件控制
+             * @param event
+             * @param treeId
+             * @param treeNodes
+             * @param targetNode
+             * @param moveType
+             */
+            function brandTreeDrop(event, treeId, treeNodes, targetNode, moveType) {
+                $scope.dropBrandId = treeNodes[0].id;
+                $scope.dropBrandPId = targetNode.id;
+                $scope.brandTreeDrop();
+            }
 
             function dblClickExpand(treeId, treeNode) {
                 return treeNode.level > 0;
             };
+
+            /**
+             * 添加增、删、改的DOM
+             * @param treeId
+             * @param treeNode
+             */
             function addDiyDom(treeId, treeNode) {
                 var aObj = $("#" + treeNode.tId + "_a");
                 if ($("#diyBtn_" + treeNode.id).length > 0) return;
