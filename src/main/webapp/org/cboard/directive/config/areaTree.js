@@ -96,7 +96,8 @@ cBoard.directive('area', ['$http', '$interval', '$filter', '$log', function ($ht
                         "desc": "Root",
                         "code": "-1",
                         "open": true
-                    })
+                    });
+                    // console.log(zNodes);
                     $.fn.zTree.init(element, setting, zNodes);
                 })
             };

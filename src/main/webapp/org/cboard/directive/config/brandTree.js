@@ -102,7 +102,7 @@ cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($h
                         "code": "-1",
                         "open": true
                     })
-                    console.log(zNodes);
+                    // console.log(zNodes);
                     $.fn.zTree.init(element, setting, zNodes);
                 })
             };
