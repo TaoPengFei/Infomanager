@@ -92,7 +92,17 @@ cBoard.directive('brand', ['$http', '$interval', '$filter', '$log', function ($h
                             "open": true
                         });
                         return newArr[0];
+                    });
+                    //手动添加一个Root根节点
+                    zNodes.push({
+                        "id": 0,
+                        "pId": -1,
+                        "name": "Root",
+                        "desc": "Root",
+                        "code": "-1",
+                        "open": true
                     })
+                    console.log(zNodes);
                     $.fn.zTree.init(element, setting, zNodes);
                 })
             };

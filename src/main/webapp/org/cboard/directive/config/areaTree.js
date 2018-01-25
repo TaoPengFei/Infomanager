@@ -89,6 +89,14 @@ cBoard.directive('area', ['$http', '$interval', '$filter', '$log', function ($ht
                         });
                         return newArr[0];
                     });
+                    zNodes.push({
+                        "id": 0,
+                        "pId": -1,
+                        "name": "Root",
+                        "desc": "Root",
+                        "code": "-1",
+                        "open": true
+                    })
                     $.fn.zTree.init(element, setting, zNodes);
                 })
             };
