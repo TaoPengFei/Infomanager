@@ -51,4 +51,11 @@ public class AreaServiceImpl implements AreaService {
 		return areaDao.updateArea(param);
 	}
 
+	//拖拽地区
+	@Override
+	public int dropArea(Map<String, Object> param) {
+
+		return areaDao.dropArea(param);
+	}
+
 }

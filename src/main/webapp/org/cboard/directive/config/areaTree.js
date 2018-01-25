@@ -8,6 +8,17 @@ cBoard.directive('area', ['$http', '$interval', '$filter', '$log', function ($ht
         restrict: 'A',
         link: function ($scope, element, attrs, ngModel) {
             var setting = {
+                edit: {
+                    drag: {
+                        isMove: true,
+                        prev: false,
+                        inner: true,
+                        next: false
+                    },
+                    enable: true,
+                    showRemoveBtn: false,
+                    showRenameBtn: false
+                },
                 view: {
                     dblClickExpand: dblClickExpand,
                     addDiyDom: addDiyDom,
@@ -26,12 +37,40 @@ cBoard.directive('area', ['$http', '$interval', '$filter', '$log', function ($ht
                         $scope.$apply(function () {
                             ngModel.$setViewValue(treeNode);
                         });
-                    }
+                    },
+                    onDrop: areaTreeDrop
                 }
             };
+
+            /**
+             *
+             * @param treeId
+             * @param treeNode
+             * @returns {boolean}
+             */
             function dblClickExpand(treeId, treeNode) {
                 return treeNode.level > 0;
             };
+
+            /**
+             *  拖拽时的事件控制
+             * @param event
+             * @param treeId
+             * @param treeNodes
+             * @param targetNode
+             * @param moveType
+             */
+            function areaTreeDrop(event, treeId, treeNodes, targetNode, moveType) {
+                $scope.dropAreaId = treeNodes[0].id;
+                $scope.dropAreapPId = targetNode.id;
+                $scope.areaTreeDrop();
+            }
+
+            /**
+             *
+             * @param treeId
+             * @param treeNode
+             */
             function addDiyDom(treeId, treeNode) {
                 var aObj = $("#" + treeNode.tId + "_a");
                 if ($("#diyBtn_" + treeNode.id).length > 0) return;

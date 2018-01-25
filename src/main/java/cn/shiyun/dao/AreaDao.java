@@ -23,4 +23,7 @@ public interface AreaDao {
 	//跟新地区
 	int updateArea(Map<String, Object> param);
 
+	//拖拽地区
+	int dropArea(Map<String, Object> param);
+
 }

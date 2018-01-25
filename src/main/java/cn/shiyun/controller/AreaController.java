@@ -120,4 +120,28 @@ public class AreaController {
 			}
 			return result;
 		}
+
+	//拖拽地区
+	@RequestMapping("dropArea.do")
+	@ResponseBody
+	public Map<String, Object> dropArea(@RequestBody Map<String,Object> param) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		try {
+			int rowCount = areaService.dropArea(param);
+			if (rowCount > 0) {
+				result.put("code", 1);
+				result.put("msg", "操作成功");
+			}else if (rowCount == -2) {
+				result.put("code", -2);
+				result.put("msg", "用户角色已存在，不允许重复设置");
+			} else {
+				result.put("code", 0);
+				result.put("msg", "操作失败");
+			}
+		} catch (Exception e) {
+			result.put("code", -1);
+			result.put("msg", e.getMessage());
+		}
+		return result;
+	}
 }

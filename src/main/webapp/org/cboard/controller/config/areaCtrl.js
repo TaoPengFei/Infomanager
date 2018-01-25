@@ -99,6 +99,35 @@ cBoard.controller('areaCtrl', function ($rootScope, $scope, $http, dataService, 
     }
 
     /**
+     * 拖拽控制
+     */
+    $scope.areaTreeDrop = function () {
+        $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            url: './area/dropArea.do',
+            data: JSON.stringify({
+                AreaId: $scope.dropAreaId,
+                pAreaId: $scope.dropAreapPId
+
+            })
+        }).success(function (response) {
+            if (response.code === 0) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === 1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-success", "md");
+                $scope.treeStatusArea = response.code;
+            } else if (response.code === -1) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            } else if (response.code === -2) {
+                ModalUtils.alert(translate(response.msg + "!"), "modal-danger", "md");
+            }
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        });
+    }
+    
+    /**
      * 取消
      */
     $scope.canel = function () {

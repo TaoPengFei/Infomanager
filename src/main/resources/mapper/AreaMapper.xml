@@ -15,7 +15,7 @@
     
      <insert id="addArea" parameterType="Map">
 		insert into bi.sy_area(AreaId,AreaCode,AreaName,AreaDesc,AreaSeq,pAreaId,`Status`,CreateTime,UpdateTime) 
-		select MAX(AreaId)+1, MAX(AreaCode)+1,#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now()
+		select MAX(AreaId)+1, #{AreaCode},#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now()
 		from bi.sy_area
 	</insert>
 	<!--<insert id="addArea" parameterType="Map">
@@ -49,6 +49,19 @@
 		    UpdateTime=now()
 	    </set>
 	    where  AreaId=#{AreaId} and pAreaId=#{pAreaId}
+	</update>
+
+	<update id="dropArea">
+		update bi.sy_area
+		<set>
+
+			<if test="pAreaId != null and pAreaId !='' ">
+				pAreaId=#{pAreaId},
+			</if>
+
+			UpdateTime=now()
+		</set>
+		where  AreaId=#{AreaId}
 	</update>
     
 </mapper> 

@@ -127,9 +127,6 @@ cBoard.controller('brandCtrl', function ($rootScope, $scope, $http, dataService,
      * 拖拽控制
      */
     $scope.brandTreeDrop = function () {
-        console.log("brandTreeDrop");
-        console.log($scope.dropBrandId);
-        console.log($scope.dropBrandPId);
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
