@@ -16,8 +16,13 @@
      <insert id="addArea" parameterType="Map">
 		insert into bi.sy_area(AreaId,AreaCode,AreaName,AreaDesc,AreaSeq,pAreaId,`Status`,CreateTime,UpdateTime) 
 		select MAX(AreaId)+1, MAX(AreaCode)+1,#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now()
+		from bi.sy_area
+	</insert>
+	<!--<insert id="addArea" parameterType="Map">
+		insert into bi.sy_area(AreaId,AreaCode,AreaName,AreaDesc,AreaSeq,pAreaId,`Status`,CreateTime,UpdateTime)
+		select MAX(AreaId)+1, MAX(AreaCode)+1,#{AreaName},#{AreaDesc},0,#{pAreaId},0,now(),now()
 		from bi.sy_area where AreaCode like '${AreaCode}__'
-		</insert>
+	</insert>-->
      
      <delete id="deleteArea">
          delete from bi.sy_area where pAreaId=#{pAreaId} and AreaId in

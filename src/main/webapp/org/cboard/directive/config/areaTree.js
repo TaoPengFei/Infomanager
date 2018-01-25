@@ -65,9 +65,11 @@ cBoard.directive('area', ['$http', '$interval', '$filter', '$log', function ($ht
                     $scope.optFlagArea = 'editArea';
                 });
                 if (delbtn) delbtn.bind("click", function () {
+
+                    // $scope.delAreapId = treeNode.pId;
                     $scope.optFlagArea = 'none';
                     $scope.searchAreaTree(treeNode);
-                    $scope.delArea();
+                    $scope.delArea(treeNode.pId);
                 });
             };
 

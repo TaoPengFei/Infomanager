@@ -73,13 +73,14 @@ cBoard.controller('areaCtrl', function ($rootScope, $scope, $http, dataService, 
     /**
      * 删除项保存
      */
-    $scope.delArea = function () {
+    $scope.delArea = function (curPid) {
         $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             url: './area/deleteArea.do',
             data: JSON.stringify({
-                AreaId: zNodesJSON
+                AreaId: zNodesJSON,
+                pAreaId: curPid
             })
         }).success(function (response) {
             if (response.code === 0) {

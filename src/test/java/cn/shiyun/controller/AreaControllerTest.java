@@ -56,10 +56,10 @@ public class AreaControllerTest {
 		
         JSONArray json = new JSONArray();
         JSONObject jo1 = new JSONObject();
-        jo1.put("pAreaId", 100000);
-        jo1.put("AreaCode", "10");
-        jo1.put("AreaName", "中华");
-        jo1.put("AreaDesc", "中华");
+        jo1.put("pAreaId", 1);
+        jo1.put("AreaCode", "1");
+        jo1.put("AreaName", "1");
+        jo1.put("AreaDesc", "1");
 //   这个就是前段需要传的json的array     [{"outletid":2,"username":"admin"},{"outletid":3,"username":"admin"}]
         String requestjson = jo1.toString();
         System.out.println(requestjson);
@@ -79,9 +79,9 @@ public class AreaControllerTest {
 		JSONArray json1 = new JSONArray();
 		
 		json1.put(300105);
-		json1.put(300106);
+//		json1.put(300106);
         JSONObject jo = new JSONObject();
-        jo.put("pAreaId", 1);
+        jo.put("pAreaId", 0);
         jo.put("AreaId", json1);
         
 //   这个就是前段需要传的json的array     {"outletid":[2,3],"userName":"admin"}
