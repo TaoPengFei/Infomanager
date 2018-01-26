@@ -1,105 +1,175 @@
 <!--
    Created by 陶鹏飞 on 2017/9/21.
 -->
-
-<!-- 模态框header -->
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
-        <span aria-hidden="true">×</span></button>
-    <h4 class="modal-title">{{'CONFIG.MENU_OUTLET.MODIFY_PROPERTY'|translate}}</h4>
-</div>
-
-<!-- 模态框body -->
-<div class="modal-body">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.CODE'|translate}}</span>
-                <input type="text" class="form-control" id="editItemDeptmentCode" ng-model="editItemDeptmentCode">
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.NAME'|translate}}</span>
-                <input type="text" class="form-control" id="editItemDeptmentName" ng-model="editItemDeptmentName">
-            </div>
-        </div>
+<form id="editItemDeptForm" class="form-horizontal" role="form" name="editItemDeptForm"
+      ng-submit="ctrl.submit()">
+    <!-- 模态框header -->
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+            <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{'CONFIG.MENU_OUTLET.MODIFY_PROPERTY'|translate}}</h4>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1></h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SHORT_NAME'|translate}}</span>
-                <input type="text" class="form-control" id="editItemDeptmentShortName" ng-model="editItemDeptmentShortName">
+    <!-- 模态框body -->
+    <div class="modal-body">
+        <div class="row">
+            <!-- 餐品编码 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : editItemDeptForm.editItemDeptmentCode.$valid,
+                              'has-error' : editItemDeptForm.editItemDeptmentCode.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.CODE'|translate}}</span>
+                    <input type="text" class="form-control" id="editItemDeptmentCode" name="editItemDeptmentCode"
+                           ng-model="editItemDeptmentCode" required>
+                    <div ng-show="!editItemDeptForm.editItemDeptmentCode.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editItemDeptForm.editItemDeptmentCode.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editItemDeptForm.editItemDeptmentCode.$invalid">
+                    <span ng-show="editItemDeptForm.editItemDeptmentCode.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
+            </div>
+            <!-- 餐品名称 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : editItemDeptForm.editItemDeptmentName.$valid,
+                              'has-error' : editItemDeptForm.editItemDeptmentName.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.NAME'|translate}}</span>
+                    <input type="text" class="form-control" id="editItemDeptmentName" name="editItemDeptmentName"
+                           ng-model="editItemDeptmentName" required>
+                    <div ng-show="!editItemDeptForm.editItemDeptmentName.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editItemDeptForm.editItemDeptmentName.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editItemDeptForm.editItemDeptmentName.$invalid">
+                    <span ng-show="editItemDeptForm.editItemDeptmentName.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.PID'|translate}}</span>
-                <input type="text" class="form-control" id="editPID" ng-model="editPID">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1></h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SEQ'|translate}}</span>
-                <input type="text" class="form-control" id="editItemDeptmentSeq" ng-model="editItemDeptmentSeq">
+        <div class="row">
+            <!-- 简称 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SHORT_NAME'|translate}}</span>
+                    <input type="text" class="form-control" id="editItemDeptmentShortName" name="editItemDeptmentShortName"
+                           ng-model="editItemDeptmentShortName">
+                </div>
+            </div>
+            <!-- 父部门ID -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.PID'|translate}}</span>
+                    <input type="text" class="form-control" id="editPID" name="editPID"
+                           ng-model="editPID">
+                </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.STATUS'|translate}}</span>
-                <!--<input type="text" class="form-control" id="editItemDeptmentStatus" ng-model="editItemDeptmentStatus">-->
-                <div class="panel-heading form-control" style="
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- 序列 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SEQ'|translate}}</span>
+                    <input type="text" class="form-control" id="editItemDeptmentSeq" name="editItemDeptmentSeq"
+                           ng-maxlength="11"
+                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
+                           ng-model="editItemDeptmentSeq" required>
+                    <div ng-show="!editItemDeptForm.editItemDeptmentSeq.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editItemDeptForm.editItemDeptmentSeq.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editItemDeptForm.editItemDeptmentSeq.$invalid">
+                    <span ng-show="editItemDeptForm.editItemDeptmentSeq.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
+                <div style="color: red" ng-show="editItemDeptForm.editItemDeptmentSeq.$invalid">
+                    <span ng-show="editItemDeptForm.editItemDeptmentSeq.$error.pattern">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
+                    </span>
+                </div>
+                <div style="color: red" ng-show="editItemDeptForm.editItemDeptmentSeq.$invalid">
+                    <span ng-show="editItemDeptForm.editItemDeptmentSeq.$error.maxlength">
+                        {{'CONFIG.MENU_ITEMDEPTMENT.LENGTH_CHECK_11'|translate}}
+                    </span>
+                </div>
+            </div>
+            <!-- 状态 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.STATUS'|translate}}</span>
+                    <!--<input type="text" class="form-control" id="editItemDeptmentStatus" ng-model="editItemDeptmentStatus">-->
+                    <div class="panel-heading form-control" style="
                                     padding: 5px 15px;
                                     border-top-left-radius: 0px;
                                     border-top-right-radius: 0px;">
-                    <input tabindex="0" type="radio" id="newEnable" value="0" name="editItemDeptmentStatus"
-                           ng-value=0
-                           ng-model="editItemDeptmentStatus"
-                           ng-icheck>
-                    <label for="newEnable" style="font-weight: normal;">启用</label>
-                    <input tabindex="100" type="radio" id="newEliminate" value="100" name="editItemDeptmentStatus"
-                           ng-value=100
-                           ng-model="editItemDeptmentStatus"
-                           ng-icheck>
-                    <label for="newEliminate" style="font-weight: normal;">淘汰</label>
+                        <input tabindex="0" type="radio" id="newEnable" value="0" name="editItemDeptmentStatus"
+                               ng-value=0
+                               ng-model="editItemDeptmentStatus"
+                               ng-icheck>
+                        <label for="newEnable" style="font-weight: normal;">启用</label>
+                        <input tabindex="100" type="radio" id="newEliminate" value="100" name="editItemDeptmentStatus"
+                               ng-value=100
+                               ng-model="editItemDeptmentStatus"
+                               ng-icheck>
+                        <label for="newEliminate" style="font-weight: normal;">淘汰</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- 描述 -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.DESC'|translate}}</span>
+                    <textarea class="form-control" rows="3" col="12" id="editItemDeptDesc" placeholder=""
+                              ng-model="editItemDeptDesc"></textarea>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1></h1>
-        </div>
+    <!-- 模态框footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn_save"
+                ng-disabled="editItemDeptForm.$error.pattern[0].$invalid ||
+                            editItemDeptForm.$error.maxlength[0].$invalid ||
+                            editItemDeptForm.$error.required[0].$invalid"
+                ng-click="save()">
+            {{'CONFIG.MENU_USER.SAVE'|translate}}
+        </button>
     </div>
-
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.DESC'|translate}}</span>
-                <textarea class="form-control" rows="3" col="12" id="editItemDeptDesc" placeholder="" ng-model="editItemDeptDesc"></textarea>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 模态框footer -->
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary" id="btn_save" ng-click="save()">{{'CONFIG.MENU_USER.SAVE'|translate}}</button>
-</div>
+</form>
