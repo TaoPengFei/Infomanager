@@ -1,105 +1,190 @@
 <!--
    Created by 陶鹏飞 on 2017/9/21.
 -->
-
-<!-- 模态框header -->
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
-        <span aria-hidden="true">×</span></button>
-    <h4 class="modal-title">{{'CONFIG.MENU_USER.ADD_USER'|translate}}</h4>
-</div>
-
-<!-- 模态框body -->
-<div class="modal-body">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.CODE'|translate}}</span>
-                <input type="text" class="form-control" id="newItemDeptmentCode" ng-model="newItemDeptmentCode">
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.NAME'|translate}}</span>
-                <input type="text" class="form-control" id="newItemDeptmentName" ng-model="newItemDeptmentName">
-            </div>
-        </div>
+<form id="addItemDeptForm" class="form-horizontal" role="form" name="addItemDeptForm"
+      ng-submit="ctrl.submit()">
+    <!-- 模态框header -->
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+            <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{'CONFIG.MENU_USER.ADD_USER'|translate}}</h4>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1></h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SHORT_NAME'|translate}}</span>
-                <input type="text" class="form-control" id="newItemDeptmentShortName" ng-model="newItemDeptmentShortName">
+    <!-- 模态框body -->
+    <div class="modal-body">
+        <div class="row">
+            <!-- 餐品编码 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : !addItemDeptForm.newItemDeptmentCode.$pristine && addItemDeptForm.newItemDeptmentCode.$valid,
+                              'has-error' : !addItemDeptForm.newItemDeptmentCode.$pristine && addItemDeptForm.newItemDeptmentCode.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.CODE'|translate}}</span>
+                    <input type="text" class="form-control" id="newItemDeptmentCode" name="newItemDeptmentCode"
+                           placeholder="{{'COMMON.PLACEHOLDER'|translate}}"
+                           ng-model="newItemDeptmentCode" required>
+                    <div ng-show="!addItemDeptForm.newItemDeptmentCode.$pristine && addItemDeptForm.newItemDeptmentCode.$valid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="!addItemDeptForm.newItemDeptmentCode.$pristine && addItemDeptForm.newItemDeptmentCode.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="addItemDeptForm.newItemDeptmentCode.$invalid">
+                    <span ng-show="addItemDeptForm.newItemDeptmentCode.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
+            </div>
+            <!-- 餐品名称 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : !addItemDeptForm.newItemDeptmentName.$pristine && addItemDeptForm.newItemDeptmentName.$valid,
+                              'has-error' : !addItemDeptForm.newItemDeptmentName.$pristine && addItemDeptForm.newItemDeptmentName.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.NAME'|translate}}</span>
+                    <input type="text" class="form-control" id="newItemDeptmentName" name="newItemDeptmentName"
+                           placeholder="{{'COMMON.PLACEHOLDER'|translate}}"
+                           ng-model="newItemDeptmentName" required>
+                    <div ng-show="!addItemDeptForm.newItemDeptmentName.$pristine && addItemDeptForm.newItemDeptmentName.$valid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="!addItemDeptForm.newItemDeptmentName.$pristine && addItemDeptForm.newItemDeptmentName.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="addItemDeptForm.newItemDeptmentName.$invalid">
+                    <span ng-show="addItemDeptForm.newItemDeptmentName.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.PID'|translate}}</span>
-                <input type="text" class="form-control" id="newPID" ng-model="newPID">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1></h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SEQ'|translate}}</span>
-                <input type="text" class="form-control" id="newItemDeptmentSeq" ng-model="newItemDeptmentSeq">
+        <div class="row">
+            <!-- 简称 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SHORT_NAME'|translate}}</span>
+                    <input type="text" class="form-control" id="newItemDeptmentShortName"
+                           placeholder="{{'COMMON.PLACEHOLDER'|translate}}"
+                           ng-model="newItemDeptmentShortName">
+                </div>
+            </div>
+            <!-- 父部门ID -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.PID'|translate}}</span>
+                    <input type="text" class="form-control" id="newPID"
+                           placeholder="{{'COMMON.PLACEHOLDER'|translate}}"
+                           ng-model="newPID">
+                </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.STATUS'|translate}}</span>
-                <!--<input type="text" class="form-control" id="newItemDeptmentStatus" ng-model="newItemDeptmentStatus">-->
-                <div class="panel-heading form-control" style="
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- 序列 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : !addItemDeptForm.newItemDeptmentSeq.$pristine && addItemDeptForm.newItemDeptmentSeq.$valid,
+                              'has-error' : !addItemDeptForm.newItemDeptmentSeq.$pristine && addItemDeptForm.newItemDeptmentSeq.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SEQ'|translate}}</span>
+                    <input type="text" class="form-control" id="newItemDeptmentSeq" name="newItemDeptmentSeq"
+                           placeholder="{{'COMMON.PLACEHOLDER'|translate}}"
+                           ng-maxlength="11"
+                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
+                           ng-model="newItemDeptmentSeq" required>
+                    <div ng-show="!addItemDeptForm.newItemDeptmentSeq.$pristine && addItemDeptForm.newItemDeptmentSeq.$valid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="!addItemDeptForm.newItemDeptmentSeq.$pristine && addItemDeptForm.newItemDeptmentSeq.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="addItemDeptForm.newItemDeptmentSeq.$invalid">
+                    <span ng-show="addItemDeptForm.newItemDeptmentSeq.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
+                <div style="color: red" ng-show="addItemDeptForm.newItemDeptmentSeq.$invalid">
+                    <span ng-show="addItemDeptForm.newItemDeptmentSeq.$error.pattern">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
+                    </span>
+                </div>
+                <div style="color: red" ng-show="addItemDeptForm.newItemDeptmentSeq.$invalid">
+                    <span ng-show="addItemDeptForm.newItemDeptmentSeq.$error.maxlength">
+                        {{'CONFIG.MENU_ITEMDEPTMENT.LENGTH_CHECK_11'|translate}}
+                    </span>
+                </div>
+            </div>
+            <!-- 状态 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : !addItemDeptForm.newItemDeptmentStatus.$pristine && addItemDeptForm.newItemDeptmentStatus.$valid,
+                              'has-error' : !addItemDeptForm.newItemDeptmentStatus.$pristine && addItemDeptForm.newItemDeptmentStatus.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.STATUS'|translate}}</span>
+                    <!--<input type="text" class="form-control" id="newItemDeptmentStatus" ng-model="newItemDeptmentStatus">-->
+                    <div class="panel-heading form-control" style="
                                     padding: 5px 15px;
                                     border-top-left-radius: 0px;
                                     border-top-right-radius: 0px;">
-                    <input tabindex="0" type="radio" id="newEnable" value="0" name="newItemDeptmentStatus"
-                           ng-value=0
-                           ng-model="newItemDeptmentStatus"
-                           ng-icheck>
-                    <label for="newEnable" style="font-weight: normal;">启用</label>
-                    <input tabindex="100" type="radio" id="newEliminate" value="100" name="newItemDeptmentStatus"
-                           ng-value=100
-                           ng-model="newItemDeptmentStatus"
-                           ng-icheck>
-                    <label for="newEliminate" style="font-weight: normal;">淘汰</label>
+                        <input tabindex="0" type="radio" id="newEnable" value="0" name="newItemDeptmentStatus"
+                               ng-value=0
+                               ng-model="newItemDeptmentStatus"
+                               ng-icheck>
+                        <label for="newEnable" style="font-weight: normal;">{{'CONFIG.MENU_USER.ENABLE_OK'|translate}}</label>
+                        <input tabindex="100" type="radio" id="newEliminate" value="100" name="newItemDeptmentStatus"
+                               ng-value=100
+                               ng-model="newItemDeptmentStatus"
+                               ng-icheck>
+                        <label for="newEliminate" style="font-weight: normal;">{{'CONFIG.MENU_USER.ENABLE_NO'|translate}}</label>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="addItemDeptForm.newItemDeptmentStatus.$invalid">
+                    <span ng-show="addItemDeptForm.newItemDeptmentStatus.$error.required">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.MUST_INPUT'|translate}}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- 描述 -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.DESC'|translate}}</span>
+                    <textarea class="form-control" rows="3" col="12" id="newItemDeptDesc" placeholder=""
+                              ng-model="newItemDeptDesc"></textarea>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1></h1>
-        </div>
+    <!-- 模态框footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn_save"
+                ng-disabled="addItemDeptForm.$error.pattern[0].$invalid ||
+                            addItemDeptForm.$error.required[0].$invalid ||
+                            addItemDeptForm.$error.peakCheck[0].$invalid ||
+                            addItemDeptForm.$error.maxlength[0].$invalid"
+                ng-click="save()">
+            {{'CONFIG.MENU_USER.SAVE'|translate}}
+        </button>
     </div>
-
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-            <div class="input-group">
-                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.DESC'|translate}}</span>
-                <textarea class="form-control" rows="3" col="12" id="newItemDeptDesc" placeholder="" ng-model="newItemDeptDesc"></textarea>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 模态框footer -->
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary" id="btn_save" ng-click="save()">{{'CONFIG.MENU_USER.SAVE'|translate}}</button>
-</div>
+</form>

@@ -123,7 +123,9 @@
       "DESC": "描述",
       "PID": "父部门ID",
       "SEQ": "序列",
-      "STATUS": "状态"
+      "STATUS": "状态",
+      "LENGTH_CHECK_11": "* 长度不超过11"
+
     },
     "MENU_PLACE": {
       "PLACE_SEARCH": "名称查询",

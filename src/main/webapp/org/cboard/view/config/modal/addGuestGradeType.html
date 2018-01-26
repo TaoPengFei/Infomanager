@@ -1,7 +1,8 @@
 <!--
    Created by 陶鹏飞 on 2017/9/21.
 -->
-<form id="addGuestGradeTypeForm" class="form-horizontal" role="form" name="addGuestGradeTypeForm" ng-submit="ctrl.submit()">
+<form id="addGuestGradeTypeForm" class="form-horizontal" role="form" name="addGuestGradeTypeForm"
+      ng-submit="ctrl.submit()">
     <!-- 模态框header -->
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
@@ -173,6 +174,7 @@
                             addGuestGradeTypeForm.$error.required[0].$invalid ||
                             addGuestGradeTypeForm.$error.peakCheck[0].$invalid ||
                             addGuestGradeTypeForm.$error.maxlength[0].$invalid"
-                ng-click="save()">{{'COMMON.SAVE'|translate}}</button>
+                ng-click="save()">{{'COMMON.SAVE'|translate}}
+        </button>
     </div>
 </form>

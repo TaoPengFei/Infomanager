@@ -127,7 +127,8 @@
       "DESC": "Describe",
       "PID": "P_ID",
       "SEQ": "Sequence",
-      "STATUS": "Status"
+      "STATUS": "Status",
+      "LENGTH_CHECK_11": "* Length not exceeding 11!"
     },
     "MENU_PLACE": {
       "PLACE_SEARCH": "Search Name",
