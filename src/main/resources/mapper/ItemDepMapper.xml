@@ -29,8 +29,8 @@
 		insert into bi.sy_itemdeptment
 		(ItemDeptId,ItemDeptCode,ItemDeptName,ItemDeptShortName,ItemDeptDesc,pItemDeptId,ItemDeptSeq,`Status`,CreateTime,UpdateTime)
 
-		(select max(ItemDeptId)+1,#{ItemDeptCode},#{ItemDeptName},0,0,0,
-		#{ItemDeptSeq},0,now(),now() from bi.sy_itemdeptment)
+		(select max(ItemDeptId)+1,#{ItemDeptCode},#{ItemDeptName},#{ItemDeptShortName},#{ItemDeptDesc},#{pItemDeptId},
+		#{ItemDeptSeq},#{Status},now(),now() from bi.sy_itemdeptment)
 		</insert>
      
      <delete id="deleteItemDep">
@@ -67,9 +67,13 @@
 			<if test="ItemDeptDesc != null and ItemDeptDesc !='' ">
 				ItemDeptDesc=#{ItemDeptDesc},
 			</if>
+
+			<if test="ItemDeptSeq != null and ItemDeptSeq !='' ">
+				ItemDeptSeq=#{ItemDeptSeq},
+			</if>
 		    UpdateTime=now()
 	    </set>
-	    where  ItemDeptId=#{ItemDeptId} and ItemDeptSeq=#{ItemDeptSeq}
+	    where  ItemDeptId=#{ItemDeptId}
 	</update>
     
 </mapper> 
