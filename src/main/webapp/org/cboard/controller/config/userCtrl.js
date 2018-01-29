@@ -3,7 +3,7 @@
  */
 cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, $uibModal, ModalUtils, $filter, chartService) {
 
-    var translate = $filter('translate');
+    let translate = $filter('translate');
     $scope.optFlag = 'none';
     $scope.dsView = '';
     $scope.curDatasource = {};
@@ -42,7 +42,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
         };
         $scope.items = $scope.data.slice(0, $scope.pageSize);
         //分页要repeat的数组
-        for (var i = 0; i < $scope.newPages; i++) {
+        for (let i = 0; i < $scope.newPages; i++) {
             $scope.pageList.push(i + 1);
         }
         //打印当前选中页索引
@@ -52,8 +52,8 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
             //最多显示分页数5
             if (page > 2) {
                 //因为只显示5个页数，大于2页开始分页转换
-                var newpageList = [];
-                for (var i = (page - 3); i < ((page + 2) > $scope.pages ? $scope.pages : (page + 2)); i++) {
+                let newpageList = [];
+                for (let i = (page - 3); i < ((page + 2) > $scope.pages ? $scope.pages : (page + 2)); i++) {
                     newpageList.push(i + 1);
                 }
                 $scope.pageList = newpageList;
@@ -117,7 +117,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
             ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
         });
-    }
+    };
 
     //查询用户
     /*
@@ -139,9 +139,13 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
             ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
         })
-    })
+    });
 
-    //增加用户
+    /**
+     *   增加用户
+     * @param current
+     * @param $event
+     */
     $scope.addUser = function (current, $event) {
         $uibModal.open({
             templateUrl: 'org/cboard/view/config/modal/addUser.html',
@@ -153,7 +157,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
                     url: './role/roleLoad.do'
                 }).success(function (response) {
                     $scope.roleList_1 = response;
-                    console,log($scope.roleList_1);
+                    // console.log($scope.roleList_1);
                 }).error(function (XMLHttpRequest, textStatus, errorThrown) {
                     ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
                 });
@@ -194,7 +198,12 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
      console.log("删除用户...");
      };*/
 
-    //修改用户
+
+    /**
+     *  修改用户
+     * @param current
+     * @param $event
+     */
     $scope.modifyUser = function (current, $event) {
         /*console.log("修改用户...");
         console.log(current);*/
@@ -228,7 +237,7 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
                             password: $scope.modifyUserPwd,
                             role: $scope.modifyUserRole,
                             oldRole: current.password,
-                            desc: $scope.modifyUserName/*,
+                            desc: $scope.modifyUserDesc/*,
                             enabled:current.enabled*/
                         }
                     }).success(function (response) {
@@ -249,7 +258,11 @@ cBoard.controller('userCtrl', function ($rootScope, $scope, $http, dataService, 
         });
     };
 
-    //启动/淘汰用户
+    /**
+     * 启动/淘汰用户
+     * @param current
+     * @param $event
+     */
     $scope.enableUser = function (current, $event) {
         $http({
             method: 'post',

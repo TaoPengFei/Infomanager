@@ -92,13 +92,28 @@ cBoard.controller('itemdeptmentCtrl', function ($rootScope, $scope, $http, dataS
              }*/
         }).success(function (response) {
             // $scope.itemDeptmentList = response;
-            console.log(response);
+            // console.log(response);
             $scope.initPageSort(response);
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
             ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
         });
     };
     getItemDeptmentList();
+
+    /*$scope.$watch("userName", function () {
+        $http({
+            method: 'post',
+            url: './user/queryUser.do',
+            data: {
+                userName: $scope.userName
+            }
+        }).success(function (response) {
+            $scope.userList = response;
+            $scope.initPageSort($scope.userList);
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
+        })
+    })*/
 
     /**
      * 增加餐品部门

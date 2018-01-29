@@ -9,7 +9,7 @@
 		MonthName,YearMonth,DayNo,DayOfWeek,DayOfWeekName,IsWeekEnd,
 		WeekInMonth,WeekInYear,WeekStartDate,WeekEndDate,HolidayId,
 		HolidayName,EventId,EventName,CreateTime,UpdateTime 
-		from bi.dim_bidate
+		from bi.dim_bidate WHERE YearNo > 0
     </select>
     
     
